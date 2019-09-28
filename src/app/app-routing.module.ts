@@ -1,11 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ModalComponent } from './modal/modal.component';
 
 
-const routes: Routes = [];
+const router: Routes = [
+  { path: 'modal', component: ModalComponent }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(
+    router,
+    { enableTracing: true }) // <-- debugging purposes only    
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
