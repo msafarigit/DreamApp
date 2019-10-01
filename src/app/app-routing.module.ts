@@ -3,12 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { ModalComponent } from './modal/modal.component';
 import { StructuralDirectiveComponent } from './structural-directive/structural-directive.component';
 import { AttributeDirectiveComponent } from './attribute-directive/attribute-directive.component';
+import { TemplateReferenceVariableComponent } from './template-reference-variable/template-reference-variable.component';
 
 
 const router: Routes = [
   { path: 'modal', component: ModalComponent },
   { path: 'structural', component: StructuralDirectiveComponent },
-  { path: 'attribute', component: AttributeDirectiveComponent }
+  { path: 'attribute', component: AttributeDirectiveComponent },
+  { path: 'templateReferenceVariable', component: TemplateReferenceVariableComponent }
 ];
 
 @NgModule({

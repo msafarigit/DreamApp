@@ -8,7 +8,11 @@ export class HighlightDirective {
   @Input() defaultColor: string;
   @Input() appHighlight: string;
 
-  constructor(private elm: ElementRef) { }
+  constructor(private elm: ElementRef) {
+    // console.log('directive native element backgroundColor: ' + elm.nativeElement.style.backgroundColor);
+    console.log(elm.nativeElement.id + ' input appHighlight: ' + this.appHighlight);
+    // elm.nativeElement.style.backgroundColor = "red";
+  }
 
   @HostListener('mouseenter') onMouseEnter() {
     this.highlight(this.appHighlight || this.defaultColor || 'red');

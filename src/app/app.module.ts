@@ -10,6 +10,7 @@ import { StructuralDirectiveComponent } from './structural-directive/structural-
 import { AttributeDirectiveComponent } from './attribute-directive/attribute-directive.component';
 
 import { HighlightDirective } from './directive/highlight.directive';
+import { TemplateReferenceVariableComponent } from './template-reference-variable/template-reference-variable.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,11 @@ import { HighlightDirective } from './directive/highlight.directive';
 
 
 
-    HighlightDirective
+    HighlightDirective,
+
+
+
+    TemplateReferenceVariableComponent
   ],
   imports: [
     BrowserModule,
