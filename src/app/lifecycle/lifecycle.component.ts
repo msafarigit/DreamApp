@@ -1,4 +1,5 @@
 import { Component, OnInit, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
+import { Person, PERSONS } from '../model/Person';
 
 // tslint:disable-next-line: no-conflicting-lifecycle
 @Component({
@@ -9,10 +10,16 @@ import { Component, OnInit, OnChanges, SimpleChanges, DoCheck, AfterContentInit,
 export class LifecycleComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
 
   callStack: Array<string>;
+  persons: Person[] = [];
+  selectedPerson: Person = null;
+  master = '';
 
   constructor() {
     this.callStack = new Array<string>();
     this.callStack.push('constructor');
+
+    this.persons = PERSONS;
+    this.selectedPerson = this.persons[0];
   }
 
   ngOnChanges(changes: SimpleChanges): void {

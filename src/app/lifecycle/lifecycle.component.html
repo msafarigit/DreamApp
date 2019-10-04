@@ -1,4 +1,26 @@
-<p class="h4">Lifecycle Call Stack:</p>
-<ul class="list-group list-group-flush">
-    <li *ngFor="let call of callStack" class="list-group-item">{{call}}</li>
-</ul>
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <label class="col-md-3 col-form-label">First Name:</label>
+        <div class="col-md-9">
+            <input class="form-control" #firstName (keyup.enter)="selectedPerson.name = firstName.value" />
+        </div>
+    </div>
+    <div class="form-group col-md-6">
+        <label class="col-md-3 col-form-label">Master:</label>
+        <div class="col-md-9">
+            <input class="form-control" #masterName (keyup.enter)="master = masterName.value" />
+        </div>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-md-3">
+        <p class="h4">Lifecycle Call Stack:</p>
+        <ul class="list-group list-group-flush">
+            <li *ngFor="let call of callStack" class="list-group-item">{{call}}</li>
+        </ul>
+    </div>
+    <div class="form-group col-md-7 offset-md-1">
+        <app-lifecycle-child [contact]="selectedPerson" [master]="master"></app-lifecycle-child>
+    </div>
+</div>

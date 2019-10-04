@@ -12,6 +12,7 @@ import { TemplateReferenceVariableComponent } from './template-reference-variabl
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
 
 import { HighlightDirective } from './directive/highlight.directive';
+import { LifecycleChildComponent } from './lifecycle-child/lifecycle-child.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,11 @@ import { HighlightDirective } from './directive/highlight.directive';
 
 
 
-    HighlightDirective
+    HighlightDirective,
+
+
+
+    LifecycleChildComponent
 
 
 
