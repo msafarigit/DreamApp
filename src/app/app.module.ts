@@ -19,14 +19,17 @@ import { TemplateReferenceVariableComponent } from './template-reference-variabl
     ModalComponent,
     StructuralDirectiveComponent,
     AttributeDirectiveComponent,
+    TemplateReferenceVariableComponent,
 
 
 
-    HighlightDirective,
+    HighlightDirective
 
 
 
-    TemplateReferenceVariableComponent
+
+
+
   ],
   imports: [
     BrowserModule,
