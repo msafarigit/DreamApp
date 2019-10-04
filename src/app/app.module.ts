@@ -8,9 +8,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ModalComponent } from './modal/modal.component';
 import { StructuralDirectiveComponent } from './structural-directive/structural-directive.component';
 import { AttributeDirectiveComponent } from './attribute-directive/attribute-directive.component';
+import { TemplateReferenceVariableComponent } from './template-reference-variable/template-reference-variable.component';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
 
 import { HighlightDirective } from './directive/highlight.directive';
-import { TemplateReferenceVariableComponent } from './template-reference-variable/template-reference-variable.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { TemplateReferenceVariableComponent } from './template-reference-variabl
     StructuralDirectiveComponent,
     AttributeDirectiveComponent,
     TemplateReferenceVariableComponent,
+    LifecycleComponent,
 
 
 
