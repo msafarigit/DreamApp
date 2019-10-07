@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ComponentInteractionComponent } from './component-interaction/component-interaction.component';
 
 
 const router: Routes = [
-  // { path: 'modal', component: ModalComponent }
+  { path: 'interaction', component: ComponentInteractionComponent }
 ];
 
 @NgModule({
