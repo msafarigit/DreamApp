@@ -8,6 +8,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ComponentInteractionComponent } from './component-interaction/component-interaction.component';
 import { ParentVersionComponent } from './parent-version/parent-version.component';
 import { ChildVersionComponent } from './child-version/child-version.component';
+import { ClassRoomComponent } from './class-room/class-room.component';
+import { StudentInfoComponent } from './student-info/student-info.component';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { ChildVersionComponent } from './child-version/child-version.component';
     ComponentInteractionComponent,
     ParentVersionComponent,
     ChildVersionComponent,
+    ClassRoomComponent,
+    StudentInfoComponent,
 
 
   ],
