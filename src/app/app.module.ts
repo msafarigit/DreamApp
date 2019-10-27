@@ -12,6 +12,7 @@ import { ClassRoomComponent } from './class-room/class-room.component';
 import { StudentInfoComponent } from './student-info/student-info.component';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
 import { CountdownLocalVarParentComponent } from './countdown-local-var-parent/countdown-local-var-parent.component';
+import { CountdownViewChildParentComponent } from './countdown-view-child-parent/countdown-view-child-parent.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { CountdownLocalVarParentComponent } from './countdown-local-var-parent/c
     StudentInfoComponent,
     CountdownTimerComponent,
     CountdownLocalVarParentComponent,
+    CountdownViewChildParentComponent,
 
 
   ],
