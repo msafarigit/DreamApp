@@ -1,0 +1,11 @@
+<div class="card border-primary mt-5">
+    <div class="card-header">
+        Person Management:
+    </div>
+    <div class="card-body">
+        <app-person-info (addPerson)="addPerson($event)" (searchPerson)="searchPerson($event)" [person]="person" (editPerson)="editPerson($event)"></app-person-info>
+    </div>
+    <div class="card-body">
+        <app-person-grid [dataSource]="personList" (deletePerson)="deletePerson($event)" (selectPerson)="selectPerson($event)"></app-person-grid>
+    </div>
+</div>

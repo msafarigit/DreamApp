@@ -16,6 +16,9 @@ import { CountdownLocalVarParentComponent } from './countdown-local-var-parent/c
 import { CountdownViewChildParentComponent } from './countdown-view-child-parent/countdown-view-child-parent.component';
 import { ClassAssessmentComponent } from './class-assessment/class-assessment.component';
 import { AssessmentDeveloperComponent } from './assessment-developer/assessment-developer.component';
+import { PersonManagementComponent } from './practice/person-management/person-management.component';
+import { PersonInfoComponent } from './practice/person-info/person-info.component';
+import { PersonGridComponent } from './practice/person-grid/person-grid.component';
 
 
 @NgModule({
@@ -32,6 +35,9 @@ import { AssessmentDeveloperComponent } from './assessment-developer/assessment-
     CountdownViewChildParentComponent,
     ClassAssessmentComponent,
     AssessmentDeveloperComponent,
+    PersonManagementComponent,
+    PersonInfoComponent,
+    PersonGridComponent,
 
 
   ],
