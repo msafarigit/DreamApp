@@ -19,6 +19,7 @@ import { AssessmentDeveloperComponent } from './assessment-developer/assessment-
 import { PersonManagementComponent } from './practice/person-management/person-management.component';
 import { PersonInfoComponent } from './practice/person-info/person-info.component';
 import { PersonGridComponent } from './practice/person-grid/person-grid.component';
+import { CountdownQuerylistParentComponent } from './countdown-querylist-parent/countdown-querylist-parent.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { PersonGridComponent } from './practice/person-grid/person-grid.componen
     PersonManagementComponent,
     PersonInfoComponent,
     PersonGridComponent,
+    CountdownQuerylistParentComponent,
 
 
   ],
