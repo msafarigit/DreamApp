@@ -20,6 +20,9 @@ import { PersonManagementComponent } from './practice/person-management/person-m
 import { PersonInfoComponent } from './practice/person-info/person-info.component';
 import { PersonGridComponent } from './practice/person-grid/person-grid.component';
 import { CountdownQuerylistParentComponent } from './countdown-querylist-parent/countdown-querylist-parent.component';
+import { CustomTwoWayComponent } from './custom-two-way/custom-two-way.component';
+import { CustomTwoWayParentComponent } from './custom-two-way-parent/custom-two-way-parent.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -40,13 +43,16 @@ import { CountdownQuerylistParentComponent } from './countdown-querylist-parent/
     PersonInfoComponent,
     PersonGridComponent,
     CountdownQuerylistParentComponent,
+    CustomTwoWayComponent,
+    CustomTwoWayParentComponent,
 
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [AssessmentService],
   bootstrap: [AppComponent]
