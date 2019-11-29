@@ -1,0 +1,13 @@
+h1.h1 { 
+    font-style: italic;
+}
+
+:host {
+    background-color: aqua;
+    display: block;
+}
+
+:host-context(app-root) h1 {
+    background-color: aliceblue;
+    display: block;
+}
