@@ -15,6 +15,7 @@ import { JalaliPipe } from './pipes/jalali.pipe';
 import { SqrtPipe } from './pipes/sqrt.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { PersonPipe } from './pipes/person.pipe';
+import { AsyncPipeExampleComponent } from './async-pipe-example/async-pipe-example.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { PersonPipe } from './pipes/person.pipe';
     SqrtPipe,
     FilterPipe,
     PersonPipe,
+    AsyncPipeExampleComponent,
 
 
   ],
