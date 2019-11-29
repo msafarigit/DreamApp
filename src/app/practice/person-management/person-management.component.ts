@@ -10,6 +10,7 @@ export class PersonManagementComponent implements OnInit {
 
   personList: Person[];
   person: Person;
+  searchRequest: Person;
 
   constructor() {
     this.personList = PERSONS;
@@ -24,9 +25,11 @@ export class PersonManagementComponent implements OnInit {
   }
 
   searchPerson(request: Person) {
-    this.personList = this.personList.filter(person => request.name.trim() ? person.name === request.name.trim() : true)
-      .filter(person => request.lastName.trim() ? person.lastName === request.lastName.trim() : true)
-      .filter(person => request.age ? person.age === +request.age : true);
+    this.searchRequest = request;
+    // before person pipe!!
+    // this.personList = this.personList.filter(person => request.name.trim() ? person.name === request.name.trim() : true)
+    //   .filter(person => request.lastName.trim() ? person.lastName === request.lastName.trim() : true)
+    //   .filter(person => request.age ? person.age === +request.age : true);
   }
 
   deletePerson(id: number) {
