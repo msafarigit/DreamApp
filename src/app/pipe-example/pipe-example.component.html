@@ -1,0 +1,70 @@
+<div style="width:100%;">
+    <div style="width:20%; float:left; color:cadetblue; border:dotted 2px skyblue; padding: 5px;">
+        <h3>Uppercase Pipe</h3>
+        <b>{{title | uppercase}}</b>
+        <h3>Lowercase Pipe</h3>
+        <b>{{title | lowercase}}</b>
+        <hr />
+        <h3>Currency Pipe</h3>
+        <b>{{6 | currency}}</b>
+        <br />
+        <b>{{6 | currency: 'EUR'}}</b>
+        <br />
+        <b>{{6 | currency: 'EUR': false}}</b>
+        <br />
+        <b>{{6.2356 | currency: 'EUR': false: '3.2-3'}}</b>
+        <hr />
+        <h3>Date Pipe</h3>
+        <b>{{todayDate | date}}</b>
+        &nbsp;
+        <b>{{todayDate | date: 'd/M/y - hh:mm:ss'}}</b>
+        &nbsp;
+        <b>{{todayDate | date:'shortTime'}}</b>
+        &nbsp;
+        <b>{{todayDate | jalali}}</b>
+        <hr />
+        <b>Birthday is {{ birthday | date:format }}</b>
+        <br />
+        <b>Birthday is {{ birthday | date:format | uppercase}}</b>
+        <br />
+        <button class="btn btn-primary" (click)="changeToggle()">Toggle Format</button>
+        <hr />
+        <h3>Decimal Pipe</h3>
+        <b>{{ 11454.78787814 | number: '3.4-5' }}</b> // 3 is for main integer, 4-5 are for integers to be displayed.
+    </div>
+
+    <div style="width:30%; float:left; color:cadetblue; border:dotted 2px skyblue; padding: 5px;">
+        <h3>Json Pipe</h3>
+        <b>{{ jsonval | json }}</b>
+        <hr />
+        <h3>Percent Pipe</h3>
+        <b>{{00.54565 | percent}}</b>
+        <h3>Slice Pipe</h3>
+        <b>{{months | slice:2:6}}</b>// here 2 and 6 refers to the start and the end index
+        <hr />
+        <h3>Sqrt Pipe</h3>
+        <b>{{ 625 | sqrt }}</b> - <b>{{ 196 | sqrt:true }}</b> - <b>{{ 196 | sqrt: true: '2.2-3' }}</b>
+        <br />
+        <br />
+        <input [value]="numberValue" (keyup.enter)="numberValue = $event.target.value" class="form-control" />
+        <b>{{ numberValue | sqrt : true: '1.1-2'}}</b>
+    </div>
+
+    <div style="width:40%; float:left; color:cadetblue; border:dotted 2px skyblue; padding: 5px;">
+        <label>New Developer Title:</label>
+        <input type="text" [value]="devTitle" (keyup.enter)="devTitle = $event.target.value" class="form-control" />
+        <label>New Developer Name:</label>
+        <input type="text" [value]="devName" (keyup.enter)="devName = $event.target.value" class="form-control" />
+        <label>New Developer LastName:</label>
+        <input type="text" [value]="devLName" (keyup.enter)="devLName = $event.target.value" class="form-control" />
+        <br />
+        <button class="btn btn-primary" (click)="addDeveloper()">Add Developer</button>
+        <hr />
+        <label>Search Developers By Title: </label>
+        <input [value]="titleFilter" (keyup.enter)="titleFilter = $event.target.value" class="form-control" />
+        <br />
+        <div *ngFor="let item of items | async | filter: [{title: titleFilter}]">
+            Hello {{item.title}} {{item.first}} {{item.last}} !
+        </div>
+    </div>
+</div>
