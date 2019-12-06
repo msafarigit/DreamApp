@@ -1,0 +1,5 @@
+<h3>toggle the "special" class on/off with a property:</h3>
+<div [class.special]="isSpecial">The class binding is special.</div>
+
+<h3>binding to class.special overrides the class attribute:</h3>
+<div class="special" [class.special]="!isSpecial">This one is not so special.</div>

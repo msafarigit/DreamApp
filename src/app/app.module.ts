@@ -17,6 +17,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { PersonPipe } from './pipes/person.pipe';
 import { AsyncPipeExampleComponent } from './async-pipe-example/async-pipe-example.component';
 import { StyleExampleComponent } from './style-example/style-example.component';
+import { NgClassExampleComponent } from './ng-class-example/ng-class-example.component';
+import { NgStyleExampleComponent } from './ng-style-example/ng-style-example.component';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { StyleExampleComponent } from './style-example/style-example.component';
     PersonPipe,
     AsyncPipeExampleComponent,
     StyleExampleComponent,
+    NgClassExampleComponent,
+    NgStyleExampleComponent,
 
 
   ],
