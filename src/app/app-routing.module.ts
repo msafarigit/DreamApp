@@ -1,3 +1,4 @@
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PersonManagementComponent } from './practice/person-management/person-management.component';
@@ -8,9 +9,8 @@ import { StyleExampleComponent } from './style-example/style-example.component';
 
 const router: Routes = [
   { path: 'practice', component: PersonManagementComponent },
-  { path: 'pipe', component: PipeExampleComponent },
-  { path: 'asyncPipe', component: AsyncPipeExampleComponent },
-  { path: 'style', component: StyleExampleComponent }
+  { path: 'style', component: StyleExampleComponent },
+  { path: 'templateDrivenForm', component: TemplateDrivenFormComponent }
 ];
 
 @NgModule({

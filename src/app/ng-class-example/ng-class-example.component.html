@@ -3,3 +3,13 @@
 
 <h3>binding to class.special overrides the class attribute:</h3>
 <div class="special" [class.special]="!isSpecial">This one is not so special.</div>
+
+
+<!-- <div [ngClass]="stringExp|arrayExp|objExp">...</!--> -->
+<div [ngClass]="'first second'">...</div>
+
+<div [ngClass]="['first', 'second']">...</div>
+
+<div [ngClass]="{'first': true, 'second': true, 'third': false}">...</div>
+
+<div [ngClass]="{'class1 class2 class3' : true}">...</div>

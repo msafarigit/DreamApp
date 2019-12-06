@@ -19,6 +19,7 @@ import { AsyncPipeExampleComponent } from './async-pipe-example/async-pipe-examp
 import { StyleExampleComponent } from './style-example/style-example.component';
 import { NgClassExampleComponent } from './ng-class-example/ng-class-example.component';
 import { NgStyleExampleComponent } from './ng-style-example/ng-style-example.component';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { NgStyleExampleComponent } from './ng-style-example/ng-style-example.com
     StyleExampleComponent,
     NgClassExampleComponent,
     NgStyleExampleComponent,
+    TemplateDrivenFormComponent,
 
 
   ],
@@ -53,3 +55,8 @@ export class AppModule { }
 
 
 // Shift + Alt + F
+
+/*
+If a component, directive, or pipe belongs to a module in the imports array, don't​ re-declare it in the declarations array.
+If you wrote it and it should belong to this module, ​do​ declare it in the declarations array.
+*/
