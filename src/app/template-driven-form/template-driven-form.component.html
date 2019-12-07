@@ -1,17 +1,26 @@
 <div class="container">
   <h1>Template-driven Form Example:</h1>
-  <form>
+  <form #form="ngForm" (ngSubmit)="submit(form)">
     <div class="form-group">
-      <label class="control-label">First Name:</label>
-      <input type="text" class="form-control" />
+      <label for="firstName" class="control-label">First Name:</label>
+      <input type="text" class="form-control" name="firstName" [(ngModel)]="person.name" required #name="ngModel"/>
+      <div class="alert alert-danger" [hidden]="name.valid">
+        Name is required!
+      </div>
     </div>
     <div class="form-group">
-      <label class="control-label">Last Name:</label>
-      <input type="text" class="form-control" />
+      <label for="lastName" class="control-label">Last Name:</label>
+      <input type="text" class="form-control" name="lastName" [(ngModel)]="person.lastName" required #lastName="ngModel"/>
+      <div class="alert alert-danger" [hidden]="lastName.valid && lastName.touched">
+        Lastname is required!
+      </div>
+    </div>
+    <div class="alert alert-success" *ngIf="form.valid && form.submitted">
+      Form data is submitted.
     </div>
     <div class="form-group">
-      <button type="submit">Submit</button>
-      <input type="button" class="btn btn-warning" value="Reset"/>
+      <button type="submit" class="btn" [ngClass]="form.valid ? 'btn-success' : 'btn-danger'" [disabled]="form.invalid">Submit</button>
+      <input type="button" class="btn btn-warning" value="Reset" (click)="resetForm()"/>
     </div>
   </form>
 </div>

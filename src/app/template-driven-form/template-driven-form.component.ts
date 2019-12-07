@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Person } from './../model/Person';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-template-driven-form',
@@ -7,11 +9,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateDrivenFormComponent implements OnInit {
 
-  constructor() { }
+  /*
+  View queries are set before the ngAfterViewInit callback is called.
+  Metadata Properties:
+    - selector - The directive type or the name used for querying.
+    - read - True to read a different token from the queried elements.
+    - static - True to resolve query results before change detection runs
+
+  The following selectors are supported.
+    - Any class with the @Component or @Directive decorator
+    - A template reference variable as a string (e.g. query <my-component #cmp></my-component> with @ViewChild('cmp'))
+    - Any provider defined in the child component tree of the current component (e.g. @ViewChild(SomeService) someService: SomeService)
+    - Any provider defined through a string token (e.g. @ViewChild('someToken') someTokenVal: any)
+    - A TemplateRef (e.g. query <ng-template></ng-template> with @ViewChild(TemplateRef) template;)
+  */
+
+  @ViewChild('form', { static: false}) myForm: NgForm;
+  @ViewChild('name', { static: false }) firstName: ElementRef;
+
+  person: Person;
+
+  constructor() {
+    this.person = new Person(5, 'mahdi', 'safari');
+  }
 
   ngOnInit() {
   }
 
+  submit(form: NgForm): void {
+    alert(this.myForm === form);
+    alert(JSON.stringify(form.value));
+  }
+
+  resetForm() {
+    // this.myForm.reset();
+    this.myForm.reset({firstName: 'mahdi', lastName: 'safari'});
+  }
 }
 
 /*
@@ -89,4 +122,16 @@ Scalability:
  The abstraction with template-driven forms also surfaces in testing,
  where testing reactive forms requires less setup and no dependence on the change detection cycle
  when updating and validating the form and data models during testing.
+
+ Abstract Control States: pristine, dirty, touched, untouched, invalid, valid.
+ Abstract Control States: pristine, dirty, invalid, valid, submitted.
+*/
+
+/*
+As soon as you import the FormsModule, this directive becomes active by default on all <form> tags.
+You don't need to add a special selector.
+You optionally export the directive into a local template variable using ngForm as the key (ex: #myForm="ngForm").
+This is optional, but useful. Many properties from the underlying FormGroup instance are duplicated on the directive itself,
+so a reference to it gives you access to the aggregate value and validity status of the form,
+as well as user interaction properties like dirty and touched.
 */
