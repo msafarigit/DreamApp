@@ -1,0 +1,13 @@
+.bg-blue {
+  background-color: #33b5e5 !important;
+}
+
+.navbar.navbar-dark .navbar-nav .nav-item .nav-link {
+  color: #fff;
+  -webkit-transition: .35s;
+  transition: .35s;
+}
+
+.navbar.navbar-dark .navbar-nav .nav-item.active > .nav-link {
+  background-color: rgba(255, 255, 255, 0.1);
+}

@@ -1,28 +1,33 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Dream</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
-    aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-md navbar-dark bg-blue">
+  <a class="navbar-brand" [routerLink]="['/']" (click)="navbarCollapsed = true">Todo Application</a>
+  <button class="navbar-toggler navbar-toggler-right" type="button" (click)="navbarCollapsed = !navbarCollapsed"
+    [attr.aria-expanded]="!navbarCollapsed" aria-controls="navbarContent" aria-expanded="false"
+    aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/practice">Practice</a>
+        <a class="nav-link" routerLink="/practice"(click)="navbarCollapsed = true">Practice</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/style">Style</a>
+        <a class="nav-link" routerLink="/style"(click)="navbarCollapsed = true">Style</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Pipe</a>
-        <div class="dropdown-menu">
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" ngbDropdownToggle data-toggle="dropdown" [routerLink]="['/']">
+          <i class="fa fa-user"></i> Pipe
+        </a>
+        <div ngbDropdownMenu class="dropdown-menu">
           <a class="dropdown-item" routerLink="/pipe">Sync</a>
           <a class="dropdown-item" routerLink="/asyncPipe">Async</a>
         </div>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Form</a>
-        <div class="dropdown-menu">
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" ngbDropdownToggle data-toggle="dropdown" [routerLink]="['/']">
+          <i class="fa fa-user"></i> Form
+        </a>
+        <div ngbDropdownMenu class="dropdown-menu">
           <a class="dropdown-item" routerLink="/templateDrivenForm">Template Driven Form</a>
           <a class="dropdown-item" routerLink="/asyncPipe">Async</a>
         </div>
