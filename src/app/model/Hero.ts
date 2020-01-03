@@ -1,4 +1,6 @@
-export class Hero {
+import { Entity } from './core/Entity';
+
+export class Hero extends Entity {
     id: number;
     name: string;
     emotion?: string; // ? safe operator

@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AssessmentService } from './services/assessment.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PersonManagementComponent } from './practice/person-management/person-management.component';
 import { PersonInfoComponent } from './practice/person-info/person-info.component';
 import { PersonGridComponent } from './practice/person-grid/person-grid.component';
-import { FormsModule } from '@angular/forms';
+import { AssessmentService } from './services/assessment.service';
 import { PipeExampleComponent } from './pipe-example/pipe-example.component';
 import { JalaliPipe } from './pipes/jalali.pipe';
 import { SqrtPipe } from './pipes/sqrt.pipe';
@@ -46,7 +47,12 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    })
   ],
   providers: [AssessmentService],
   bootstrap: [AppComponent]
