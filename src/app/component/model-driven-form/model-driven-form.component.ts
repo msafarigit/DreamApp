@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-model-driven-form',
@@ -17,9 +17,9 @@ export class ModelDrivenFormComponent {
   // signupForm: AbstractControl;
   signupForm: FormGroup;
 
-  constructor() {
+  constructor(fb: FormBuilder) {
     // this.firstName = new FormControl('Mahdi');
-    this.signupForm = new FormGroup({
+    this.signupForm = fb.group({
       firstName: new FormControl('Mahdi', Validators.compose([Validators.required, Validators.minLength(3)])),
       lastName: new FormControl('Safari', Validators.required),
       // subject: new FormControl(this.subjects[0])
