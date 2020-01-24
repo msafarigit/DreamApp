@@ -28,6 +28,13 @@ export class TemplateDrivenFormComponent implements OnInit {
   @ViewChild('name', { static: false }) firstName: ElementRef;
 
   person: Person;
+  states = [
+    {name: 'Arizona', abbrev: 'AZ'},
+    {name: 'California', abbrev: 'CA'},
+    {name: 'Colorado', abbrev: 'CO'},
+    {name: 'New York', abbrev: 'NY'},
+    {name: 'Pennsylvania', abbrev: 'PA'},
+  ];
 
   constructor() {
     this.person = new Person(5, 'mahdi', 'safari');

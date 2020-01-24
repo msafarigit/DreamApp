@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormControl } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-model-driven-form',
@@ -7,14 +7,32 @@ import { AbstractControl, FormControl } from '@angular/forms';
   styleUrls: ['./model-driven-form.component.scss']
 })
 export class ModelDrivenFormComponent {
+  subjects = [
+    {name: 'Feedback', id: 1},
+    {name: 'Report a bug', id: 2},
+    {name: 'Feature request', id: 3}
+  ];
 
-  name: AbstractControl;
+  // firstName: AbstractControl;
+  signupForm: AbstractControl;
 
   constructor() {
-    this.name = new FormControl('Mahdi');
+    // this.firstName = new FormControl('Mahdi');
+    this.signupForm = new FormGroup({
+      firstName: new FormControl('Mahdi'),
+      lastName: new FormControl('Safari'),
+      // subject: new FormControl(this.subjects[0])
+      subject: new FormControl()
+    });
   }
 
+  onSubmit() {
+    alert(JSON.stringify(this.signupForm.value));
+  }
 
+  // updateFirstName() {
+  //   this.firstName.setValue('Ali');
+  // }
 }
 
 /*

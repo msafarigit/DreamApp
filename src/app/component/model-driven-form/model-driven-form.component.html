@@ -1,26 +1,24 @@
 <div class="container">
   <h1>Reactive Form Example:</h1>
-  <form class="col-md-6 offset-md-3 text-center border border-light p-4">
+  <form class="col-md-6 offset-md-3 text-center border border-light p-4" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
     <p class="h4 mb-4">Sign up</p>
 
     <div class="form-row mb-4">
       <div class="col">
-        <input type="text" class="form-control" placeholder="First name" [formControl]="name" />
+        <!-- <input type="text" class="form-control" placeholder="First name" [formControl]="firstName" /> without formGroup-->
+        <input type="text" class="form-control" placeholder="First name" formControlName="firstName" />
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="Last name" />
+        <input type="text" class="form-control" placeholder="Last name" formControlName="lastName" />
       </div>
     </div>
 
     <input type="email" class="form-control mb-4" placeholder="E-mail" />
 
     <label>Subject</label>
-    <select class="browser-default custom-select mb-4">
+    <select class="browser-default custom-select mb-4" formControlName="subject">
       <option value="" disabled>Choose option</option>
-      <option value="1" selected>Feedback</option>
-      <option value="2">Report a bug</option>
-      <option value="3">Feature request</option>
-      <option value="4">Feature request</option>
+      <option *ngFor="let subject of subjects" [ngValue]="subject.id">{{subject.name}}</option>
     </select>
 
     <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password"
@@ -40,7 +38,7 @@
       <label class="custom-control-label" for="defaultRegisterFormNewsletter">Subscribe to our newsletter</label>
     </div>
 
-    <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
+    <button class="btn btn-info my-4 btn-block" type="submit" [disabled]="!signupForm.valid">Sign in</button>
     <hr>
 
     <p>By clicking <em>Sign up</em> you agree to our <a href="" target="_blank">terms of service</a>

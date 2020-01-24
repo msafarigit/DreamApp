@@ -15,6 +15,15 @@
         Lastname is required!
       </div>
     </div>
+    <div class="form-group">
+      <label for="state" class="control-label">State:</label>
+      <select class="custom-select" name="state" ngModel>
+        <option value="" disabled>Choose a state</option>
+        <option *ngFor="let state of states" [ngValue]="state">
+          {{ state.abbrev }}
+        </option>
+      </select>
+    </div>
     <div class="alert alert-success" *ngIf="form.valid && form.submitted">
       Form data is submitted.
     </div>
