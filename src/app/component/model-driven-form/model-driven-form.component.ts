@@ -14,17 +14,20 @@ export class ModelDrivenFormComponent {
   ];
 
   // firstName: AbstractControl;
-  signupForm: AbstractControl;
+  // signupForm: AbstractControl;
+  signupForm: FormGroup;
 
   constructor() {
     // this.firstName = new FormControl('Mahdi');
     this.signupForm = new FormGroup({
-      firstName: new FormControl('Mahdi', Validators.required),
+      firstName: new FormControl('Mahdi', Validators.compose([Validators.required, Validators.minLength(3)])),
       lastName: new FormControl('Safari', Validators.required),
       // subject: new FormControl(this.subjects[0])
       subject: new FormControl('', Validators.required)
     });
   }
+
+  get firstName(): any { return this.signupForm.get('firstName'); }
 
   onSubmit() {
     alert(JSON.stringify(this.signupForm.value));
@@ -42,6 +45,14 @@ export class ModelDrivenFormComponent {
   check() {
     // this.firstName.markAsTouched({onlySelf: true});
     this.signupForm.markAllAsTouched();
+  }
+
+  partialUpdate() {
+    this.signupForm.patchValue({ firstName: 'Hamid' });
+  }
+
+  fullUpdate() {
+    this.signupForm.setValue({ firstName: 'Hasan', lastName: 'Mohammadi', subject: this.subjects[2].id });
   }
 }
 

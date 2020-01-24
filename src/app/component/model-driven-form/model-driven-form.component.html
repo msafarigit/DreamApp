@@ -1,19 +1,24 @@
 <div class="container">
   <h1>Reactive Form Example:</h1>
-  <form class="col-md-6 offset-md-3 text-center border border-light p-4" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <form class="col-md-6 offset-md-3 text-center border border-light p-4" [formGroup]="signupForm" #form="ngForm" (ngSubmit)="onSubmit()">
     <p class="h4 mb-4">Sign up</p>
 
     <div class="form-row mb-4">
       <div class="col">
         <!-- <input type="text" class="form-control" placeholder="First name" [formControl]="firstName" /> without formGroup-->
         <input type="text" class="form-control" placeholder="First name" formControlName="firstName" />
+        <div *ngIf="firstName.invalid && firstName.touched" class="alert alert-danger">
+          <span>Please Enter First Name.</span>
+        </div>
       </div>
       <div class="col">
         <input type="text" class="form-control" placeholder="Last name" formControlName="lastName" />
+        <div *ngIf="signupForm.controls['lastName'].invalid && signupForm.controls['lastName'].touched"
+          class="alert alert-danger">
+          <span>Please Enter Last Name.</span>
+        </div>
       </div>
     </div>
-
-    <input type="email" class="form-control mb-4" placeholder="E-mail" />
 
     <label>Subject</label>
     <select class="browser-default custom-select mb-4" formControlName="subject">
@@ -38,9 +43,20 @@
       <label class="custom-control-label" for="defaultRegisterFormNewsletter">Subscribe to our newsletter</label>
     </div>
 
-    <button class="btn btn-info my-4 btn-block" type="submit" [disabled]="!signupForm.valid">Sign in</button>
-    <button class="btn btn-warning my-4 btn-block" type="button" [disabled]="signupForm.untouched" (click)="reset()">Reset</button>
-    <button class="btn btn-danger my-4 btn-block" type="button" (click)="check()">Validate</button>
+    <div *ngIf="signupForm.hasError('minlength', 'firstName') && !form.submitted" class="alert alert-danger">
+      <span>Please enter First Name at least 3 characters!</span>
+    </div>
+
+    <!--<div *ngIf="signupForm.valid && form.submitted" class="alert alert-success">
+      <span>Form Data Successfully sent to Server!</span>
+    </div>-->
+
+    <button class="btn btn-info my-3 btn-block" type="submit" [disabled]="!signupForm.valid">Sign in</button>
+    <button class="btn btn-warning my-3 btn-block" type="button" [disabled]="signupForm.untouched" (click)="reset()">Reset</button>
+    <button class="btn btn-danger my-3 btn-block" type="button" (click)="check()">Validate</button>
+
+    <button class="btn btn-secondary my-3 btn-block" type="button" (click)="partialUpdate()">Partial Update</button>
+    <button class="btn btn-success my-3 btn-block" type="button" (click)="fullUpdate()">Full Update</button>
     <hr>
 
     <p>By clicking <em>Sign up</em> you agree to our <a href="" target="_blank">terms of service</a>
