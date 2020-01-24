@@ -19,8 +19,10 @@
       "dom"
     ],
     "paths": {
+      "@pipe/*": ["app/pipe/*"],
       "@service/*": ["app/service/*"],
       "@model/*": ["app/model/*"],
+      "@component/*": ["app/component/*"],
       "@env/*": ["environments/*"]
     }
   },

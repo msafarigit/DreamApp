@@ -1,6 +1,6 @@
-import { Person } from './../model/Person';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Person } from '@model/Person';
 
 @Component({
   selector: 'app-template-driven-form',
