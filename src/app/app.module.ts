@@ -33,6 +33,7 @@ import { StyleExampleComponent } from '@component/style-example/style-example.co
 import { NgClassExampleComponent } from '@component/ng-class-example/ng-class-example.component';
 import { NgStyleExampleComponent } from '@component/ng-style-example/ng-style-example.component';
 import { TemplateDrivenFormComponent } from '@component/template-driven-form/template-driven-form.component';
+import { ModelDrivenFormComponent } from './component/model-driven-form/model-driven-form.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { TemplateDrivenFormComponent } from '@component/template-driven-form/tem
     NgClassExampleComponent,
     NgStyleExampleComponent,
     TemplateDrivenFormComponent,
+    ModelDrivenFormComponent,
 
 
   ],
