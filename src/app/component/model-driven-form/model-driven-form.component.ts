@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AbstractControl, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-model-driven-form',
   templateUrl: './model-driven-form.component.html',
   styleUrls: ['./model-driven-form.component.scss']
 })
-export class ModelDrivenFormComponent implements OnInit {
+export class ModelDrivenFormComponent {
 
-  constructor() { }
+  name: AbstractControl;
 
-  ngOnInit() {
+  constructor() {
+    this.name = new FormControl('Mahdi');
   }
+
 
 }
 
@@ -62,4 +65,21 @@ FormBuilder: An injectable service that provides factory methods for creating co
   FormGroupDirective: Syncs an existing FormGroup instance to a DOM element.
   FormGroupName: Syncs a nested FormGroup instance to a DOM element.
   FormArrayName: Syncs a nested FormArray instance to a DOM element.
+*/
+
+/*
+constructor(formState: any = null,
+  validatorOrOpts?: ValidatorFn | AbstractControlOptions | ValidatorFn[],
+  asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[])
+
+Parameters:
+formState:any - Initializes the control with an initial value, or an object that defines the initial value and disabled state.
+Optional. Default is null.
+
+validatorOrOpts:ValidatorFn | AbstractControlOptions | ValidatorFn[]
+A synchronous validator function, or an array of such functions, or an AbstractControlOptions object that contains validation functions and a validation trigger.
+Optional. Default is undefined.
+
+asyncValidator: AsyncValidatorFn | AsyncValidatorFn[]
+A single async validator or array of async validator functions Optional. Default is undefined.
 */

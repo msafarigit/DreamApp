@@ -1,3 +1,4 @@
+import { ModelDrivenFormComponent } from './component/model-driven-form/model-driven-form.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PersonManagementComponent } from '@component/practice/person-management/person-management.component';
@@ -10,7 +11,8 @@ import { TemplateDrivenFormComponent } from '@component/template-driven-form/tem
 const router: Routes = [
   { path: 'practice', component: PersonManagementComponent },
   { path: 'style', component: StyleExampleComponent },
-  { path: 'templateDrivenForm', component: TemplateDrivenFormComponent }
+  { path: 'templateDrivenForm', component: TemplateDrivenFormComponent },
+  { path: 'modelDrivenForm', component: ModelDrivenFormComponent }
 ];
 
 @NgModule({
