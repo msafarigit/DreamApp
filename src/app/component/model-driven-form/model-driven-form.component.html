@@ -39,6 +39,8 @@
     </div>
 
     <button class="btn btn-info my-4 btn-block" type="submit" [disabled]="!signupForm.valid">Sign in</button>
+    <button class="btn btn-warning my-4 btn-block" type="button" [disabled]="signupForm.untouched" (click)="reset()">Reset</button>
+    <button class="btn btn-danger my-4 btn-block" type="button" (click)="check()">Validate</button>
     <hr>
 
     <p>By clicking <em>Sign up</em> you agree to our <a href="" target="_blank">terms of service</a>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-model-driven-form',
@@ -8,9 +8,9 @@ import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
 })
 export class ModelDrivenFormComponent {
   subjects = [
-    {name: 'Feedback', id: 1},
-    {name: 'Report a bug', id: 2},
-    {name: 'Feature request', id: 3}
+    { name: 'Feedback', id: 1 },
+    { name: 'Report a bug', id: 2 },
+    { name: 'Feature request', id: 3 }
   ];
 
   // firstName: AbstractControl;
@@ -19,10 +19,10 @@ export class ModelDrivenFormComponent {
   constructor() {
     // this.firstName = new FormControl('Mahdi');
     this.signupForm = new FormGroup({
-      firstName: new FormControl('Mahdi'),
-      lastName: new FormControl('Safari'),
+      firstName: new FormControl('Mahdi', Validators.required),
+      lastName: new FormControl('Safari', Validators.required),
       // subject: new FormControl(this.subjects[0])
-      subject: new FormControl()
+      subject: new FormControl('', Validators.required)
     });
   }
 
@@ -33,6 +33,16 @@ export class ModelDrivenFormComponent {
   // updateFirstName() {
   //   this.firstName.setValue('Ali');
   // }
+
+  reset() {
+    // this.firstName.reset();
+    this.signupForm.reset();
+  }
+
+  check() {
+    // this.firstName.markAsTouched({onlySelf: true});
+    this.signupForm.markAllAsTouched();
+  }
 }
 
 /*
