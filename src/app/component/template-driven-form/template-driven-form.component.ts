@@ -24,8 +24,8 @@ export class TemplateDrivenFormComponent implements OnInit {
     - A TemplateRef (e.g. query <ng-template></ng-template> with @ViewChild(TemplateRef) template;)
   */
 
-  @ViewChild('form', { static: false}) myForm: NgForm;
-  @ViewChild('name', { static: false }) firstName: ElementRef;
+  @ViewChild('form') myForm: NgForm;
+  @ViewChild('name') firstName: ElementRef;
 
   person: Person;
   states = [
