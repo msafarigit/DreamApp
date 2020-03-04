@@ -11,3 +11,7 @@
 .navbar.navbar-dark .navbar-nav .nav-item.active > .nav-link {
   background-color: rgba(255, 255, 255, 0.1);
 }
+
+.navbar.navbar-dark .navbar-nav .dropdown > a.nav-link.dropdown-toggle:hover {
+  cursor: pointer;
+}
