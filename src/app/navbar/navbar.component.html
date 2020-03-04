@@ -6,7 +6,6 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-
   <div id="navbar-content" [ngbCollapse]="navbarCollapsed" class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
@@ -17,18 +16,27 @@
       </li>
       <li class="nav-item dropdown" ngbDropdown>
         <a id="dropdown-first" class="nav-link dropdown-toggle" ngbDropdownToggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-user"></i> Pipe
+          <i class="fa fa-bars"></i> Directive
         </a>
         <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown-first">
+          <a class="dropdown-item" routerLink="/structural">Structural</a>
+          <a class="dropdown-item" routerLink="/attribute">Attribute</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" ngbDropdown>
+        <a id="dropdown-second" class="nav-link dropdown-toggle" ngbDropdownToggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-bars"></i> Pipe
+        </a>
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown-second">
           <a class="dropdown-item" routerLink="/pipe">Sync</a>
           <a class="dropdown-item" routerLink="/asyncPipe">Async</a>
         </div>
       </li>
       <li class="nav-item dropdown" ngbDropdown>
-        <a id="dropdown-second" class="nav-link dropdown-toggle" ngbDropdownToggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a id="dropdown-third" class="nav-link dropdown-toggle" ngbDropdownToggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-user"></i> Form
         </a>
-        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown-second">
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown-third">
           <a class="dropdown-item" routerLink="/templateDrivenForm">Template Driven Form</a>
           <a class="dropdown-item" routerLink="/modelDrivenForm">Model Driven Form</a>
         </div>

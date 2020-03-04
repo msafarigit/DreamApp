@@ -11,6 +11,8 @@ import { TemplateDrivenFormComponent } from '@component/template-driven-form/tem
 const router: Routes = [
   { path: 'practice', component: PersonManagementComponent },
   { path: 'style', component: StyleExampleComponent },
+  { path: 'pipe', component: PipeExampleComponent },
+  { path: 'asyncPipe', component: AsyncPipeExampleComponent },
   { path: 'templateDrivenForm', component: TemplateDrivenFormComponent },
   { path: 'modelDrivenForm', component: ModelDrivenFormComponent }
 ];
