@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { AssessmentService } from '../services/assessment.service';
+import { AssessmentService } from '@service/assessment.service';
 
 @Component({
   selector: 'app-assessment-developer',

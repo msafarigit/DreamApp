@@ -24,9 +24,18 @@ import { PersonPipe } from '@pipe/person.pipe';
 import { AssessmentService } from '@service/assessment.service';
 // #endregion
 
+import { ChildVersionComponent } from '@component/child-version/child-version.component';
+import { ParentVersionComponent } from '@component/parent-version/parent-version.component';
 import { PersonManagementComponent } from '@component/practice/person-management/person-management.component';
 import { PersonInfoComponent } from '@component/practice/person-info/person-info.component';
 import { PersonGridComponent } from '@component/practice/person-grid/person-grid.component';
+import { CountdownTimerComponent } from '@component/countdown-timer/countdown-timer.component';
+import { CountdownLocalVarParentComponent } from '@component/countdown-local-var-parent/countdown-local-var-parent.component';
+import { CountdownQuerylistParentComponent } from '@component/countdown-querylist-parent/countdown-querylist-parent.component';
+import { CountdownViewChildParentComponent } from '@component/countdown-view-child-parent/countdown-view-child-parent.component';
+import { AssessmentDeveloperComponent } from '@component/assessment-developer/assessment-developer.component';
+import { CustomTwoWayComponent } from '@component/custom-two-way/custom-two-way.component';
+import { CustomTwoWayParentComponent } from '@component/custom-two-way-parent/custom-two-way-parent.component';
 import { PipeExampleComponent } from '@component/pipe-example/pipe-example.component';
 import { AsyncPipeExampleComponent } from '@component/async-pipe-example/async-pipe-example.component';
 import { StyleExampleComponent } from '@component/style-example/style-example.component';
@@ -40,9 +49,18 @@ import { ModelDrivenFormComponent } from './component/model-driven-form/model-dr
   declarations: [
     AppComponent,
     NavbarComponent,
+    ChildVersionComponent,
+    ParentVersionComponent,
     PersonManagementComponent,
     PersonInfoComponent,
     PersonGridComponent,
+    CountdownTimerComponent,
+    CountdownLocalVarParentComponent,
+    CountdownQuerylistParentComponent,
+    CountdownViewChildParentComponent,
+    AssessmentDeveloperComponent,
+    CustomTwoWayComponent,
+    CustomTwoWayParentComponent,
     PipeExampleComponent,
     JalaliPipe,
     SqrtPipe,

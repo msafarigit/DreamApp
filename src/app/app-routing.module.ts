@@ -1,6 +1,7 @@
 import { ModelDrivenFormComponent } from './component/model-driven-form/model-driven-form.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ComponentInteractionComponent } from '@component/component-interaction/component-interaction.component';
 import { PersonManagementComponent } from '@component/practice/person-management/person-management.component';
 import { PipeExampleComponent } from '@component/pipe-example/pipe-example.component';
 import { AsyncPipeExampleComponent } from '@component/async-pipe-example/async-pipe-example.component';
@@ -9,6 +10,7 @@ import { TemplateDrivenFormComponent } from '@component/template-driven-form/tem
 
 
 const router: Routes = [
+  { path: 'interaction', component: ComponentInteractionComponent },
   { path: 'practice', component: PersonManagementComponent },
   { path: 'style', component: StyleExampleComponent },
   { path: 'pipe', component: PipeExampleComponent },

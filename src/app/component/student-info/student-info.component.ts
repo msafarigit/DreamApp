@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Person } from '../model/Person';
+import { Person } from '@model/Person';
 
 @Component({
   selector: 'app-student-info',

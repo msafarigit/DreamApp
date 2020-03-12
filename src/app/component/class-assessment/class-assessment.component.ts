@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AssessmentService } from '../services/assessment.service';
+import { AssessmentService } from '@service/assessment.service';
 
 @Component({
   selector: 'app-class-assessment',

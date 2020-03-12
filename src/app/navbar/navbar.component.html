@@ -8,14 +8,25 @@
 
   <div id="navbar-content" [ngbCollapse]="navbarCollapsed" class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/practice"(click)="navbarCollapsed = true">Practice</a>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/modal" routerLinkActive="active" (click)="navbarCollapsed = true">
+          Modal<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/style"(click)="navbarCollapsed = true">Style</a>
+        <a class="nav-link" routerLink="/interaction" (click)="navbarCollapsed = true">Interaction</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/templateReferenceVariable" (click)="navbarCollapsed = true">Reference Variable</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/practice" (click)="navbarCollapsed = true">Practice</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/style" (click)="navbarCollapsed = true">Style</a>
       </li>
       <li class="nav-item dropdown" ngbDropdown>
-        <a id="dropdown-first" class="nav-link dropdown-toggle" ngbDropdownToggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a id="dropdown-first" class="nav-link dropdown-toggle" ngbDropdownToggle data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-bars"></i> Directive
         </a>
         <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown-first">
@@ -24,7 +35,8 @@
         </div>
       </li>
       <li class="nav-item dropdown" ngbDropdown>
-        <a id="dropdown-second" class="nav-link dropdown-toggle" ngbDropdownToggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a id="dropdown-second" class="nav-link dropdown-toggle" ngbDropdownToggle data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-bars"></i> Pipe
         </a>
         <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown-second">
@@ -33,7 +45,8 @@
         </div>
       </li>
       <li class="nav-item dropdown" ngbDropdown>
-        <a id="dropdown-third" class="nav-link dropdown-toggle" ngbDropdownToggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a id="dropdown-third" class="nav-link dropdown-toggle" ngbDropdownToggle data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-user"></i> Form
         </a>
         <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown-third">
