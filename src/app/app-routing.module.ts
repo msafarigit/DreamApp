@@ -1,6 +1,7 @@
 import { ModelDrivenFormComponent } from './component/model-driven-form/model-driven-form.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { ComponentInteractionComponent } from '@component/component-interaction/component-interaction.component';
 import { PersonManagementComponent } from '@component/practice/person-management/person-management.component';
 import { PipeExampleComponent } from '@component/pipe-example/pipe-example.component';

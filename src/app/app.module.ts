@@ -29,6 +29,7 @@ import { ParentVersionComponent } from '@component/parent-version/parent-version
 import { PersonManagementComponent } from '@component/practice/person-management/person-management.component';
 import { PersonInfoComponent } from '@component/practice/person-info/person-info.component';
 import { PersonGridComponent } from '@component/practice/person-grid/person-grid.component';
+import { ComponentInteractionComponent } from '@component/component-interaction/component-interaction.component';
 import { CountdownTimerComponent } from '@component/countdown-timer/countdown-timer.component';
 import { CountdownLocalVarParentComponent } from '@component/countdown-local-var-parent/countdown-local-var-parent.component';
 import { CountdownQuerylistParentComponent } from '@component/countdown-querylist-parent/countdown-querylist-parent.component';
@@ -54,6 +55,7 @@ import { ModelDrivenFormComponent } from './component/model-driven-form/model-dr
     PersonManagementComponent,
     PersonInfoComponent,
     PersonGridComponent,
+    ComponentInteractionComponent,
     CountdownTimerComponent,
     CountdownLocalVarParentComponent,
     CountdownQuerylistParentComponent,
