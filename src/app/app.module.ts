@@ -46,12 +46,18 @@ import { NgContainerExampleComponent } from '@component/ng-container-example/ng-
 import { TemplateDrivenFormComponent } from '@component/template-driven-form/template-driven-form.component';
 import { ModelDrivenFormComponent } from './component/model-driven-form/model-driven-form.component';
 import { ClassAssessmentComponent } from '@component/class-assessment/class-assessment.component';
+import { TimesDirective } from './directive/times.directive';
+import { ClassDirective } from './directive/class.directive';
+import { CustomDirectiveComponent } from './component/custom-directive/custom-directive.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    TimesDirective,
+    ClassDirective,
+    CustomDirectiveComponent,
     ChildVersionComponent,
     ParentVersionComponent,
     PersonManagementComponent,
