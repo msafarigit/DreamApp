@@ -1,3 +1,4 @@
+import { NgContainerExampleComponent } from '@component/ng-container-example/ng-container-example.component';
 import { ModelDrivenFormComponent } from './component/model-driven-form/model-driven-form.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -11,6 +12,7 @@ import { TemplateDrivenFormComponent } from '@component/template-driven-form/tem
 
 
 const router: Routes = [
+  { path: 'structural', component: NgContainerExampleComponent },
   { path: 'interaction', component: ComponentInteractionComponent },
   { path: 'practice', component: PersonManagementComponent },
   { path: 'style', component: StyleExampleComponent },

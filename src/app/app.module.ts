@@ -42,6 +42,7 @@ import { AsyncPipeExampleComponent } from '@component/async-pipe-example/async-p
 import { StyleExampleComponent } from '@component/style-example/style-example.component';
 import { NgClassExampleComponent } from '@component/ng-class-example/ng-class-example.component';
 import { NgStyleExampleComponent } from '@component/ng-style-example/ng-style-example.component';
+import { NgContainerExampleComponent } from '@component/ng-container-example/ng-container-example.component';
 import { TemplateDrivenFormComponent } from '@component/template-driven-form/template-driven-form.component';
 import { ModelDrivenFormComponent } from './component/model-driven-form/model-driven-form.component';
 import { ClassAssessmentComponent } from '@component/class-assessment/class-assessment.component';
@@ -74,6 +75,7 @@ import { ClassAssessmentComponent } from '@component/class-assessment/class-asse
     StyleExampleComponent,
     NgClassExampleComponent,
     NgStyleExampleComponent,
+    NgContainerExampleComponent,
     TemplateDrivenFormComponent,
     ModelDrivenFormComponent,
 
