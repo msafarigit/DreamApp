@@ -9,8 +9,8 @@ import { ToastrModule } from 'ngx-toastr';
 
 // #region base
 import { AppRoutingModule } from './app-routing.module';
+import { NavbarModule } from './navbar/navbar.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
 // #endregion
 
 // #region pipe
@@ -54,7 +54,6 @@ import { CustomDirectiveComponent } from './component/custom-directive/custom-di
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     TimesDirective,
     ClassDirective,
     CustomDirectiveComponent,
@@ -98,7 +97,8 @@ import { CustomDirectiveComponent } from './component/custom-directive/custom-di
       timeOut: 3000,
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
-    })
+    }),
+    NavbarModule
   ],
   providers: [AssessmentService],
   bootstrap: [AppComponent]
