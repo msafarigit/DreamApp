@@ -43,7 +43,7 @@
             <b>{{months | slice:2:6}}</b>// here 2 and 6 refers to the start and the end index
             <hr />
             <h3>Sqrt Pipe</h3>
-            <b>{{ 625 | sqrt }}</b> - <b>{{ 196 | sqrt:true }}</b> - <b>{{ 196 | sqrt: true: '2.2-3' }}</b>
+            <b>{{ 625 | sqrt }}</b> - <b>{{ 196 | sqrt:true }}</b> - <b>{{ 196 | sqrt:true :'2.2-3' }}</b>
             <br />
             <br />
             <input [value]="numberValue" (keyup.enter)="numberValue = $event.target.value" class="form-control" />
