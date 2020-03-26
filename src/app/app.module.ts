@@ -17,7 +17,6 @@ import { AppComponent } from './app.component';
 import { JalaliPipe } from '@pipe/jalali.pipe';
 import { SqrtPipe } from '@pipe/sqrt.pipe';
 import { FilterPipe } from '@pipe/filter.pipe';
-import { PersonPipe } from '@pipe/person.pipe';
 // #endregion
 
 // #region service
@@ -26,9 +25,6 @@ import { AssessmentService } from '@service/assessment.service';
 
 import { ChildVersionComponent } from '@component/child-version/child-version.component';
 import { ParentVersionComponent } from '@component/parent-version/parent-version.component';
-import { PersonManagementComponent } from '@component/practice/person-management/person-management.component';
-import { PersonInfoComponent } from '@component/practice/person-info/person-info.component';
-import { PersonGridComponent } from '@component/practice/person-grid/person-grid.component';
 import { ComponentInteractionComponent } from '@component/component-interaction/component-interaction.component';
 import { CountdownTimerComponent } from '@component/countdown-timer/countdown-timer.component';
 import { CountdownLocalVarParentComponent } from '@component/countdown-local-var-parent/countdown-local-var-parent.component';
@@ -60,9 +56,6 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
     CustomDirectiveComponent,
     ChildVersionComponent,
     ParentVersionComponent,
-    PersonManagementComponent,
-    PersonInfoComponent,
-    PersonGridComponent,
     ComponentInteractionComponent,
     ClassAssessmentComponent,
     CountdownTimerComponent,
@@ -76,7 +69,6 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
     JalaliPipe,
     SqrtPipe,
     FilterPipe,
-    PersonPipe,
     AsyncPipeExampleComponent,
     StyleExampleComponent,
     NgClassExampleComponent,
