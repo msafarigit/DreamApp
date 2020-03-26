@@ -66,4 +66,14 @@ A routing module typically does the following:
  - A routing module does not have its own declarations. Components, directives, and pipes are the responsibility of the feature module, not the routing module.
 
 A routing module should only be imported by its companion module.
+
+4- Service modules provide utility services such as data access and messaging.
+ Ideally, they consist entirely of providers and have no declarations. Angular's HttpClientModule is a good example of a service module.
+ The root AppModule is the only module that should import service modules.
+
+5- A widget module makes components, directives, and pipes available to external modules.
+ Many third-party UI component libraries are widget modules.
+A widget module should consist entirely of declarations, most of them exported.
+A widget module should rarely have providers.
+Import widget modules in any module whose component templates need the widgets.
 */
