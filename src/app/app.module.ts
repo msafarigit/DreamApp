@@ -49,6 +49,7 @@ import { ClassAssessmentComponent } from '@component/class-assessment/class-asse
 import { TimesDirective } from './directive/times.directive';
 import { ClassDirective } from './directive/class.directive';
 import { CustomDirectiveComponent } from './component/custom-directive/custom-directive.component';
+import { NotFoundComponent } from './component/not-found/not-found.component';
 
 
 @NgModule({
@@ -83,6 +84,7 @@ import { CustomDirectiveComponent } from './component/custom-directive/custom-di
     NgContainerExampleComponent,
     TemplateDrivenFormComponent,
     ModelDrivenFormComponent,
+    NotFoundComponent,
 
 
   ],

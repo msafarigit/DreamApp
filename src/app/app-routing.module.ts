@@ -10,8 +10,10 @@ import { PipeExampleComponent } from '@component/pipe-example/pipe-example.compo
 import { AsyncPipeExampleComponent } from '@component/async-pipe-example/async-pipe-example.component';
 import { StyleExampleComponent } from '@component/style-example/style-example.component';
 import { TemplateDrivenFormComponent } from '@component/template-driven-form/template-driven-form.component';
+import { NotFoundComponent } from '@component/not-found/not-found.component';
 
 
+// router order provides priority of path!
 const router: Routes = [
   { path: 'custom-directives', component: CustomDirectiveComponent },
   { path: 'structural', component: NgContainerExampleComponent },
@@ -21,13 +23,12 @@ const router: Routes = [
   { path: 'pipe', component: PipeExampleComponent },
   { path: 'asyncPipe', component: AsyncPipeExampleComponent },
   { path: 'templateDrivenForm', component: TemplateDrivenFormComponent },
-  { path: 'modelDrivenForm', component: ModelDrivenFormComponent }
+  { path: 'modelDrivenForm', component: ModelDrivenFormComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(
-    router,
-    { enableTracing: false }) // <-- debugging purposes only, console log
+  imports: [RouterModule.forRoot(router, { enableTracing: false }) // <-- debugging purposes only, console log
   ],
   exports: [RouterModule]
 })
