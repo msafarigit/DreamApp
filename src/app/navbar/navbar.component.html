@@ -8,20 +8,20 @@
 
   <div id="navbar-content" [ngbCollapse]="navbarCollapsed" class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/modal" routerLinkActive="active" (click)="navbarCollapsed = true">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/modal" (click)="navbarCollapsed = true">
           Modal<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/interaction" (click)="navbarCollapsed = true">Interaction</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/templateReferenceVariable" (click)="navbarCollapsed = true">Reference Variable</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/practice" (click)="navbarCollapsed = true">Practice</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/style" (click)="navbarCollapsed = true">Style</a>
       </li>
       <li class="nav-item dropdown" ngbDropdown>
