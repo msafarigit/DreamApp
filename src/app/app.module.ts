@@ -10,6 +10,7 @@ import { ToastrModule } from 'ngx-toastr';
 // #region base
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarModule } from './navbar/navbar.module';
+import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 // #endregion
 
@@ -92,7 +93,8 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
     }),
-    NavbarModule
+    NavbarModule,
+    SharedModule
   ],
   providers: [AssessmentService],
   bootstrap: [AppComponent]

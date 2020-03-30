@@ -1,12 +1,15 @@
 <div class="card card-block">
-    <h4 class="card-title">AsyncPipe</h4>
+  <app-divider class-names="card-title">
+    AsyncPipe
+    <span class="badge badge-pill badge-light">Light</span>
+  </app-divider>
 
-    <p class="card-text" ngNonBindable>{{ promise | async }} </p>
-    <p class="card-text">{{ promise | async }} </p>
+  <p class="card-text" ngNonBindable>{{ promise | async }} </p>
+  <p class="card-text">{{ promise | async }} </p>
 
-    <p class="card-text" ngNonBindable>{{ observable$ | async }} </p>
-    <p class="card-text">{{ observable$ | async }}</p>
+  <p class="card-text" ngNonBindable>{{ observable$ | async }} </p>
+  <p class="card-text">{{ observable$ | async }}</p>
 
-    <p class="card-text" ngNonBindable>{{ observableData }} </p>
-    <p class="card-text">{{ observableData }}</p>
+  <p class="card-text" ngNonBindable>{{ observableData }} </p>
+  <p class="card-text">{{ observableData }}</p>
 </div>
