@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
+
 import { Person } from '@model/Person';
 
 @Component({
@@ -12,9 +13,9 @@ export class TemplateDrivenFormComponent implements OnInit {
   /*
   View queries are set before the ngAfterViewInit callback is called.
   Metadata Properties:
-    - selector - The directive type or the name used for querying.
-    - read - True to read a different token from the queried elements.
-    - static - True to resolve query results before change detection runs
+    - selector: The directive type or the name used for querying.
+    - read: True to read a different token from the queried elements.
+    - static: True to resolve query results before change detection runs
 
   The following selectors are supported.
     - Any class with the @Component or @Directive decorator
@@ -131,7 +132,7 @@ Scalability:
  when updating and validating the form and data models during testing.
 
  Abstract Control States: pristine, dirty, touched, untouched, invalid, valid.
- Abstract Control States: pristine, dirty, invalid, valid, submitted.
+ Abstract Control Form States: pristine, dirty, invalid, valid, submitted.
 */
 
 /*
