@@ -111,7 +111,8 @@ status: string	Read-Only
 These status values are mutually exclusive, so a control cannot be both valid AND invalid or invalid AND disabled.
 
 FormGroup: Manages the value and validity state of a group of AbstractControl instances.
-           The group's properties include its child controls. The top-level form in your component is FormGroup.
+           The group's properties include its child controls.
+           The top-level form in your component is FormGroup.
 
 FormArray: Manages the value and validity state of a numerically indexed array of AbstractControl instances.
 FormBuilder: An injectable service that provides factory methods for creating control instances.

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray } from '@angular/forms'; // PACKAGE
+import { FormBuilder, FormGroup, FormArray, FormControl, Validators } from '@angular/forms'; // PACKAGE
 
 @Component({
   selector: 'app-model-driven-form-nested',
@@ -19,12 +19,41 @@ export class ModelDrivenFormNestedComponent implements OnInit {
   ];
 
   constructor(private fb: FormBuilder) {
-
-   }
-
-  ngOnInit(): void {
+    this.services = this.buildServiceFormArray();
   }
 
+  ngOnInit(): void {
+    // The top-level form in your component is FormGroup.
+    this.packageForm = this.fb.group({
+      name: ['', Validators.required],
+      serviceInfo: this.fb.group({
+        deliverDate: '',
+        services: this.services
+      })
+    });
+  }
+
+  buildServiceFormArray(): FormArray {
+    const serviceFormControls: Array<FormControl> = this.serviceList.map((service, index, serviceList) => {
+      return this.fb.control(service.selected);
+    });
+
+    return this.fb.array(serviceFormControls);
+  }
+
+  onSubmit() {
+    const formVal = Object.assign(new Object(), this.packageForm.value, {
+      selected: this.getSelectedServices()
+    })
+    alert(JSON.stringify(formVal));
+  }
+
+  getSelectedServices(): any[] {
+    return this.packageForm.value.serviceInfo.services.map((selected, index) => {
+        return selected && this.serviceList[index];
+    })
+    .filter(service => service);
+  }
 }
 
 /*
