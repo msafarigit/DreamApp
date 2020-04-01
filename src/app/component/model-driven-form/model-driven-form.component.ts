@@ -23,7 +23,7 @@ export class ModelDrivenFormComponent {
       firstName: new FormControl('Mahdi', Validators.compose([Validators.required, Validators.minLength(3)])),
       lastName: new FormControl('Safari', Validators.required),
       // subject: new FormControl(this.subjects[0])
-      subject: new FormControl('', Validators.required)
+      subject: new FormControl({ value: '', disabled: true }, { validators: Validators.required, asyncValidators: [] })
     });
   }
 
@@ -91,6 +91,24 @@ AbstractControl: The abstract base class for the concrete form control classes F
 
 FormControl: Manages the value and validity status of an individual form control.
              It corresponds to an HTML form control such as <input> or <select>.
+constructor(formState: any = null, validatorOrOpts?: ValidatorFn | AbstractControlOptions | ValidatorFn[], asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[])
+const control = new FormControl('', { updateOn: 'blur' });
+
+const control = new FormControl('Nancy');
+console.log(control.value); // 'Nancy'
+console.log(control.status); // 'VALID'
+
+control.reset({ value: 'Drew', disabled: true });
+console.log(control.value); // 'Drew'
+console.log(control.status); // 'DISABLED'
+
+status: string	Read-Only
+ The validation status of the control. There are four possible validation status values:
+  -VALID: This control has passed all validation checks.
+  -INVALID: This control has failed at least one validation check.
+  -PENDING: This control is in the midst of conducting a validation check.
+  -DISABLED: This control is exempt from validation checks.
+These status values are mutually exclusive, so a control cannot be both valid AND invalid or invalid AND disabled.
 
 FormGroup: Manages the value and validity state of a group of AbstractControl instances.
            The group's properties include its child controls. The top-level form in your component is FormGroup.
@@ -107,6 +125,9 @@ FormBuilder: An injectable service that provides factory methods for creating co
 */
 
 /*
+FormControl: Manages the value and validity status of an individual form control.
+             It corresponds to an HTML form control such as <input> or <select>.
+
 constructor(formState: any = null,
   validatorOrOpts?: ValidatorFn | AbstractControlOptions | ValidatorFn[],
   asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[])
@@ -121,4 +142,22 @@ Optional. Default is undefined.
 
 asyncValidator: AsyncValidatorFn | AsyncValidatorFn[]
 A single async validator or array of async validator functions Optional. Default is undefined.
+
+const control = new FormControl('', { updateOn: 'blur' });
+
+const control = new FormControl('Nancy');
+console.log(control.value); // 'Nancy'
+console.log(control.status); // 'VALID'
+
+control.reset({ value: 'Drew', disabled: true });
+console.log(control.value); // 'Drew'
+console.log(control.status); // 'DISABLED'
+
+status: string	Read-Only
+ The validation status of the control. There are four possible validation status values:
+  -VALID: This control has passed all validation checks.
+  -INVALID: This control has failed at least one validation check.
+  -PENDING: This control is in the midst of conducting a validation check.
+  -DISABLED: This control is exempt from validation checks.
+These status values are mutually exclusive, so a control cannot be both valid AND invalid or invalid AND disabled.
 */
