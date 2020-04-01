@@ -15,8 +15,7 @@
       </div>
       <div class="col">
         <input type="text" class="form-control" placeholder="Last name" formControlName="lastName" />
-        <div *ngIf="signupForm.controls['lastName'].invalid && signupForm.controls['lastName'].touched"
-          class="alert alert-danger">
+        <div *ngIf="signupForm.controls['lastName'].invalid && signupForm.controls['lastName'].touched" class="alert alert-danger">
           <span>Please Enter Last Name.</span>
         </div>
       </div>
@@ -28,14 +27,12 @@
       <option *ngFor="let subject of subjects" [ngValue]="subject.id">{{subject.name}}</option>
     </select>
 
-    <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password"
-      aria-describedby="defaultRegisterFormPasswordHelpBlock">
+    <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
     <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
       At least 8 characters and 1 digit
     </small>
 
-    <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number"
-      aria-describedby="defaultRegisterFormPhoneHelpBlock">
+    <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
     <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
       Optional - for two step authentication
     </small>

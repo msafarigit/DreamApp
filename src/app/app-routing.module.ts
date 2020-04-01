@@ -5,12 +5,13 @@ import { DelayPreloadingStrategy } from '@service/core/delay-preloading-strategy
 
 import { CustomDirectiveComponent } from './component/custom-directive/custom-directive.component';
 import { NgContainerExampleComponent } from '@component/ng-container-example/ng-container-example.component';
-import { ModelDrivenFormComponent } from './component/model-driven-form/model-driven-form.component';
 import { ComponentInteractionComponent } from '@component/component-interaction/component-interaction.component';
 import { PipeExampleComponent } from '@component/pipe-example/pipe-example.component';
 import { AsyncPipeExampleComponent } from '@component/async-pipe-example/async-pipe-example.component';
 import { StyleExampleComponent } from '@component/style-example/style-example.component';
 import { TemplateDrivenFormComponent } from '@component/template-driven-form/template-driven-form.component';
+import { ModelDrivenFormComponent } from './component/model-driven-form/model-driven-form.component';
+import { ModelDrivenFormNestedComponent } from '@component/model-driven-form-nested/model-driven-form-nested.component';
 import { NotFoundComponent } from '@component/not-found/not-found.component';
 
 const routerOptions: ExtraOptions = {
@@ -35,6 +36,7 @@ const router: Routes = [
   { path: 'asyncPipe', component: AsyncPipeExampleComponent },
   { path: 'templateDrivenForm', component: TemplateDrivenFormComponent },
   { path: 'modelDrivenForm', component: ModelDrivenFormComponent },
+  { path: 'modelDrivenFormNested', component: ModelDrivenFormNestedComponent },
   { path: '**', component: NotFoundComponent },
 ];
 

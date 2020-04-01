@@ -14,6 +14,9 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 // #endregion
 
+import { TimesDirective } from './directive/times.directive';
+import { ClassDirective } from './directive/class.directive';
+
 // #region pipe
 import { JalaliPipe } from '@pipe/jalali.pipe';
 import { SqrtPipe } from '@pipe/sqrt.pipe';
@@ -42,9 +45,8 @@ import { NgStyleExampleComponent } from '@component/ng-style-example/ng-style-ex
 import { NgContainerExampleComponent } from '@component/ng-container-example/ng-container-example.component';
 import { TemplateDrivenFormComponent } from '@component/template-driven-form/template-driven-form.component';
 import { ModelDrivenFormComponent } from './component/model-driven-form/model-driven-form.component';
+import { ModelDrivenFormNestedComponent } from './component/model-driven-form-nested/model-driven-form-nested.component';
 import { ClassAssessmentComponent } from '@component/class-assessment/class-assessment.component';
-import { TimesDirective } from './directive/times.directive';
-import { ClassDirective } from './directive/class.directive';
 import { CustomDirectiveComponent } from './component/custom-directive/custom-directive.component';
 import { NotFoundComponent } from './component/not-found/not-found.component';
 
@@ -77,6 +79,7 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
     NgContainerExampleComponent,
     TemplateDrivenFormComponent,
     ModelDrivenFormComponent,
+    ModelDrivenFormNestedComponent,
     NotFoundComponent,
 
 
