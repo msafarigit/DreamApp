@@ -102,7 +102,10 @@ control.reset({ value: 'Drew', disabled: true });
 console.log(control.value); // 'Drew'
 console.log(control.status); // 'DISABLED'
 
-status: string	Read-Only
+Abstract Control States: pristine, dirty, touched, untouched, invalid, valid.
+Abstract Control Form States: pristine, dirty, invalid, valid, submitted.
+
+Abstract Control status: string	Read-Only
  The validation status of the control. There are four possible validation status values:
   -VALID: This control has passed all validation checks.
   -INVALID: This control has failed at least one validation check.
@@ -161,4 +164,67 @@ status: string	Read-Only
   -PENDING: This control is in the midst of conducting a validation check.
   -DISABLED: This control is exempt from validation checks.
 These status values are mutually exclusive, so a control cannot be both valid AND invalid or invalid AND disabled.
+*/
+
+/*
+Reactive form validation
+In a reactive form, the source of truth is the component class. Instead of adding validators through attributes in the template,
+ you add validator functions directly to the form control model in the component class.
+ Angular then calls these functions whenever the value of the control changes.
+
+There are two types of validator functions: sync validators and async validators.
+  1-Sync validators: functions that take a control instance and immediately return either a set of validation errors or null.
+   You can pass these in as the second argument when you instantiate a FormControl.
+
+  2-Async validators: functions that take a control instance and return a Promise or Observable that later emits a set of validation errors or null.
+   You can pass these in as the third argument when you instantiate a FormControl.
+
+Note: for performance reasons, Angular only runs async validators if all sync validators pass. Each must complete before errors are set.
+
+ngOnInit(): void {
+  this.heroForm = new FormGroup({
+    'name': new FormControl(this.hero.name, [
+      Validators.required,
+      Validators.minLength(4),
+      forbiddenNameValidator(/bob/i) // <-- Here's how you pass in the custom validator.
+    ]),
+    'alterEgo': new FormControl(this.hero.alterEgo),
+    'power': new FormControl(this.hero.power, Validators.required)
+  });
+}
+
+get name() { return this.heroForm.get('name'); }
+get power() { return this.heroForm.get('power'); }
+
+<input id="name" class="form-control" formControlName="name" required />
+
+<div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+
+  <div *ngIf="name.errors.required">
+    Name is required.
+  </div>
+  <div *ngIf="name.errors.minlength">
+    Name must be at least 4 characters long.
+  </div>
+  <div *ngIf="name.errors.forbiddenName">
+    Name cannot be Bob.
+  </div>
+
+</div>
+
+The required attribute is still present. While it's not necessary for validation purposes,
+ you may want to keep it in your template for CSS styling or accessibility reasons.a
+
+export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
+  return (control: AbstractControl): {[key: string]: any} | null => {
+    const forbidden = nameRe.test(control.value);
+    return forbidden ? {'forbiddenName': {value: control.value}} : null;
+  };
+}
+
+The function is actually a factory that takes a regular expression to detect a specific forbidden name and returns a validator function.
+The forbiddenNameValidator factory returns the configured validator function.
+That function takes an Angular control object and returns either null if the control value is valid or a validation error object.
+The validation error object typically has a property whose name is the validation key, 'forbiddenName',
+ and whose value is an arbitrary dictionary of values that you could insert into an error message, {name}.
 */

@@ -14,8 +14,8 @@
       <div class="alert alert-danger" [hidden]="lastName.valid">
         Lastname is required!
       </div>
-      <div class="alert alert-danger" [hidden]="lastName.valid && lastName.touched">
-        Lastname must be touched!
+      <div class="alert alert-danger" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+        Lastname is invalid!
       </div>
     </div>
     <div class="form-group">
