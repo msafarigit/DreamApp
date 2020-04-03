@@ -9,9 +9,6 @@ import { ComponentInteractionComponent } from '@component/component-interaction/
 import { PipeExampleComponent } from '@component/pipe-example/pipe-example.component';
 import { AsyncPipeExampleComponent } from '@component/async-pipe-example/async-pipe-example.component';
 import { StyleExampleComponent } from '@component/style-example/style-example.component';
-import { TemplateDrivenFormComponent } from '@component/template-driven-form/template-driven-form.component';
-import { ModelDrivenFormComponent } from './component/model-driven-form/model-driven-form.component';
-import { ModelDrivenFormNestedComponent } from '@component/model-driven-form-nested/model-driven-form-nested.component';
 import { NotFoundComponent } from '@component/not-found/not-found.component';
 
 const routerOptions: ExtraOptions = {
@@ -28,15 +25,18 @@ const router: Routes = [
   { path: 'structural', component: NgContainerExampleComponent },
   { path: 'interaction', component: ComponentInteractionComponent },
   {
-    path: 'practice', loadChildren: () => import('@component/practice/practice.module').then(m => m.PracticeModule),
+    path: 'practice',
+    loadChildren: () => import('@component/practice/practice.module').then(m => m.PracticeModule),
     data: { preload: true, delay: 8000 }
   },
   { path: 'style', component: StyleExampleComponent },
   { path: 'pipe', component: PipeExampleComponent },
   { path: 'asyncPipe', component: AsyncPipeExampleComponent },
-  { path: 'templateDrivenForm', component: TemplateDrivenFormComponent },
-  { path: 'modelDrivenForm', component: ModelDrivenFormComponent },
-  { path: 'modelDrivenFormNested', component: ModelDrivenFormNestedComponent },
+  {
+    path: 'form',
+    loadChildren: () => import('@component/form/form.module').then(m => m.FormModule),
+    data: { preload: false }
+  },
   { path: '**', component: NotFoundComponent },
 ];
 
