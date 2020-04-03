@@ -10,7 +10,7 @@ import { ToastrModule } from 'ngx-toastr';
 // #region base
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarModule } from './navbar/navbar.module';
-import { SharedModule } from './shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 import { AppComponent } from './app.component';
 // #endregion
 
