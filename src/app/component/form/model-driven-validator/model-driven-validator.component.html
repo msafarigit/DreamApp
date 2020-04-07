@@ -1,0 +1,15 @@
+<div class="container">
+  <app-divider>
+    Model Driven Validator:
+  </app-divider>
+  <form [formGroup]="validationForm" (ngSubmit)="onSubmit()" #form="ngForm">
+    <div class="form-row">
+      <div class="form-group col">
+        <label for="age">Age:</label>
+        <input id="age" class="form-control" formControlName="age"/>
+      </div>
+    </div>
+
+    <button class="btn btn-info my-3 btn-block" type="submit" [disabled]="!form.valid">Sign in</button>
+  </form>
+</div>
