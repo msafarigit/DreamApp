@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TemplateDrivenValidatorComponent implements OnInit {
 
   age: number;
+  email: string;
 
   constructor() { }
 

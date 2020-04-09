@@ -17,6 +17,19 @@
     </div>
 
     <div class="form-group">
+      <label for="email" class="control-label">Email:</label>
+      <input class="form-control" name="email" [(ngModel)]="email" #emailInput="ngModel" required [appEmailDomainValidator]="'gmail.com'"/>
+      <div *ngIf="emailInput.dirty && emailInput.errors" class="alert alert-danger">
+        <div *ngIf="emailInput.errors.required">
+          Email field is required.
+        </div>
+        <div *ngIf="emailInput.errors.emailDomain">
+          Email field is invalid!
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
       <button type="submit" class="btn" [ngClass]="form.valid ? 'btn-success' : 'btn-danger'" [disabled]="form.invalid">Submit</button>
     </div>
   </form>
