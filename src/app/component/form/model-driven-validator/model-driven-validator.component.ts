@@ -30,3 +30,25 @@ export class ModelDrivenValidatorComponent implements OnInit {
   }
 
 }
+
+/*
+https://www.concretepage.com/angular/angular-conditional-validation
+handleFormChanges() {
+   this.notificationMode.valueChanges.subscribe(
+      mode => {
+        if (mode==='email') {
+           this.email.setValidators([Validators.required, Validators.email]);
+           this.mobileNumber.clearValidators();
+        } else if (mode === 'mobile') {
+           this.mobileNumber.setValidators([Validators.required]);
+           this.email.clearValidators();
+        } else if (mode==='both') {
+          this.email.setValidators([Validators.required, Validators.email]);
+          this.mobileNumber.setValidators([Validators.required]);
+        }
+        this.email.updateValueAndValidity();
+        this.mobileNumber.updateValueAndValidity();
+      }
+   );
+}
+*/

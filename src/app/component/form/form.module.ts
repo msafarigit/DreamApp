@@ -19,7 +19,7 @@ import { TemplateDrivenValidatorComponent } from '@component/form/template-drive
     ModelDrivenFormComponent,
     ModelDrivenFormNestedComponent,
     ModelDrivenValidatorComponent,
-    TemplateDrivenFormComponent
+    TemplateDrivenValidatorComponent
   ],
   imports: [
     CommonModule,

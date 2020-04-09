@@ -13,6 +13,9 @@ import { AgeRangeValidatorDirective } from './directive/age-range-validator.dire
   imports: [
     CommonModule
   ],
-  exports: [DividerComponent]
+  exports: [
+    DividerComponent,
+    AgeRangeValidatorDirective
+  ]
 })
 export class SharedModule { }
