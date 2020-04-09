@@ -9,7 +9,8 @@ import { HomeComponent } from '@component/form/home/home.component';
 import { TemplateDrivenFormComponent } from '@component/form/template-driven-form/template-driven-form.component';
 import { ModelDrivenFormComponent } from '@component/form/model-driven-form/model-driven-form.component';
 import { ModelDrivenFormNestedComponent } from '@component/form/model-driven-form-nested/model-driven-form-nested.component';
-import { ModelDrivenValidatorComponent } from './model-driven-validator/model-driven-validator.component';
+import { ModelDrivenValidatorComponent } from '@component/form/model-driven-validator/model-driven-validator.component';
+import { TemplateDrivenValidatorComponent } from '@component/form/template-driven-validator/template-driven-validator.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ModelDrivenValidatorComponent } from './model-driven-validator/model-dr
     TemplateDrivenFormComponent,
     ModelDrivenFormComponent,
     ModelDrivenFormNestedComponent,
-    ModelDrivenValidatorComponent
+    ModelDrivenValidatorComponent,
+    TemplateDrivenFormComponent
   ],
   imports: [
     CommonModule,
