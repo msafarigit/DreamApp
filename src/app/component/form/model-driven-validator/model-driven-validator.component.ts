@@ -16,7 +16,8 @@ export class ModelDrivenValidatorComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.validationForm = this.fb.group({
-      age: new FormControl('', [Validators.required, ageRangeValidator])
+      age: new FormControl('', [Validators.required, ageRangeValidator]),
+      customAge: new FormControl('20', ageCustomRangeValidator(20, 30))
     });
   }
 

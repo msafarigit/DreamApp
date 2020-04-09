@@ -19,7 +19,7 @@ export class ChildVersionComponent implements OnInit, OnChanges {
   @Input()
   major: number;
 
-  changeLog: Array<string> = [];
+  changeLog: Array<string> = []; // ReadonlyArray
 
   constructor() { }
 

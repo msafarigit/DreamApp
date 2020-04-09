@@ -9,6 +9,12 @@
         <input id="age" class="form-control" formControlName="age"/>
       </div>
     </div>
+    <div class="form-row">
+      <div class="form-group col">
+        <label for="customAge">Custom Age:</label>
+        <input id="customAge" class="form-control" formControlName="customAge" />
+      </div>
+    </div>
 
     <button class="btn btn-info my-3 btn-block" type="submit" [disabled]="!form.valid">Sign in</button>
   </form>
