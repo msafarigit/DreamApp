@@ -8,7 +8,7 @@ export class AppValidators {
         return null;
 
       const email = control.value;
-      if (email.indexof('@') === -1)
+      if (email.indexOf('@') === -1)
         return { emailDomain: false };
 
       const [_, domain] = email.split('@'); // array destructor

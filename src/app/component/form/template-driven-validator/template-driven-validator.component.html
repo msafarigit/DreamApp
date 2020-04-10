@@ -2,11 +2,12 @@
   <app-divider>
     Template Driven Validator:
   </app-divider>
-  <form #form="ngForm" (ngSubmit)="onSubmit($event)">
+  <form #form="ngForm" (ngSubmit)="onSubmit($event)" appPasswordCheckValidator>
     <div class="form-group">
       <label for="age" class="control-label">Age:</label>
-      <input class="form-control" name="age" [(ngModel)]="age" #ageInput="ngModel" required [appAgeRangeValidator]="{min: 20, max: 30}"/>
-      <div *ngIf="(ageInput.dirty || ageInput.touched) && ageInput.errors" class = "alert alert-danger">
+      <input class="form-control" name="age" [(ngModel)]="age" #ageInput="ngModel" required
+        [appAgeRangeValidator]="{min: 20, max: 30}" />
+      <div *ngIf="(ageInput.dirty || ageInput.touched) && ageInput.errors" class="alert alert-danger">
         <div *ngIf="ageInput.errors.ageRange">
           Age field is required.
         </div>
@@ -18,7 +19,8 @@
 
     <div class="form-group">
       <label for="email" class="control-label">Email:</label>
-      <input class="form-control" name="email" [(ngModel)]="email" #emailInput="ngModel" required [appEmailDomainValidator]="'gmail.com'"/>
+      <input class="form-control" id="email" name="email" [(ngModel)]="email" #emailInput="ngModel" required
+        [appEmailDomainValidator]="'gmail.com'" />
       <div *ngIf="emailInput.dirty && emailInput.errors" class="alert alert-danger">
         <div *ngIf="emailInput.errors.required">
           Email field is required.
@@ -30,7 +32,26 @@
     </div>
 
     <div class="form-group">
-      <button type="submit" class="btn" [ngClass]="form.valid ? 'btn-success' : 'btn-danger'" [disabled]="form.invalid">Submit</button>
+      <label for="password" class="control-label">Password:</label>
+      <input class="form-control" type="password" id="password" name="password" [(ngModel)]="password" #passwordInput="ngModel" required />
+      <div *ngIf="passwordInput.dirty && passwordInput.errors" class="alert alert-danger">
+        <div *ngIf="passwordInput.errors.required">
+          Password field is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword" class="control-label">Confirm:</label>
+      <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" #confirmPasswordInput="ngModel" required />
+      <div *ngIf="form.dirty && form.errors?.passwordCheck" class="alert alert-danger">
+        Paasword and confirm dont matched!
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn" [ngClass]="form.valid ? 'btn-success' : 'btn-danger'"
+        [disabled]="form.invalid">Submit</button>
     </div>
   </form>
 </div>

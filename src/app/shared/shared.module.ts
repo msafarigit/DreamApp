@@ -8,6 +8,7 @@ import { ClassDirective } from '@shared/directive/class.directive';
 
 import { AgeRangeValidatorDirective } from '@validator/directive/age-range-validator.directive';
 import { EmailDomainValidatorDirective } from '@validator/directive/email-domain-validator.directive';
+import { PasswordCheckValidatorDirective } from '@validator/directive/password-check-validator.directive';
 
 // Widget feature modules
 @NgModule({
@@ -16,7 +17,8 @@ import { EmailDomainValidatorDirective } from '@validator/directive/email-domain
     TimesDirective,
     ClassDirective,
     AgeRangeValidatorDirective,
-    EmailDomainValidatorDirective
+    EmailDomainValidatorDirective,
+    PasswordCheckValidatorDirective
   ],
   imports: [
     CommonModule
@@ -26,7 +28,8 @@ import { EmailDomainValidatorDirective } from '@validator/directive/email-domain
     TimesDirective,
     ClassDirective,
     AgeRangeValidatorDirective,
-    EmailDomainValidatorDirective
+    EmailDomainValidatorDirective,
+    PasswordCheckValidatorDirective
   ]
 })
 export class SharedModule { }
