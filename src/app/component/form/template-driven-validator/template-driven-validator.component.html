@@ -6,7 +6,7 @@
     <div class="form-group">
       <label for="age" class="control-label">Age:</label>
       <input class="form-control" name="age" [(ngModel)]="age" #ageInput="ngModel" required [appAgeRangeValidator]="{min: 20, max: 30}"/>
-      <div *ngIf="ageInput.dirty && ageInput.errors" class = "alert alert-danger">
+      <div *ngIf="(ageInput.dirty || ageInput.touched) && ageInput.errors" class = "alert alert-danger">
         <div *ngIf="ageInput.errors.ageRange">
           Age field is required.
         </div>

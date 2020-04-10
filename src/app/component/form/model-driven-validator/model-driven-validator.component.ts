@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 
-import { ageRangeValidator, ageCustomRangeValidator } from '@shared/validator/age-range-validator';
-import { AppValidators } from '@shared/validator/app-validators';
+import { ageRangeValidator, ageCustomRangeValidator } from '@validator/age-range-validator';
+import { AppValidators } from '@validator/app-validators';
+import { passwordCheckValidator } from '@validator/password-check-validator';
 
 @Component({
   selector: 'app-model-driven-validator',
@@ -15,12 +16,19 @@ export class ModelDrivenValidatorComponent implements OnInit {
 
   @ViewChild('form', { static: true }) form: NgForm;
 
+  get password() {
+    // tslint:disable-next-line: no-string-literal
+    return this.validationForm.controls['password'];
+  }
+
   constructor(private fb: FormBuilder) {
     this.validationForm = this.fb.group({
       age: new FormControl('', [Validators.required, ageRangeValidator]),
       customAge: new FormControl('20', ageCustomRangeValidator(20, 30)),
-      email: new FormControl('', [Validators.required, Validators.email, AppValidators.emailDomainValidator('gmail.com')])
-    });
+      email: new FormControl('', [Validators.required, Validators.email, AppValidators.emailDomainValidator('gmail.com')]),
+      password: new FormControl('', Validators.required),
+      confirmPassword: new FormControl('', Validators.required)
+    }, { validators: passwordCheckValidator });
   }
 
   ngOnInit(): void {

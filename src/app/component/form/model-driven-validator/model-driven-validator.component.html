@@ -6,10 +6,8 @@
     <div class="form-row">
       <div class="form-group col">
         <label for="age">Age:</label>
-        <input id="age" class="form-control" formControlName="age"/>
+        <input id="age" class="form-control" formControlName="age" />
       </div>
-    </div>
-    <div class="form-row">
       <div class="form-group col">
         <label for="customAge">Custom Age:</label>
         <input id="customAge" class="form-control" formControlName="customAge" />
@@ -20,9 +18,25 @@
         <label for="email">Email:</label>
         <input id="email" class="form-control" formControlName="email" />
       </div>
-
     </div>
-
-    <button class="btn btn-info my-3 btn-block" type="submit" [disabled]="!form.valid">Sign in</button>
+    <div class="form-row">
+      <div class="form-group col">
+        <label for="password">Password:</label>
+        <input id="password" type="password" class="form-control" formControlName="password" />
+        <div *ngIf="(password.dirty || password.touched) && password.errors" class="alert alert-danger">
+          <div *ngIf="password.errors.required">
+            Password field is required.
+          </div>
+        </div>
+      </div>
+      <div class="form-group col">
+        <label for="confirmPassword">Confirm:</label>
+        <input id="confirmPassword" type="password" class="form-control" formControlName="confirmPassword" />
+        <div *ngIf="validationForm.errors?.passwordCheck && (validationForm.touched || validationForm.dirty)" class="alert alert-danger">
+          Password cannot match confirm.
+        </div>
+      </div>
+    </div>
+    <button class="btn my-3 btn-block" type="submit" [ngClass]="form.valid ? 'btn-success' : 'btn-danger'" [disabled]="!form.valid">Sign in</button>
   </form>
 </div>
