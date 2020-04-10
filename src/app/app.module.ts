@@ -14,9 +14,6 @@ import { SharedModule } from '@shared/shared.module';
 import { AppComponent } from './app.component';
 // #endregion
 
-import { TimesDirective } from './directive/times.directive';
-import { ClassDirective } from './directive/class.directive';
-
 // #region pipe
 import { JalaliPipe } from '@pipe/jalali.pipe';
 import { SqrtPipe } from '@pipe/sqrt.pipe';
@@ -51,8 +48,6 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TimesDirective,
-    ClassDirective,
     CustomDirectiveComponent,
     ChildVersionComponent,
     ParentVersionComponent,
@@ -75,7 +70,6 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
     NgStyleExampleComponent,
     NgContainerExampleComponent,
     NotFoundComponent
-
 
   ],
   imports: [

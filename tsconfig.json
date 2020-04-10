@@ -20,6 +20,7 @@
     ],
     "paths": {
       "@shared/*": ["app/shared/*"],
+      "@validator/*": ["app/shared/validator/*"],
       "@pipe/*": ["app/pipe/*"],
       "@service/*": ["app/service/*"],
       "@model/*": ["app/model/*"],
