@@ -11,6 +11,7 @@ import { ModelDrivenFormComponent } from '@component/form/model-driven-form/mode
 import { ModelDrivenFormNestedComponent } from '@component/form/model-driven-form-nested/model-driven-form-nested.component';
 import { ModelDrivenValidatorComponent } from '@component/form/model-driven-validator/model-driven-validator.component';
 import { TemplateDrivenValidatorComponent } from '@component/form/template-driven-validator/template-driven-validator.component';
+import { ModelDrivenAsyncValidatorComponent } from './model-driven-async-validator/model-driven-async-validator.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TemplateDrivenValidatorComponent } from '@component/form/template-drive
     ModelDrivenFormComponent,
     ModelDrivenFormNestedComponent,
     ModelDrivenValidatorComponent,
-    TemplateDrivenValidatorComponent
+    TemplateDrivenValidatorComponent,
+    ModelDrivenAsyncValidatorComponent
   ],
   imports: [
     CommonModule,
