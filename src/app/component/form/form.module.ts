@@ -28,6 +28,8 @@ import { ModelDrivenAsyncValidatorComponent } from './model-driven-async-validat
     FormsModule,
     ReactiveFormsModule,
     FormRoutingModule,
+    // Then finally, in any feature module we can simply import the shared module without the forRoot and
+    // we’ll have access to the shared pipes and directives without providing the service again.
     SharedModule
   ]
 })
