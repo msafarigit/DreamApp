@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { DividerComponent } from './divider/divider.component';
 
@@ -21,9 +22,13 @@ import { PasswordCheckValidatorDirective } from '@validator/directive/password-c
     PasswordCheckValidatorDirective
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
+    ReactiveFormsModule,
+    FormsModule,
     DividerComponent,
     TimesDirective,
     ClassDirective,

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { FormRoutingModule } from './form-routing.module';
 import { SharedModule } from '@shared/shared.module';
@@ -25,8 +24,6 @@ import { ModelDrivenAsyncValidatorComponent } from './model-driven-async-validat
   ],
   imports: [
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
     FormRoutingModule,
     SharedModule
   ]
