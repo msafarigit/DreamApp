@@ -84,7 +84,8 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
       preventDuplicates: true,
     }),
     NavbarModule,
-    SharedModule
+    SharedModule.forRoot()
+
   ],
   providers: [AssessmentService],
   bootstrap: [AppComponent]

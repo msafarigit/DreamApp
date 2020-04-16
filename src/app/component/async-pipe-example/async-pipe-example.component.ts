@@ -2,6 +2,8 @@ import { Component, OnDestroy } from '@angular/core';
 import { Observable, Subscription, interval } from 'rxjs';
 import { take, map } from 'rxjs/operators';
 
+import { AuthService } from '@shared/service/auth.service';
+
 @Component({
   selector: 'app-async-pipe',
   templateUrl: './async-pipe-example.component.html'
@@ -13,7 +15,7 @@ export class AsyncPipeExampleComponent implements OnDestroy {
   subscription: Subscription = null;
   observableData: number;
 
-  constructor() {
+  constructor(private authservice: AuthService) {
     this.promise = this.getPromise();
     this.observable$ = this.getObservable();
     this.subscribeObservable();
