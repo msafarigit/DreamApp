@@ -20,7 +20,7 @@ export class ModelDrivenAsyncValidatorComponent implements OnInit {
 
   constructor(private fb: FormBuilder, authService: AuthService) {
     this.validationForm = this.fb.group({
-      email: new FormControl('', Validators.required)
+      email: new FormControl('', [Validators.required, Validators.email])
     });
   }
 

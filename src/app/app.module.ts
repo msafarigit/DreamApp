@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 // #endregion
@@ -74,6 +75,8 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
   ],
   imports: [
     BrowserModule,
+    // import HttpClientModule after BrowserModule.
+    HttpClientModule,
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
@@ -98,4 +101,9 @@ export class AppModule { }
 /*
 If a component, directive, or pipe belongs to a module in the imports array, don't​ re-declare it in the declarations array.
 If you wrote it and it should belong to this module, ​do​ declare it in the declarations array.
+*/
+
+/*
+HttpClientModule:
+ Configures the dependency injector for HttpClient with supporting services for XSRF. Automatically imported by HttpClientModule.
 */
