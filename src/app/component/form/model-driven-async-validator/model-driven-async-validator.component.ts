@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators, NgForm, AbstractControl } from '@angular/forms';
+import { map } from 'rxjs/operators'
 
 import { AuthService } from '@shared/service/auth.service';
 
@@ -18,9 +19,9 @@ export class ModelDrivenAsyncValidatorComponent implements OnInit {
     return this.validationForm.get('email');
   }
 
-  constructor(private fb: FormBuilder, authService: AuthService) {
+  constructor(private fb: FormBuilder, private authService: AuthService) {
     this.validationForm = this.fb.group({
-      email: new FormControl('', [Validators.required, Validators.email])
+      email: new FormControl('', [Validators.required, Validators.email], this.validateEmailNotTaken.bind(this))
     });
   }
 
@@ -30,4 +31,9 @@ export class ModelDrivenAsyncValidatorComponent implements OnInit {
   onSubmit(): void {
   }
 
+  validateEmailNotTaken(control: AbstractControl) {
+     return this.authService.checkEmail(control.value).pipe(map(res => {
+       return res ? null : { emailTaken: true };
+     }));
+  }
 }

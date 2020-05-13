@@ -7,20 +7,21 @@
       <div class="form-group col">
         <label for="email">Email:</label>
         <input id="email" class="form-control" formControlName="email" />
-      </div>
-      <div *ngIf="email.dirty || email.touched" class="alert alert-danger">
-        <div *ngIf="email.status === 'PENDING'">
-          Checking...
-        </div>
-        <div *ngIf="email.status === 'VALID'">
-          😺 Email is available!
-        </div>
-        <div *ngIf="email.errors && email.errors.emailTaken">
-          😢 Oh noes, this email is already taken!
+        <div *ngIf="email.dirty || email.touched" class="alert alert-danger">
+          <div *ngIf="email.status === 'PENDING'">
+            Checking...
+          </div>
+          <div *ngIf="email.status === 'VALID'">
+            😺 Email is available!
+          </div>
+          <div *ngIf="email.errors && email.errors.emailTaken">
+            😢 Oh noes, this email is already taken!
+          </div>
         </div>
       </div>
     </div>
 
-    <button class="btn my-3 btn-block" type="submit" [ngClass]="form.valid ? 'btn-success' : 'btn-danger'" [disabled]="!form.valid">Sign in</button>
+    <button class="btn my-3 btn-block" type="submit" [ngClass]="form.valid ? 'btn-success' : 'btn-danger'"
+      [disabled]="!form.valid">Sign in</button>
   </form>
 </div>

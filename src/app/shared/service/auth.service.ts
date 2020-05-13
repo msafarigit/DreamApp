@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { catchError, retry, tap, delay, map, filter } from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
 
   constructor(private http: HttpClient) {
-    console.log('hello');
   }
 
   // gotoPage(page: string, preserveParams = true) {
-
   //   const navigationExtras: NavigationExtras = {
   //     queryParamsHandling: preserveParams ? 'merge' : '', preserveFragment: preserveParams
   //   };
@@ -23,6 +21,36 @@ export class AuthService {
   //   this.router.navigate([this.homeUrl]);
   // }
 
+  checkEmail(email: string): Observable<boolean> {
+    const emails = this.getTextFile('assets/files/user-mail.json');
+    return emails.pipe(
+      delay(5000),
+      map(res => JSON.parse(res)),
+      map(users => users.filter(user => user.email === email)),
+      map(users => !users.length)
+    );
+  }
+
+  getTextFile(filename: string) {
+    // important: The types of the observe and response options are string unions, rather than plain strings.
+    const options = {
+      responseType: 'text' as const,
+    };
+
+    // The Observable returned by get() is of type Observable<string> because a text response was specified.
+    // There's no need to pass a <string> type parameter to get().
+    // return this.http.get(filename, { responseType: 'text' }) or
+    return this.http.get(filename, options)
+      .pipe(
+        tap(
+          data => {
+            // console.info(filename, data);
+            return data;
+          },
+          error => console.error(error)
+        )
+      );
+  }
 }
 
 /*
@@ -116,9 +144,47 @@ Requesting a typed response:
 
  the following subscribe callback receives data as an Object, and then type-casts it in order to access the properties:
   .subscribe(data => this.config = {
-   heroesUrl: (data as any).heroesUrl,
-   textfile:  (data as any).textfile,
+    heroesUrl: (data as any).heroesUrl,
+    textfile:  (data as any).textfile,
  });
-
-
  */
+
+/*
+Reading the full response:
+In the previous example, the call to HttpClient.get() did not specify any options. By default, it returned the JSON data contained in the response body.
+Tell HttpClient that you want the full response with the observe option of the get() method:
+
+getConfigResponse(): Observable<HttpResponse<Config>> {
+ return this.http.get<Config>(this.configUrl, { observe: 'response' });
+}
+
+this.configService.getConfigResponse()
+   // resp is of type `HttpResponse<Config>`
+   .subscribe(resp => {
+     // display its headers
+     const keys = resp.headers.keys();
+     this.headers = keys.map(key => `${key}: ${resp.headers.get(key)}`);
+
+     // access the body directly, which is typed as `Config`.
+     this.config = { ... resp.body };
+   });
+
+Requesting non-JSON data
+Not all APIs return JSON data. In this next example, a DownloaderService method reads a text file from the server and logs the file contents,
+before returning those contents to the caller as an Observable<string>.
+
+getTextFile(filename: string) {
+ // The Observable returned by get() is of type Observable<string>
+ // because a text response was specified.
+ // There's no need to pass a <string> type parameter to get().
+ return this.http.get(filename, {responseType: 'text'})
+   .pipe(
+     tap( // Log the result or error
+       data => this.log(filename, data),
+       error => this.logError(filename, error)
+     )
+   );
+}
+HttpClient.get() returns a string rather than the default JSON because of the responseType option.
+The RxJS tap operator (as in "wiretap") lets the code inspect both success and error values passing through the observable without disturbing them.
+*/
