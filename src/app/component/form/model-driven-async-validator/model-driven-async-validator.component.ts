@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, FormControl, Validators, NgForm, AbstractContro
 import { map } from 'rxjs/operators'
 
 import { AuthService } from '@shared/service/auth.service';
+import { AppAsyncValidators } from '@shared/validator/app-async-validators';
 
 @Component({
   selector: 'app-model-driven-async-validator',
@@ -21,7 +22,8 @@ export class ModelDrivenAsyncValidatorComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private authService: AuthService) {
     this.validationForm = this.fb.group({
-      email: new FormControl('', [Validators.required, Validators.email], this.validateEmailNotTaken.bind(this))
+      // email: new FormControl('', [Validators.required, Validators.email], this.validateEmailNotTaken.bind(this))
+      email: new FormControl('', [Validators.required, Validators.email], AppAsyncValidators.EmailNotTakenValidator(this.authService))
     });
   }
 

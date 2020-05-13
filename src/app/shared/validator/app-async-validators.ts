@@ -1,4 +1,17 @@
+import { AbstractControl, AsyncValidatorFn, ValidationErrors } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { AuthService } from '@shared/service/auth.service';
+
 export class AppAsyncValidators {
+  static EmailNotTakenValidator(authService: AuthService): AsyncValidatorFn {
+    return (control:AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> => {
+      return authService.checkEmail(control.value).pipe(map(res => {
+        return res ? null : { emailTaken: true };
+      }));
+    }
+  }
 }
 
 /*
