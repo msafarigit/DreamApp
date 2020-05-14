@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, of, from } from 'rxjs';
 import { catchError, retry, tap, delay, map, filter } from 'rxjs/operators';
 
 @Injectable()
@@ -20,6 +20,11 @@ export class AuthService {
   // gotoHomePage() {
   //   this.router.navigate([this.homeUrl]);
   // }
+
+  public checkLogin(login: string) {
+    // simulate http.get()
+    return of({ isLoginAvailable: login !== 'test'}).pipe(delay(4000));
+  }
 
   checkEmail(email: string): Observable<boolean> {
     const emails = this.getTextFile('assets/files/user-mail.json');
