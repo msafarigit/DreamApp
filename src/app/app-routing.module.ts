@@ -37,6 +37,11 @@ const router: Routes = [
     loadChildren: () => import('@component/form/form.module').then(m => m.FormModule),
     data: { preload: false }
   },
+  {
+    path: 'rxjs',
+    loadChildren: () => import('@component/rxjs/rxjs.module').then(m => m.RxjsModule),
+    data: { preload: false }
+  },
   { path: '**', component: NotFoundComponent },
 ];
 
