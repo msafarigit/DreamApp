@@ -27,11 +27,13 @@ import { AssessmentService } from '@service/assessment.service';
 
 import { ChildVersionComponent } from '@component/child-version/child-version.component';
 import { ParentVersionComponent } from '@component/parent-version/parent-version.component';
-import { ComponentInteractionComponent } from '@component/component-interaction/component-interaction.component';
+import { ClassRoomComponent } from '@component/class-room/class-room.component';
+import { StudentInfoComponent } from '@component/student-info/student-info.component';
 import { CountdownTimerComponent } from '@component/countdown-timer/countdown-timer.component';
 import { CountdownLocalVarParentComponent } from '@component/countdown-local-var-parent/countdown-local-var-parent.component';
-import { CountdownQuerylistParentComponent } from '@component/countdown-querylist-parent/countdown-querylist-parent.component';
 import { CountdownViewChildParentComponent } from '@component/countdown-view-child-parent/countdown-view-child-parent.component';
+import { CountdownQuerylistParentComponent } from '@component/countdown-querylist-parent/countdown-querylist-parent.component';
+import { ComponentInteractionComponent } from '@component/component-interaction/component-interaction.component';
 import { AssessmentDeveloperComponent } from '@component/assessment-developer/assessment-developer.component';
 import { CustomTwoWayComponent } from '@component/custom-two-way/custom-two-way.component';
 import { CustomTwoWayParentComponent } from '@component/custom-two-way-parent/custom-two-way-parent.component';
@@ -42,8 +44,8 @@ import { NgClassExampleComponent } from '@component/ng-class-example/ng-class-ex
 import { NgStyleExampleComponent } from '@component/ng-style-example/ng-style-example.component';
 import { NgContainerExampleComponent } from '@component/ng-container-example/ng-container-example.component';
 import { ClassAssessmentComponent } from '@component/class-assessment/class-assessment.component';
-import { CustomDirectiveComponent } from './component/custom-directive/custom-directive.component';
-import { NotFoundComponent } from './component/not-found/not-found.component';
+import { CustomDirectiveComponent } from '@component/custom-directive/custom-directive.component';
+import { NotFoundComponent } from '@component/not-found/not-found.component';
 
 
 @NgModule({
@@ -52,12 +54,14 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
     CustomDirectiveComponent,
     ChildVersionComponent,
     ParentVersionComponent,
-    ComponentInteractionComponent,
-    ClassAssessmentComponent,
+    ClassRoomComponent,
+    StudentInfoComponent,
     CountdownTimerComponent,
     CountdownLocalVarParentComponent,
-    CountdownQuerylistParentComponent,
     CountdownViewChildParentComponent,
+    CountdownQuerylistParentComponent,
+    ClassAssessmentComponent,
+    ComponentInteractionComponent,
     AssessmentDeveloperComponent,
     CustomTwoWayComponent,
     CustomTwoWayParentComponent,

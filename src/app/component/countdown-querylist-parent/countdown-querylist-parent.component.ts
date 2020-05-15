@@ -4,7 +4,7 @@ import { CountdownTimerComponent } from '@component/countdown-timer/countdown-ti
 @Component({
   selector: 'app-countdown-parent-querylist',
   template: `
-    <h3>Countdown to Liftoff (via ViewChild)</h3>
+    <h3>Countdown to Liftoff (via ViewChildren)</h3>
     <button type="button" class="btn btn-success" (click)="start()">Start</button>
     <button type="button" class="btn btn-danger" (click)="pause()">Pause</button>
     <div class="seconds">{{seconds()}}</div>
