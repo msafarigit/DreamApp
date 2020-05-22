@@ -14,11 +14,13 @@ export class HighlightDirective {
     // elm.nativeElement.style.backgroundColor = "red";
   }
 
-  @HostListener('mouseenter') onMouseEnter() {
+  @HostListener('mouseenter')
+  onMouseEnter() {
     this.highlight(this.appHighlight || this.defaultColor || 'red');
   }
 
-  @HostListener('mouseleave') onMouseLeave() {
+  @HostListener('mouseleave')
+  onMouseLeave() {
     this.highlight(null);
   }
 
@@ -26,3 +28,14 @@ export class HighlightDirective {
     this.elm.nativeElement.style.backgroundColor = color;
   }
 }
+
+/*
+The @HostListener decorator lets you subscribe to events of the DOM element that hosts an attribute directive.
+
+Of course you could reach into the DOM with standard JavaScript and attach event listeners manually. There are at least three problems with that approach:
+  1-You have to write the listeners correctly.
+  2-The code must detach the listener when the directive is destroyed to avoid memory leaks.
+  3-Talking to DOM API directly isn't a best practice.
+
+It's called an input property because data flows from the binding expression into the directive. Without that input metadata, Angular rejects the binding;
+*/

@@ -27,3 +27,11 @@ export class ClassDirective {
   constructor(private element: ElementRef) { }
 
 }
+
+/*
+Attribute directives
+ An Attribute directive changes the appearance or behavior of a DOM element. Attribute directives are used as attributes of elements.
+ The built-in NgStyle directive in the Template Syntax guide, for example, can change several element styles at the same time.
+ You use the ElementRef in the directive's constructor to inject a reference to the host DOM element, the element to which you applied appHighlight.
+ ElementRef grants direct access to the host DOM element through its nativeElement property.
+*/
