@@ -25,6 +25,7 @@ import { FilterPipe } from '@pipe/filter.pipe';
 import { AssessmentService } from '@service/assessment.service';
 // #endregion
 
+import { ModalComponent } from '@component/modal/modal.component';
 import { ChildVersionComponent } from '@component/child-version/child-version.component';
 import { ParentVersionComponent } from '@component/parent-version/parent-version.component';
 import { ClassRoomComponent } from '@component/class-room/class-room.component';
@@ -50,6 +51,7 @@ import { NotFoundComponent } from '@component/not-found/not-found.component';
 
 @NgModule({
   declarations: [
+    ModalComponent,
     AppComponent,
     CustomDirectiveComponent,
     ChildVersionComponent,

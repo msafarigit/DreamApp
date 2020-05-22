@@ -3,7 +3,8 @@ import { Routes, RouterModule, PreloadAllModules, NoPreloading, ExtraOptions } f
 
 import { DelayPreloadingStrategy } from '@service/core/delay-preloading-strategy.service';
 
-import { CustomDirectiveComponent } from './component/custom-directive/custom-directive.component';
+import { ModalComponent } from '@component/modal/modal.component';
+import { CustomDirectiveComponent } from '@component/custom-directive/custom-directive.component';
 import { NgContainerExampleComponent } from '@component/ng-container-example/ng-container-example.component';
 import { ComponentInteractionComponent } from '@component/component-interaction/component-interaction.component';
 import { PipeExampleComponent } from '@component/pipe-example/pipe-example.component';
@@ -21,6 +22,7 @@ const routerOptions: ExtraOptions = {
 
 // router order provides priority of path!
 const router: Routes = [
+  { path: 'modal', component: ModalComponent },
   { path: 'custom-directives', component: CustomDirectiveComponent },
   { path: 'structural', component: NgContainerExampleComponent },
   { path: 'interaction', component: ComponentInteractionComponent },
