@@ -27,6 +27,9 @@ import { AssessmentService } from '@service/assessment.service';
 
 import { ModalComponent } from '@component/modal/modal.component';
 import { DatepickerJalaliComponent } from '@component/datepicker-jalali/datepicker-jalali.component';
+import { StructuralDirectiveComponent } from '@component/structural-directive/structural-directive.component';
+import { AttributeDirectiveComponent } from '@component/attribute-directive/attribute-directive.component';
+import { CustomDirectiveComponent } from '@component/custom-directive/custom-directive.component';
 import { ChildVersionComponent } from '@component/child-version/child-version.component';
 import { ParentVersionComponent } from '@component/parent-version/parent-version.component';
 import { ClassRoomComponent } from '@component/class-room/class-room.component';
@@ -46,15 +49,16 @@ import { NgClassExampleComponent } from '@component/ng-class-example/ng-class-ex
 import { NgStyleExampleComponent } from '@component/ng-style-example/ng-style-example.component';
 import { NgContainerExampleComponent } from '@component/ng-container-example/ng-container-example.component';
 import { ClassAssessmentComponent } from '@component/class-assessment/class-assessment.component';
-import { CustomDirectiveComponent } from '@component/custom-directive/custom-directive.component';
 import { NotFoundComponent } from '@component/not-found/not-found.component';
 
 
 @NgModule({
   declarations: [
+    AppComponent,
     ModalComponent,
     DatepickerJalaliComponent,
-    AppComponent,
+    StructuralDirectiveComponent,
+    AttributeDirectiveComponent,
     CustomDirectiveComponent,
     ChildVersionComponent,
     ParentVersionComponent,

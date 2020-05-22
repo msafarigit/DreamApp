@@ -1,12 +1,13 @@
 import { NgModule, SkipSelf, Optional, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AuthService } from '@shared//service/auth.service';
+import { AuthService } from '@shared/service/auth.service';
 
 import { DividerComponent } from './divider/divider.component';
 
 import { TimesDirective } from '@shared/directive/times.directive';
 import { ClassDirective } from '@shared/directive/class.directive';
+import { HighlightDirective } from '@shared/directive/highlight.directive';
 
 import { AgeRangeValidatorDirective } from '@validator/directive/age-range-validator.directive';
 import { EmailDomainValidatorDirective } from '@validator/directive/email-domain-validator.directive';
@@ -18,6 +19,7 @@ import { PasswordCheckValidatorDirective } from '@validator/directive/password-c
     DividerComponent,
     TimesDirective,
     ClassDirective,
+    HighlightDirective,
     AgeRangeValidatorDirective,
     EmailDomainValidatorDirective,
     PasswordCheckValidatorDirective
@@ -29,6 +31,7 @@ import { PasswordCheckValidatorDirective } from '@validator/directive/password-c
     DividerComponent,
     TimesDirective,
     ClassDirective,
+    HighlightDirective,
     AgeRangeValidatorDirective,
     EmailDomainValidatorDirective,
     PasswordCheckValidatorDirective

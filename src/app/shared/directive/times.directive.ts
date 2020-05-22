@@ -30,3 +30,7 @@ export class TimesDirective {
   constructor(private viewContainer: ViewContainerRef, private template: TemplateRef<any>) { }
 
 }
+
+// Structural directives are responsible for HTML layout.
+// They shape or reshape the DOM's structure, typically by adding, removing, or manipulating elements.
+// An asterisk (*) precedes the directive attribute name

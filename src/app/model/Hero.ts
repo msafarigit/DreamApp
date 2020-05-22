@@ -1,14 +1,17 @@
 import { Entity } from './core/Entity';
 
 export class Hero extends Entity {
-    id: number;
-    name: string;
-    emotion?: string; // ? safe operator
+  name: string;
+  emotion?: string; // ? safe operator
+
+  constructor(id: number) {
+    super(id);
+  }
 }
 
 export const heroes: Hero[] = [
-    { id: 1, name: 'Dr Nice', emotion: 'happy' },
-    { id: 2, name: 'Narco', emotion: 'sad' },
-    { id: 3, name: 'Windstorm', emotion: 'confused' },
-    { id: 4, name: 'Magneta' }
+  Object.assign(new Hero(1), { name: 'Dr Nice', emotion: 'happy' }),
+  Object.assign(new Hero(2), { name: 'Narco', emotion: 'sad' }),
+  Object.assign(new Hero(3), { name: 'Windstorm', emotion: 'confused' }),
+  Object.assign(new Hero(3), { name: 'Magneta' })
 ];

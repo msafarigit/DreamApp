@@ -10,6 +10,12 @@
     Button inline style
 </button>
 
+<p [style.display]="'block'">
+  Expression sets display to "block". This paragraph is visible.
+</p>
+<p [style.display]="'none'">
+  Expression sets display to "none". This paragraph is hidden but still in the DOM.
+</p>
 
 <style type="text/css">
     button {

@@ -5,6 +5,8 @@ import { DelayPreloadingStrategy } from '@service/core/delay-preloading-strategy
 
 import { ModalComponent } from '@component/modal/modal.component';
 import { DatepickerJalaliComponent } from '@component/datepicker-jalali/datepicker-jalali.component';
+import { StructuralDirectiveComponent } from '@component/structural-directive/structural-directive.component';
+import { AttributeDirectiveComponent } from '@component/attribute-directive/attribute-directive.component';
 import { CustomDirectiveComponent } from '@component/custom-directive/custom-directive.component';
 import { NgContainerExampleComponent } from '@component/ng-container-example/ng-container-example.component';
 import { ComponentInteractionComponent } from '@component/component-interaction/component-interaction.component';
@@ -25,8 +27,10 @@ const routerOptions: ExtraOptions = {
 const router: Routes = [
   { path: 'modal', component: ModalComponent },
   { path: 'datepicker-jalali', component: DatepickerJalaliComponent },
+  { path: 'structural-directives', component: StructuralDirectiveComponent },
+  { path: 'attribute-directives', component: AttributeDirectiveComponent },
   { path: 'custom-directives', component: CustomDirectiveComponent },
-  { path: 'structural', component: NgContainerExampleComponent },
+  { path: 'ng-container', component: NgContainerExampleComponent },
   { path: 'interaction', component: ComponentInteractionComponent },
   {
     path: 'practice',
