@@ -26,6 +26,7 @@ import { AssessmentService } from '@service/assessment.service';
 // #endregion
 
 import { ModalComponent } from '@component/modal/modal.component';
+import { DatepickerJalaliComponent } from '@component/datepicker-jalali/datepicker-jalali.component';
 import { ChildVersionComponent } from '@component/child-version/child-version.component';
 import { ParentVersionComponent } from '@component/parent-version/parent-version.component';
 import { ClassRoomComponent } from '@component/class-room/class-room.component';
@@ -52,6 +53,7 @@ import { NotFoundComponent } from '@component/not-found/not-found.component';
 @NgModule({
   declarations: [
     ModalComponent,
+    DatepickerJalaliComponent,
     AppComponent,
     CustomDirectiveComponent,
     ChildVersionComponent,
@@ -76,7 +78,7 @@ import { NotFoundComponent } from '@component/not-found/not-found.component';
     NgClassExampleComponent,
     NgStyleExampleComponent,
     NgContainerExampleComponent,
-    NotFoundComponent
+    NotFoundComponent,
 
   ],
   imports: [

@@ -8,12 +8,17 @@
 
   <div id="navbar-content" [ngbCollapse]="navbarCollapsed" class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/modal" (click)="navbarCollapsed = true">
-          Modal<span class="sr-only">(current)</span></a>
+      <li class="nav-item dropdown" ngbDropdown>
+        <a id="dropdown-first" class="nav-link dropdown-toggle" ngbDropdownToggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-bars"></i> Ng-bootstrap
+        </a>
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown-first">
+          <a class="dropdown-item" routerLink="/modal">Modal</a>
+          <a class="dropdown-item" routerLink="/datepicker-jalali">Datepicker Jalali</a>
+        </div>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/interaction" (click)="navbarCollapsed = true">Interaction</a>
+        <a class="nav-link" routerLink="/interaction" (click)="navbarCollapsed = true">Interaction<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/templateReferenceVariable" (click)="navbarCollapsed = true">Reference Variable</a>
