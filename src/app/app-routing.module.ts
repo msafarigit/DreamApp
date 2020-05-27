@@ -28,6 +28,10 @@ const router: Routes = [
     data: { preload: false }
   },
   {
+    path: 'lifecycle',
+    loadChildren: () => import('@component/lifecycle/lifecycle.module').then(m=> m.LifecycleModule)
+  },
+  {
     path: 'interaction',
     loadChildren: () => import('@component/interaction/interaction.module').then(m => m.InteractionModule),
     data: { preload: false }
