@@ -1,7 +1,7 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from '@component/form/home/home.component';
 import { TemplateDrivenFormComponent } from '@component/form/template-driven-form/template-driven-form.component';
 import { ModelDrivenFormComponent } from '@component/form/model-driven-form/model-driven-form.component';
 import { ModelDrivenFormNestedComponent } from '@component/form/model-driven-form-nested/model-driven-form-nested.component';
