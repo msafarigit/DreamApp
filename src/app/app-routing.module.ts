@@ -5,7 +5,6 @@ import { DelayPreloadingStrategy } from '@service/core/delay-preloading-strategy
 
 import { ModalComponent } from '@component/modal/modal.component';
 import { DatepickerJalaliComponent } from '@component/datepicker-jalali/datepicker-jalali.component';
-import { ComponentInteractionComponent } from '@component/component-interaction/component-interaction.component';
 import { PipeExampleComponent } from '@component/pipe-example/pipe-example.component';
 import { AsyncPipeExampleComponent } from '@component/async-pipe-example/async-pipe-example.component';
 import { StyleExampleComponent } from '@component/style-example/style-example.component';
@@ -28,7 +27,11 @@ const router: Routes = [
     loadChildren: () => import('@component/directive/directive.module').then(m => m.DirectiveModule),
     data: { preload: false }
   },
-  { path: 'interaction', component: ComponentInteractionComponent },
+  {
+    path: 'interaction',
+    loadChildren: () => import('@component/interaction/interaction.module').then(m => m.InteractionModule),
+    data: { preload: false }
+  },
   {
     path: 'practice',
     loadChildren: () => import('@component/practice/practice.module').then(m => m.PracticeModule),
