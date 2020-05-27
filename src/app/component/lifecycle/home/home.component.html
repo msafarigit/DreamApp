@@ -1,7 +1,35 @@
-<div class="container">
+<div class="container-fluid">
   <app-divider>
     Component Lifecycle:
   </app-divider>
 
+  <div class="row">
+    <div class="col text-center">
+      <form class="border border-light p-2">
+        <div class="form-row mb-4">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="First name" />
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Last name" />
+          </div>
+        </div>
+        <div class="form-row mb-1 text-left">
+          <div class="col">
+            <p class="h5">Lifecycle Call Stack:</p>
+            <ul class="list-group list-group-flush">
+              <li *ngFor="let i = index; let call of callStack" class="list-group-item pl-0 pr-0 pt-1">{{i+1}}- {{call}}</li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
 
+    <div class="col text-center">
+      <div class="form-row mb-4">
+        <div class="col">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
