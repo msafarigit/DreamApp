@@ -8,10 +8,10 @@
       <form class="border border-light p-2">
         <div class="form-row mb-4">
           <div class="col">
-            <input type="text" class="form-control" placeholder="First name" />
+            <input type="text" class="form-control" #firstName (keyup.enter)="selectedPerson.name = firstName.value" placeholder="First name" />
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="Last name" />
+            <input type="text" class="form-control" #masterName (keyup.enter)="master = masterName.value" placeholder="Master" />
           </div>
         </div>
         <div class="form-row mb-1 text-left">
@@ -25,9 +25,10 @@
       </form>
     </div>
 
-    <div class="col text-center">
+    <div class="col">
       <div class="form-row mb-4">
         <div class="col">
+          <app-child [person]="selectedPerson" [master]="master"></app-child>
         </div>
       </div>
     </div>
