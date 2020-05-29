@@ -1,4 +1,6 @@
-import { Component, OnInit, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, ViewChild } from '@angular/core';
+
+import { ChildComponent } from '@component/lifecycle/child/child.component';
 import { PERSONS, Person } from '@model/Person';
 
 // tslint:disable-next-line: no-conflicting-lifecycle
@@ -8,6 +10,10 @@ import { PERSONS, Person } from '@model/Person';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
+
+  // from session 4
+  @ViewChild('lifecycleChild', { static: true })
+  private lifecycleChild: ChildComponent;
 
   callStack: Array<string>;
   selectedPerson: Person;
