@@ -4,11 +4,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from '@shared/shared.module';
 import { LifecycleRoutingModule } from './lifecycle-routing.module';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from '@component/lifecycle/home/home.component';
+import { ChildComponent } from '@component/lifecycle/child/child.component';
 
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [
+    HomeComponent,
+    ChildComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
