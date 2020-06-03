@@ -21,16 +21,16 @@ export class AsyncPipeExampleComponent implements OnDestroy {
     this.subscribeObservable();
   }
 
-  getObservable() {
+  getObservable(): Observable<number> {
     return interval(1000).pipe(take(10), map(v => v * v));
   }
 
   // AsyncPipe subscribes to the observable automatically
-  subscribeObservable() {
+  subscribeObservable(): void {
     this.subscription = this.getObservable().subscribe(v => this.observableData = v);
   }
 
-  getPromise() {
+  getPromise(): Promise<string> {
     return new Promise((resolve, reject) => {
       setTimeout(() => resolve('Promise complete!'), 3000);
     });

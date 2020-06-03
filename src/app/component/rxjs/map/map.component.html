@@ -1,1 +1,44 @@
-<p>map works!</p>
+<div class="container-fluid">
+  <app-divider class-names="card-title">
+    RxJS Map functions
+    <span class="badge badge-pill badge-light">Light</span>
+  </app-divider>
+  <div class="row">
+    <div class="col">
+      <span class="badge badge-pill badge-light">Regular Map</span>
+      <p class="pb-1 mb-0" *ngFor="let item of regularMapItems">{{ item }}</p>
+
+      <hr class="m-0 p-0" />
+      <span class="badge badge-pill badge-light">Merge All</span>
+      <p class="pb-1 mb-0" *ngFor="let item of mergeAllItems">{{ item }}</p>
+
+      <hr class="m-0 p-0" />
+      <span class="badge badge-pill badge-light">Merge Map</span>
+      <p class="pb-1 mb-0" *ngFor="let item of mergeMapItems">{{ item }}</p>
+    </div>
+    <div class="col">
+      <span class="badge badge-pill badge-light">Regular Map</span>
+      <p class="pb-1 mb-0" *ngFor="let item of regularMapItems">{{ item }}</p>
+
+      <hr class="m-0 p-0" />
+      <span class="badge badge-pill badge-light">Switch All</span>
+      <p class="pb-1 mb-0" *ngFor="let item of switchAllItems">{{ item }}</p>
+
+      <hr class="m-0 p-0" />
+      <span class="badge badge-pill badge-light">Switch Map</span>
+      <p class="pb-1 mb-0" *ngFor="let item of switchMapItems">{{ item }}</p>
+
+      <hr class="m-0 p-0" />
+      <span class="badge badge-pill badge-light">Other Switch Map (Filters)</span>
+      <p class="pb-1 mb-0" *ngFor="let item of otherSwitchMapItems">{{ item }}</p>
+    </div>
+    <div class="col">
+      <span class="badge badge-pill badge-light">Regular Map</span>
+      <p class="pb-1 mb-0" *ngFor="let item of regularMapItems">{{ item }}</p>
+
+      <hr class="m-0 p-0" />
+      <span class="badge badge-pill badge-light">Concat Map</span>
+      <p class="pb-1 mb-0" *ngFor="let item of concatMapItems">{{ item }}</p>
+    </div>
+  </div>
+</div>
