@@ -6,11 +6,13 @@ import { SharedModule } from '@shared/shared.module';
 
 import { MapComponent } from '@component/rxjs/map/map.component';
 import { SchedulerComponent } from '@component/rxjs/scheduler/scheduler.component';
+import { AsyncSchedulerComponent } from '@component/rxjs/async-scheduler/async-scheduler.component';
 
 @NgModule({
   declarations: [
     MapComponent,
-    SchedulerComponent
+    SchedulerComponent,
+    AsyncSchedulerComponent
   ],
   imports: [
     CommonModule,
