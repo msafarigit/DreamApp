@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { asapScheduler, asyncScheduler } from 'rxjs';
 
 @Component({
   selector: 'app-asap-scheduler',
@@ -10,6 +11,13 @@ export class AsapSchedulerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    asyncScheduler.schedule(() => console.log('async')); // scheduling 'async' first...
+    asapScheduler.schedule(() => console.log('asap'));
+
+    // Logs:
+    // "asap"
+    // "async"
+    // ... but 'asap' goes first!
   }
 
 }
