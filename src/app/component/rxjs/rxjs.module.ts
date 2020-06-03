@@ -5,10 +5,12 @@ import { RxjsRoutingModule } from './rxjs-routing.module';
 import { SharedModule } from '@shared/shared.module';
 
 import { MapComponent } from '@component/rxjs/map/map.component';
+import { SchedulerComponent } from '@component/rxjs/scheduler/scheduler.component';
 
 @NgModule({
   declarations: [
-    MapComponent
+    MapComponent,
+    SchedulerComponent
   ],
   imports: [
     CommonModule,
