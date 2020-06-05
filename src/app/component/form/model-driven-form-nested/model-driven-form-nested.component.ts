@@ -25,7 +25,7 @@ export class ModelDrivenFormNestedComponent implements OnInit {
   ngOnInit(): void {
     // The top-level form in your component is FormGroup.
     this.packageForm = this.fb.group({
-      name: ['', Validators.required],
+      name: ['', { validators: Validators.required, asyncValidators: [], updateOn: 'blur' }],
       serviceInfo: this.fb.group({
         deliverDate: '',
         services: this.services
@@ -50,9 +50,9 @@ export class ModelDrivenFormNestedComponent implements OnInit {
 
   getSelectedServices(): any[] {
     return this.packageForm.value.serviceInfo.services.map((selected, index) => {
-        return selected && this.serviceList[index];
+      return selected && this.serviceList[index];
     })
-    .filter(service => service);
+      .filter(service => service);
   }
 }
 
@@ -67,4 +67,20 @@ this.control = fb.control({value: 'my val', disabled: true});
 
 array(): Constructs a new FormArray from the given array of configurations, validators and options.
 array(controlsConfig: any[], validatorOrOpts?: ValidatorFn | AbstractControlOptions | ValidatorFn[], asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[]): FormArray
+*/
+
+/*
+interface AbstractControlOptions {
+    // @description
+    // The list of validators applied to a control.
+    validators?: ValidatorFn | ValidatorFn[] | null;
+
+    // @description
+    // The list of async validators applied to control.
+    asyncValidators ?: AsyncValidatorFn | AsyncValidatorFn[] | null;
+
+    // @description
+    // The event name for control to update upon.
+    updateOn ?: 'change' | 'blur' | 'submit';
+}
 */

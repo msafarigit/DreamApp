@@ -23,7 +23,7 @@ export class ModelDrivenFormComponent {
       firstName: new FormControl('Mahdi', Validators.compose([Validators.required, Validators.minLength(3)])),
       lastName: new FormControl('Safari', Validators.required),
       // subject: new FormControl(this.subjects[0])
-      subject: new FormControl({ value: '', disabled: true }, { validators: Validators.required, asyncValidators: [] })
+      subject: new FormControl({ value: '', disabled: true }, { validators: Validators.required, asyncValidators: [], updateOn: 'change' })
     });
   }
 
@@ -227,4 +227,25 @@ The forbiddenNameValidator factory returns the configured validator function.
 That function takes an Angular control object and returns either null if the control value is valid or a validation error object.
 The validation error object typically has a property whose name is the validation key, 'forbiddenName',
  and whose value is an arbitrary dictionary of values that you could insert into an error message, {name}.
+*/
+
+/*
+  FormControl:
+  constructor(formState?: any, validatorOrOpts?: ValidatorFn | ValidatorFn[] | AbstractControlOptions | null, asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[] | null);
+*/
+
+/*
+interface AbstractControlOptions {
+    // @description
+    // The list of validators applied to a control.
+    validators?: ValidatorFn | ValidatorFn[] | null;
+
+    // @description
+    // The list of async validators applied to control.
+    asyncValidators ?: AsyncValidatorFn | AsyncValidatorFn[] | null;
+
+    // @description
+    // The event name for control to update upon.
+    updateOn ?: 'change' | 'blur' | 'submit';
+}
 */
