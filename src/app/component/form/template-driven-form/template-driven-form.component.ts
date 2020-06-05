@@ -30,11 +30,11 @@ export class TemplateDrivenFormComponent implements OnInit {
 
   person: Person;
   states = [
-    {name: 'Arizona', abbrev: 'AZ'},
-    {name: 'California', abbrev: 'CA'},
-    {name: 'Colorado', abbrev: 'CO'},
-    {name: 'New York', abbrev: 'NY'},
-    {name: 'Pennsylvania', abbrev: 'PA'},
+    { name: 'Arizona', abbrev: 'AZ' },
+    { name: 'California', abbrev: 'CA' },
+    { name: 'Colorado', abbrev: 'CO' },
+    { name: 'New York', abbrev: 'NY' },
+    { name: 'Pennsylvania', abbrev: 'PA' },
   ];
 
   constructor() {
@@ -51,7 +51,7 @@ export class TemplateDrivenFormComponent implements OnInit {
 
   resetForm() {
     // this.myForm.reset();
-    this.myForm.reset({firstName: 'mahdi', lastName: 'safari'});
+    this.myForm.reset({ firstName: 'mahdi', lastName: 'safari' });
   }
 }
 
@@ -193,4 +193,19 @@ Abstract Control errors: ValidationErrors | null	Read-Only
 #name="ngModel" exports NgModel into a local variable called name. NgModel mirrors many of the properties of its underlying FormControl instance,
  so you can use this in the template to check for control states such as valid and dirty.
  For a full list of control properties, see the AbstractControl API reference.
+*/
+
+/*
+options: {
+    name?: string;
+    standalone?: boolean;
+    updateOn?: FormHooks;
+}
+Tracks the configuration options for this ngModel instance.
+  1- name: An alternative to setting the name attribute on the form control element.
+   See the example for using NgModel as a standalone control.
+  2- standalone: When set to true, the ngModel will not register itself with its parent form,
+   and acts as if it's not in the form. Defaults to false.
+  3- updateOn: Defines the event upon which the form control value and validity update.
+Defaults to 'change'. Possible values: 'change' | 'blur' | 'submit'.
 */
