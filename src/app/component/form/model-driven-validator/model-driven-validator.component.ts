@@ -28,7 +28,7 @@ export class ModelDrivenValidatorComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email, AppValidators.emailDomainValidator('gmail.com')]),
       password: new FormControl('', Validators.required),
       confirmPassword: new FormControl('', Validators.required)
-    }, { validators: passwordCheckValidator });
+    }, { validators: passwordCheckValidator }); // Cross-field validation
   }
 
   ngOnInit(): void {
@@ -59,4 +59,15 @@ handleFormChanges() {
       }
    );
 }
+*/
+
+/*
+Cross-field validation
+A cross-field validator is a custom validator that compares the values of different fields in a form and accepts or rejects them in combination.
+For example, you might have a form that offers mutually incompatible options, so that if the user can choose A or B, but not both.
+Some field values might also depend on others; a user might be allowed to choose B only if A is also chosen.
+
+The following cross validation examples show how to do the following:
+- Validate reactive or template-based form input based on the values of two sibling controls,
+- Show a descriptive error message after the user interacted with the form and the validation failed.
 */
