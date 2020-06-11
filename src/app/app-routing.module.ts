@@ -62,3 +62,9 @@ const router: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+/*
+<base href>
+This guide works with a CLI-generated Angular app. If you are working manually, make sure that you have <base href="/"> in the <head> of your index.html file.
+This assumes that the app folder is the application root, and uses "/".
+*/
