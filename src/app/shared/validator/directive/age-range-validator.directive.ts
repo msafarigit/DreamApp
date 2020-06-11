@@ -3,6 +3,8 @@ import { NG_VALIDATORS, Validator, AbstractControl, ValidationErrors } from '@an
 
 @Directive({
   selector: '[appAgeRangeValidator]',
+  // The following example registers a custom validator directive.
+  // Adding the validator to the existing collection of validators requires the multi: true option.
   providers: [{ provide: NG_VALIDATORS, useExisting: AgeRangeValidatorDirective, multi: true }]
 })
 export class AgeRangeValidatorDirective implements Validator {
@@ -33,4 +35,14 @@ Angular recognizes the directive's role in the validation process because the di
  a provider with an extensible collection of validators.
 
 The directive class then implements the Validator interface, so that it can easily integrate with Angular forms.
+*/
+
+/*
+NG_VALIDATORS CONST:
+An InjectionToken for registering additional synchronous validators used with AbstractControls.
+const NG_VALIDATORS: InjectionToken<(Function | Validator)[]>;
+
+InjectionToken CLASS:
+Creates a token that can be used in a DI Provider.
+Use an InjectionToken whenever the type you are injecting is not reified (does not have a runtime representation) such as when injecting an interface, callable type, array or parameterized type.
 */

@@ -12,6 +12,7 @@ import { HighlightDirective } from '@shared/directive/highlight.directive';
 import { AgeRangeValidatorDirective } from '@validator/directive/age-range-validator.directive';
 import { EmailDomainValidatorDirective } from '@validator/directive/email-domain-validator.directive';
 import { PasswordCheckValidatorDirective } from '@validator/directive/password-check-validator.directive';
+import { LoginAsyncValidatorDirective } from '@validator/directive/login-async-validator.directive';
 
 // Widget feature modules
 @NgModule({
@@ -22,7 +23,8 @@ import { PasswordCheckValidatorDirective } from '@validator/directive/password-c
     HighlightDirective,
     AgeRangeValidatorDirective,
     EmailDomainValidatorDirective,
-    PasswordCheckValidatorDirective
+    PasswordCheckValidatorDirective,
+    LoginAsyncValidatorDirective
   ],
   imports: [
     CommonModule
@@ -34,7 +36,8 @@ import { PasswordCheckValidatorDirective } from '@validator/directive/password-c
     HighlightDirective,
     AgeRangeValidatorDirective,
     EmailDomainValidatorDirective,
-    PasswordCheckValidatorDirective
+    PasswordCheckValidatorDirective,
+    LoginAsyncValidatorDirective
   ]
 })
 export class SharedModule {

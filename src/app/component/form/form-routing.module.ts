@@ -8,6 +8,7 @@ import { ModelDrivenFormNestedComponent } from '@component/form/model-driven-for
 import { ModelDrivenValidatorComponent } from '@component/form/model-driven-validator/model-driven-validator.component';
 import { ModelDrivenAsyncValidatorComponent } from '@component/form/model-driven-async-validator/model-driven-async-validator.component';
 import { TemplateDrivenValidatorComponent } from '@component/form/template-driven-validator/template-driven-validator.component';
+import { TemplateDrivenAsyncValidatorComponent } from '@component/form/template-driven-async-validator/template-driven-async-validator.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'modelDrivenFormNested', component: ModelDrivenFormNestedComponent },
   { path: 'modelDrivenValidator', component: ModelDrivenValidatorComponent },
   { path: 'modelDrivenAsyncValidator', component: ModelDrivenAsyncValidatorComponent },
-  { path: 'templateDrivenValidator', component: TemplateDrivenValidatorComponent }
+  { path: 'templateDrivenValidator', component: TemplateDrivenValidatorComponent },
+  { path: 'templateDrivenAsyncValidator', component: TemplateDrivenAsyncValidatorComponent }
 ];
 
 @NgModule({
