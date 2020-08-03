@@ -9,6 +9,7 @@ import { SharedModule } from '@shared/shared.module';
 import { InMemoryCourseService } from './service/api/in-memory-course.service';
 
 import { HomeComponent } from '@component/course/home/home.component';
+import { CourseService } from './service/course.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { HomeComponent } from '@component/course/home/home.component';
     CourseRoutingModule,
     SharedModule
   ],
-  providers: [InMemoryCourseService]
+  providers: [InMemoryCourseService, CourseService]
 })
 export class CourseModule { }
 

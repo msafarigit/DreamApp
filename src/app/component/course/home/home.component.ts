@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { throwError } from 'rxjs';
-import { catchError, finalize , map } from 'rxjs/operators';
+
+import { CourseService } from '../service/course.service';
 
 @Component({
   selector: 'app-home',
@@ -10,13 +9,10 @@ import { catchError, finalize , map } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private courseService: CourseService) { }
 
   ngOnInit(): void {
-    this.httpClient.get('/api/courses')
-      .pipe(
-        map((response: Response) => console.log(response)),
-        finalize(() => console.log('get courses completed'))).subscribe(() => console.log('end'));
+    this.courseService.getCourses().subscribe(() => console.log('subscribe'));
   }
 
 }
