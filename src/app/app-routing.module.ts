@@ -4,6 +4,7 @@ import { Routes, RouterModule, PreloadAllModules, NoPreloading, ExtraOptions } f
 import { DelayPreloadingStrategy } from '@service/core/delay-preloading-strategy.service';
 
 import { ModalComponent } from '@component/modal/modal.component';
+import { TemplateReferenceVariableComponent } from '@component/template-reference-variable/template-reference-variable.component';
 import { DatepickerJalaliComponent } from '@component/datepicker-jalali/datepicker-jalali.component';
 import { PipeExampleComponent } from '@component/pipe-example/pipe-example.component';
 import { AsyncPipeExampleComponent } from '@component/async-pipe-example/async-pipe-example.component';
@@ -21,6 +22,7 @@ const routerOptions: ExtraOptions = {
 // router order provides priority of path!
 const router: Routes = [
   { path: 'modal', component: ModalComponent },
+  { path: 'templateReferenceVariable', component: TemplateReferenceVariableComponent },
   { path: 'datepicker-jalali', component: DatepickerJalaliComponent },
   {
     path: 'directive',
