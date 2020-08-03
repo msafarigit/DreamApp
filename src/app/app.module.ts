@@ -21,10 +21,6 @@ import { SqrtPipe } from '@pipe/sqrt.pipe';
 import { FilterPipe } from '@pipe/filter.pipe';
 // #endregion
 
-// #region service
-import { AssessmentService } from '@service/assessment.service';
-// #endregion
-
 import { ModalComponent } from '@component/modal/modal.component';
 import { TemplateReferenceVariableComponent } from '@component/template-reference-variable/template-reference-variable.component';
 import { DatepickerJalaliComponent } from '@component/datepicker-jalali/datepicker-jalali.component';
@@ -70,7 +66,7 @@ import { NotFoundComponent } from '@component/not-found/not-found.component';
     SharedModule.forRoot()
 
   ],
-  providers: [AssessmentService],
+  providers: [], // Using the @Injectable() providedIn property is preferable to the @NgModule() providers
   bootstrap: [AppComponent]
 })
 export class AppModule { }

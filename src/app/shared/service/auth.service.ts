@@ -3,11 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError, of, from } from 'rxjs';
 import { catchError, retry, tap, delay, map, filter } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) { }
 
   // gotoPage(page: string, preserveParams = true) {
   //   const navigationExtras: NavigationExtras = {
