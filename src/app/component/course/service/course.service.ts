@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { catchError, finalize , map } from 'rxjs/operators';
 
@@ -19,9 +19,9 @@ export class CourseService {
   constructor(private httpClient: HttpClient) { }
 
   getCourses() {
-    return this.httpClient.get('/api/courses')
+    return this.httpClient.get('/api/courses', { observe: 'response' })
       .pipe(
-        map((response: Response) => console.log(response)),
+        map((response: HttpResponse<Course[]>) => response.body),
         catchError(this.handleError),
         finalize(() => console.log('get courses completed')));
   }
@@ -33,9 +33,7 @@ export class CourseService {
     } else {
       // The backend returned an unsuccessful response code.
       // The response body may contain clues as to what went wrong.
-      console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was: ${error}`);
+      console.error(`Backend returned code ${error.status}, ` + `body was: ${error}`);
     }
     // Return an observable with a user-facing error message.
     return throwError(

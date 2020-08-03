@@ -1,1 +1,21 @@
-<p>course home works!</p>
+<div class="container">
+  <app-divider>
+    Course List:
+  </app-divider>
+
+  <ul class="list-group list-group-flush">
+    <li *ngFor="let course of filteredCourses" class="list-group-item">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <span class="card-subtitle mb-2 text-muted">{{course.id}}.</span>
+            {{course.name}}
+            <button type="button" class="btn btn-nice float-right" [routerLink]="['Course', {id: course.id}]">
+              <i class="fa fa-edit"></i>
+            </button>
+          </h5>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
