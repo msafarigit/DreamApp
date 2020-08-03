@@ -9,6 +9,17 @@
   <div id="navbar-content" [ngbCollapse]="navbarCollapsed" class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown" ngbDropdown>
+        <a id="dropdown-main" class="nav-link dropdown-toggle" ngbDropdownToggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-video-camera"></i> Main
+        </a>
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown-main">
+        <a class="dropdown-item" routerLink="/interaction"><i class="fa fa-share-alt"></i>Interaction</a>
+        <a class="dropdown-item" routerLink="/templateReferenceVariable">Reference Variable</a>
+        <a class="dropdown-item" routerLink="/style">Style</a>
+        <a class="dropdown-item" routerLink="/lifecycle">Lifecycle</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" ngbDropdown>
         <a id="dropdown-first" class="nav-link dropdown-toggle" ngbDropdownToggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-cubes"></i> Ng-bootstrap
         </a>
@@ -18,20 +29,9 @@
         </div>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/interaction" (click)="navbarCollapsed = true">
-          <i class="fa fa-share-alt"></i>Interaction
-        </a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/templateReferenceVariable" (click)="navbarCollapsed = true">Reference Variable</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/practice" (click)="navbarCollapsed = true">
           <i class="fa fa-sliders"></i>Practice
         </a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/style" (click)="navbarCollapsed = true">Style</a>
       </li>
       <li class="nav-item dropdown" ngbDropdown>
         <a id="dropdown-first" class="nav-link dropdown-toggle" ngbDropdownToggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -44,9 +44,6 @@
           <a class="dropdown-item" routerLink="/directive/custom">Custom</a>
           <a class="dropdown-item" routerLink="/directive/ng-container">NgContainer</a>
         </div>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/lifecycle" (click)="navbarCollapsed = true">Lifecycle</a>
       </li>
       <li class="nav-item dropdown" ngbDropdown>
         <a id="dropdown-second" class="nav-link dropdown-toggle" ngbDropdownToggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -81,6 +78,14 @@
           <a class="dropdown-item" routerLink="/rxjs/scheduler">Scheduler</a>
           <a class="dropdown-item" routerLink="/rxjs/asyncScheduler">Async Scheduler</a>
           <a class="dropdown-item" routerLink="/rxjs/asapScheduler">Asap Scheduler</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" ngbDropdown>
+        <a id="dropdown-course" class="nav-link dropdown-toggle" ngbDropdownToggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-cogs"></i> Course
+        </a>
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown-course">
+          <a class="dropdown-item" routerLink="/course">Home</a>
         </div>
       </li>
     </ul>

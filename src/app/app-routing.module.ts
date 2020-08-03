@@ -56,6 +56,11 @@ const router: Routes = [
     loadChildren: () => import('@component/rxjs/rxjs.module').then(m => m.RxjsModule),
     data: { preload: false }
   },
+  {
+    path: 'course',
+    loadChildren: () => import('@component/course/course.module').then(m => m.CourseModule),
+    data: { preload: false }
+  },
   { path: '**', component: NotFoundComponent },
 ];
 
