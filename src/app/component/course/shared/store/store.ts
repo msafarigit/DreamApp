@@ -1,8 +1,11 @@
-import { createStore, Action } from 'redux';
+import { createStore, Action, applyMiddleware, compose, StoreEnhancer } from 'redux';
 import { reducer } from './reducer';
 import { IAppState } from './IAppState';
 
-export const store = createStore<IAppState, Action<any>, object, object>(reducer);
+// after install redux dev tools on browser
+const devToolsExtension: StoreEnhancer = window['devToolsExtension'] ? window['devToolsExtension']() : (f: any) => f;
+
+export const store = createStore<IAppState, Action<any>, object, object>(reducer, compose(devToolsExtension) as StoreEnhancer);
 
 
 /*
