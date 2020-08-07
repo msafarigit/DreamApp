@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../service/course.service';
 import { Course } from '../model/course';
 import { store } from '../shared/store/store';
+import { filterCourses } from '../shared/store/actions';
 
 @Component({
   selector: 'app-home',
@@ -10,11 +11,10 @@ import { store } from '../shared/store/store';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  courses: Course[];
   filteredCourses: Course[];
 
   constructor(private courseService: CourseService) {
-    this.filteredCourses = this.courses;
+    this.filteredCourses = [];
   }
 
   // before use redux
@@ -35,7 +35,10 @@ export class HomeComponent implements OnInit {
 
   updateFromState() {
     const allState = store.getState();
-    this.courses = allState.courses;
-    this.filteredCourses = allState.courses;
+    this.filteredCourses = allState.filteredCourses;
+  }
+
+  filter(searchText: string) {
+    store.dispatch(filterCourses(searchText));
   }
 }

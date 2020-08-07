@@ -2,7 +2,13 @@
   <app-divider>
     Course List:
   </app-divider>
-
+  <form class="ml-4 mr-4">
+    <div class="form-group">
+      <label for="filter">Filter</label>
+      <input class="form-control" id="filter" aria-describedby="filterHelp" placeholder="Filter ..." #searchText (change)="filter(searchText.value)" />
+      <small id="filterHelp" class="form-text text-muted">you can filter by all text formats.</small>
+    </div>
+  </form>
   <ul class="list-group list-group-flush">
     <li *ngFor="let course of filteredCourses" class="list-group-item">
       <div class="card">
