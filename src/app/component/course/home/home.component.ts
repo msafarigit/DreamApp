@@ -29,6 +29,8 @@ export class HomeComponent implements OnInit {
     // before use redux
     // this.getCourses();
     this.updateFromState();
+
+    store.subscribe(() => this.updateFromState());
   }
 
   updateFromState() {
@@ -36,5 +38,4 @@ export class HomeComponent implements OnInit {
     this.courses = allState.courses;
     this.filteredCourses = allState.courses;
   }
-
 }

@@ -90,3 +90,5 @@ RxJS
  In fact there is an effort to create a library that models human-computer interaction as interdependent observables.
  Does it make sense to use Redux together with RxJS? Sure! They work great together.
 */
+
+// add redux dev tools from https://github.com/zalmoxisus/redux-devtools-extension
