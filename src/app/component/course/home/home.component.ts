@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { CourseService } from '../service/course.service';
 import { Course } from '../model/course';
-import { store } from '../shared/store/store';
-import { filterCourses } from '../shared/store/actions';
+import { store, filterCourses } from '../shared/store';
 
 @Component({
   selector: 'app-home',
