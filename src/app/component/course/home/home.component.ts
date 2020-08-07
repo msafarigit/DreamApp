@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { CourseService } from '../service/course.service';
 import { Course } from '../model/course';
+import { store } from '../shared/store/store';
 
 @Component({
   selector: 'app-home',
@@ -16,15 +17,24 @@ export class HomeComponent implements OnInit {
     this.filteredCourses = this.courses;
   }
 
-  getCourses() {
-    this.courseService.getCourses()
-      .subscribe(courses => {
-        this.courses = this.filteredCourses = courses;
-      });
-  }
+  // before use redux
+  // getCourses() {
+  //   this.courseService.getCourses()
+  //     .subscribe(courses => {
+  //       this.courses = this.filteredCourses = courses;
+  //     });
+  // }
 
   ngOnInit(): void {
-    this.getCourses();
+    // before use redux
+    // this.getCourses();
+    this.updateFromState();
+  }
+
+  updateFromState() {
+    const allState = store.getState();
+    this.courses = allState.courses;
+    this.filteredCourses = allState.courses;
   }
 
 }
