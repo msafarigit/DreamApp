@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { NgRedux, select } from '@angular-redux/store';
 
 import { CourseService } from '../service/course.service';
 import { Course } from '../model/course';
-import { store, filterCourses } from '../shared/store';
+import { store, filterCourses, IAppState } from '../shared/store';
 
 @Component({
   selector: 'app-home',
@@ -10,34 +12,45 @@ import { store, filterCourses } from '../shared/store';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  filteredCourses: Course[];
 
-  constructor(private courseService: CourseService) {
-    this.filteredCourses = [];
-  }
+  // 2-before use NgRedux
+  // filteredCourses: Course[];
+  // constructor(private courseService: CourseService) {
+  //   this.filteredCourses = [];
+  // }
 
-  // before use redux
+  @select('filteredCourses') filteredCourses$: Observable<Course[]>;
+
+  constructor(private ngRedux: NgRedux<IAppState>) { }
+
+  // 1-before use redux
   // getCourses() {
   //   this.courseService.getCourses()
-  //     .subscribe(courses => {
-  //       this.courses = this.filteredCourses = courses;
-  //     });
+  //      .subscribe(courses => {
+  //        this.courses = this.filteredCourses = courses;
+  //      });
   // }
 
   ngOnInit(): void {
-    // before use redux
+    // 1-before use redux
     // this.getCourses();
-    this.updateFromState();
 
-    store.subscribe(() => this.updateFromState());
+    // 2-before use NgRedux
+    // this.updateFromState();
+    // store.subscribe(() => this.updateFromState());
   }
 
-  updateFromState() {
-    const allState = store.getState();
-    this.filteredCourses = allState.filteredCourses;
-  }
+  // 2-before use NgRedux
+  // updateFromState() {
+  //   const allState = store.getState();
+  //   this.filteredCourses = allState.filteredCourses;
+  // }
 
   filter(searchText: string) {
     store.dispatch(filterCourses(searchText));
   }
 }
+
+/*
+Use the @select decorator to access your store state, and .dispatch() to dispatch actions
+*/

@@ -10,7 +10,8 @@
     </div>
   </form>
   <ul class="list-group list-group-flush">
-    <li *ngFor="let course of filteredCourses" class="list-group-item">
+    <!-- 2-before use NgRedux <li *ngFor="let course of filteredCourses" class="list-group-item"> -->
+    <li *ngFor="let course of filteredCourses$ |async" class="list-group-item">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">

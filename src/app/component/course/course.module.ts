@@ -2,6 +2,7 @@ import { NgModule, isDevMode } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { NgReduxModule, NgRedux } from '@angular-redux/store';
 
 import { CourseRoutingModule } from './course-routing.module';
 import { SharedModule } from '@shared/shared.module';
@@ -10,6 +11,7 @@ import { InMemoryCourseService } from './service/api/in-memory-course.service';
 
 import { HomeComponent } from '@component/course/home/home.component';
 import { CourseService } from './service/course.service';
+import { store, IAppState } from './shared/store';
 
 @NgModule({
   declarations: [
@@ -21,11 +23,16 @@ import { CourseService } from './service/course.service';
     HttpClientModule,
     InMemoryWebApiModule.forRoot(InMemoryCourseService, { delay: 500 }),
     CourseRoutingModule,
-    SharedModule
+    SharedModule,
+    NgReduxModule
   ],
   providers: [InMemoryCourseService, CourseService]
 })
-export class CourseModule { }
+export class CourseModule {
+  constructor(ngRedux: NgRedux<IAppState>) {
+    ngRedux.provideStore(store);
+  }
+}
 
 /*
  InMemoryWebApiModule.forRoot(InMemoryCourseService, { delay: 500 })
@@ -40,4 +47,20 @@ Request evaluation order:
     4-If not but the Config.passThruUnknownUrl flag is true, try to pass the request along to a real XHR.
     5-Return a 404.
 
+*/
+
+/*
+ What is @angular-redux?
+  Our approach helps you by bridging the gap with some of Angular's advanced features, including:
+    - Change processing with RxJS observables.
+    - Compile time optimizations with NgModule and Ahead-of-Time compilation.
+    - Integration with the Angular change detector.
+
+ Import the NgReduxModule class and add it to your application module as an import.
+ Once you've done this, you'll be able to inject NgRedux into your Angular components. In your top-level app module,
+ you can configure your Redux store with reducers, initial state, and optionally middlewares and enhancers as you would in Redux directly.
+
+In-Depth Usage:
+ @angular-redux/store uses an approach to redux based on RxJS Observables to select and transform data on its way out of the store
+ and into your UI or side-effect handlers. Observables are an efficient analogue to reselect for the RxJS-heavy Angular world.
 */
