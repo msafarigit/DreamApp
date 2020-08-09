@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NgRedux, select } from '@angular-redux/store';
 
-import { CourseService } from '../service/course.service';
+import { filterCourses } from '../course.action';
 import { Course } from '../model/course';
-import { store, filterCourses, IAppState } from '../shared/store';
+import { store, IAppState } from '../shared/store';
 
 @Component({
   selector: 'app-home',
