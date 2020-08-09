@@ -52,8 +52,24 @@ export class HomeComponent implements OnInit {
     // store.dispatch(filterCourses(searchText));
     this.courseAction.filterCourses(searchText);
   }
+
+  // https://github.com/substack/deep-freeze
+  // https://github.com/immutable-js/immutable-js
+  deepFreeze(obj) {
+    Object.freeze(obj); // root props of object freezed!
+
+    Object.getOwnPropertyNames(obj).forEach(prop => {
+      if (obj.hasOwnProperty(prop) && obj[prop] && typeof obj[prop] === 'object' && !Object.isFrozen(obj[prop])) {
+        this.deepFreeze(obj[prop]);
+      }
+    });
+
+    return obj;
+  }
 }
 
 /*
 Use the @select decorator to access your store state, and .dispatch() to dispatch actions
 */
+
+
