@@ -1,12 +1,13 @@
 import { createStore, Action, applyMiddleware, compose, StoreEnhancer } from 'redux';
 import { reducer } from './reducer';
 import { IAppState } from './IAppState';
+import freezeState from './freezeState';
 
 // after install redux dev tools on browser
 // const devToolsExtension: StoreEnhancer = window['devToolsExtension'] ? window['devToolsExtension']() : (f: any) => f;
 const devToolsExtension: StoreEnhancer = window['__REDUX_DEVTOOLS_EXTENSION__'] ? window['__REDUX_DEVTOOLS_EXTENSION__']() : (f: any) => f;
 
-export const store = createStore<IAppState, Action<any>, object, object>(reducer, compose(devToolsExtension) as StoreEnhancer);
+export const store = createStore<IAppState, Action<any>, object, object>(reducer, compose(applyMiddleware(freezeState) , devToolsExtension) as StoreEnhancer);
 
 
 /*
