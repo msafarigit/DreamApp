@@ -1,22 +1,8 @@
-import { FILTER_COURSES } from '../../course.action';
+import { FILTER_COURSES, SUCCESS_REQUEST_COURSES } from '../../course.action';
 import { Course } from '../../model/course';
 import { IAppState } from './IAppState';
 
-const courses = [
-  {
-    id: 1,
-    name: 'Building Apps with React',
-    topic: 'ReactJS'
-  }, {
-    id: 2,
-    name: 'Building Apps with Angular',
-    topic: 'AngularJS'
-  }, {
-    id: 3,
-    name: 'Building Apps with Angular and Redux',
-    topic: 'Angular and Redux'
-  }
-];
+const courses = [];
 
 const initiateState: IAppState = {
   courses,
@@ -29,10 +15,19 @@ function filterCourses(state: IAppState, action): IAppState {
   });
 }
 
+function storeCourses(state: IAppState, action): IAppState {
+  return Object.assign({}, state, {
+    courses: action.courses,
+    filteredCourses: action.courses
+  });
+}
+
 export function reducer(state: IAppState = initiateState, action) {
   switch (action.type) {
     case FILTER_COURSES:
       return filterCourses(state, action);
+    case SUCCESS_REQUEST_COURSES:
+      return storeCourses(state, action);
     default:
       return state;
   }

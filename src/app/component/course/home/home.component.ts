@@ -38,6 +38,8 @@ export class HomeComponent implements OnInit {
     // 2-before use NgRedux
     // this.updateFromState();
     // store.subscribe(() => this.updateFromState());
+
+    this.courseAction.getCourses();
   }
 
   // 2-before use NgRedux
