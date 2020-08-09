@@ -1,4 +1,4 @@
-import { FILTER_COURSES } from './actions';
+import { FILTER_COURSES } from '../../course.action';
 import { Course } from '../../model/course';
 import { IAppState } from './IAppState';
 

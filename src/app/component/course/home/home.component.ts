@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NgRedux, select } from '@angular-redux/store';
 
-import { filterCourses } from '../course.action';
+import { CourseAction } from '../course.action';
 import { Course } from '../model/course';
-import { store, IAppState } from '../shared/store';
+import { IAppState } from '../shared/store';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
 
   @select('filteredCourses') filteredCourses$: Observable<Course[]>;
 
-  constructor(private ngRedux: NgRedux<IAppState>) { }
+  constructor(private ngRedux: NgRedux<IAppState>, private courseAction: CourseAction) { }
 
   // 1-before use redux
   // getCourses() {
@@ -47,7 +47,8 @@ export class HomeComponent implements OnInit {
   // }
 
   filter(searchText: string) {
-    store.dispatch(filterCourses(searchText));
+    // store.dispatch(filterCourses(searchText));
+    this.courseAction.filterCourses(searchText);
   }
 }
 

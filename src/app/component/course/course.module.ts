@@ -11,6 +11,7 @@ import { InMemoryCourseService } from './service/api/in-memory-course.service';
 
 import { HomeComponent } from '@component/course/home/home.component';
 import { CourseService } from './service/course.service';
+import { CourseAction } from './course.action';
 import { store, IAppState } from './shared/store';
 
 @NgModule({
@@ -26,7 +27,7 @@ import { store, IAppState } from './shared/store';
     SharedModule,
     NgReduxModule
   ],
-  providers: [InMemoryCourseService, CourseService]
+  providers: [InMemoryCourseService, CourseService, CourseAction]
 })
 export class CourseModule {
   constructor(ngRedux: NgRedux<IAppState>) {
