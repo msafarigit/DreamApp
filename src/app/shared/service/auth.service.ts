@@ -194,3 +194,13 @@ getTextFile(filename: string) {
 HttpClient.get() returns a string rather than the default JSON because of the responseType option.
 The RxJS tap operator (as in "wiretap") lets the code inspect both success and error values passing through the observable without disturbing them.
 */
+
+/* Always subscribe!
+ An HttpClient method does not begin its HTTP request until you call subscribe() on the observable returned by that method.
+ This is true for all HttpClient methods. The AsyncPipe subscribes (and unsubscribes) for you automatically.
+ All observables returned from HttpClient methods are cold by design. Execution of the HTTP request is deferred,
+ allowing you to extend the observable with additional operations such as tap and catchError before anything actually happens.
+ Calling subscribe(...) triggers execution of the observable and causes HttpClient to compose and send the HTTP request to the server.
+ You can think of these observables as blueprints for actual HTTP requests.
+ In fact, each subscribe() initiates a separate, independent execution of the observable. Subscribing twice results in two HTTP requests.
+*/
