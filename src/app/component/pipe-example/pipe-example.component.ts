@@ -24,7 +24,7 @@ export class PipeExampleComponent implements OnInit {
   devLName = '';
   titleFilter = 'Mr.';
 
-  // tslint:disable-next-line: variable-name
+  // eslint-disable-next-line @typescript-eslint/naming-convention, no-underscore-dangle, id-blacklist, id-match
   _items = [
     { title: 'Mr.', first: 'Saeid', last: 'Rastak' },
     { title: 'Mr.', first: 'Hamid', last: 'Tamana' },

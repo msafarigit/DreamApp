@@ -17,7 +17,7 @@ export class ModelDrivenValidatorComponent implements OnInit {
   @ViewChild('form', { static: true }) form: NgForm;
 
   get password() {
-    // tslint:disable-next-line: no-string-literal
+    // eslint-disable-next-line @typescript-eslint/dot-notation
     return this.validationForm.controls['password'];
   }
 

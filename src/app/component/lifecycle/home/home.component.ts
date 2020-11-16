@@ -3,7 +3,7 @@ import { Component, OnInit, OnChanges, SimpleChanges, DoCheck, AfterContentInit,
 import { ChildComponent } from '@component/lifecycle/child/child.component';
 import { PERSONS, Person } from '@model/Person';
 
-// tslint:disable-next-line: no-conflicting-lifecycle
+// eslint-disable-next-line @angular-eslint/no-conflicting-lifecycle
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

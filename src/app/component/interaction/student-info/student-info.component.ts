@@ -19,7 +19,7 @@ export class StudentInfoComponent implements OnInit {
     return this.student;
   }
 
-  // tslint:disable-next-line: no-output-on-prefix
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output()
   onVote: EventEmitter<boolean>;
 

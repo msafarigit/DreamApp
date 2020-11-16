@@ -1,7 +1,7 @@
 import { Component, OnInit, OnChanges, SimpleChanges, Input, DoCheck } from '@angular/core';
 import { Person } from '@model/Person';
 
-// tslint:disable-next-line: no-conflicting-lifecycle
+// eslint-disable-next-line @angular-eslint/no-conflicting-lifecycle
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',

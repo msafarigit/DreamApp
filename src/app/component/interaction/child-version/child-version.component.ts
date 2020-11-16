@@ -30,7 +30,7 @@ export class ChildVersionComponent implements OnInit, OnChanges {
   ngOnChanges(changes: { [propKey: string]: SimpleChange }): void {
     const log: string[] = [];
 
-    // tslint:disable-next-line: forin
+    // eslint-disable-next-line guard-for-in
     for (const change in changes) {
       const changedInput = changes[change];
       const to = JSON.stringify(changedInput.currentValue);

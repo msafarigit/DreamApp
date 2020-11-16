@@ -41,7 +41,7 @@ export class CountdownViewChildParentComponent implements OnInit, AfterViewInit 
   }
 
   start() {
-    // tslint:disable-next-line: no-debugger
+    // eslint-disable-next-line no-debugger
     debugger;
     // this.timer.start();
     this.timerComponent.start();
