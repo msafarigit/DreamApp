@@ -8,7 +8,7 @@
   files, include and exclude from the inheriting config file overwrite those from the base config file.
 */
 {
-  "extends": "./tsconfig.base.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
     "types": []
