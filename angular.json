@@ -48,8 +48,7 @@
               "node_modules/ngx-toastr/toastr.css",
               "src/styles.scss"
             ],
-            "scripts": [
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -130,6 +129,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "NgDreamApp"
+    }
+  },
+  "defaultProject": "NgDreamApp",
+  "cli": {
+    "analytics": "5032eb2a-de5f-4545-b87c-f6a6d74dbb46"
+  }
 }
