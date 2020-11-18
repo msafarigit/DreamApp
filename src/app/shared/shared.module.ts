@@ -8,6 +8,7 @@ import { DividerComponent } from './divider/divider.component';
 import { TimesDirective } from '@shared/directive/times.directive';
 import { ClassDirective } from '@shared/directive/class.directive';
 import { HighlightDirective } from '@shared/directive/highlight.directive';
+import { NgForTrackByFieldDirective } from './directive/track-by-field.directive';
 
 import { AgeRangeValidatorDirective } from '@validator/directive/age-range-validator.directive';
 import { EmailDomainValidatorDirective } from '@validator/directive/email-domain-validator.directive';
@@ -21,6 +22,7 @@ import { LoginAsyncValidatorDirective } from '@validator/directive/login-async-v
     TimesDirective,
     ClassDirective,
     HighlightDirective,
+    NgForTrackByFieldDirective,
     AgeRangeValidatorDirective,
     EmailDomainValidatorDirective,
     PasswordCheckValidatorDirective,
@@ -34,6 +36,7 @@ import { LoginAsyncValidatorDirective } from '@validator/directive/login-async-v
     TimesDirective,
     ClassDirective,
     HighlightDirective,
+    NgForTrackByFieldDirective,
     AgeRangeValidatorDirective,
     EmailDomainValidatorDirective,
     PasswordCheckValidatorDirective,

@@ -1,0 +1,11 @@
+<div class="container">
+  <ng-container *ngFor="let hero of heroes; trackBy: trackById">
+    {{hero.name}}
+  </ng-container>
+
+  <hr />
+
+  <ng-container *ngFor="let hero of heroes; trackByField: 'id'">
+    {{hero.name}}
+  </ng-container>
+</div>

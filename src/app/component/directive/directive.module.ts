@@ -10,6 +10,7 @@ import { StructuralDirectiveComponent } from '@component/directive/structural-di
 import { AttributeDirectiveComponent } from '@component/directive/attribute-directive/attribute-directive.component';
 import { CustomDirectiveComponent } from '@component/directive/custom-directive/custom-directive.component';
 import { NgContainerExampleComponent } from '@component/directive/ng-container-example/ng-container-example.component';
+import { NgForExtendComponent } from './ng-for-extend/ng-for-extend.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { NgContainerExampleComponent } from '@component/directive/ng-container-e
     StructuralDirectiveComponent,
     AttributeDirectiveComponent,
     CustomDirectiveComponent,
-    NgContainerExampleComponent
+    NgContainerExampleComponent,
+    NgForExtendComponent
   ],
   imports: [
     CommonModule,
