@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-blue">
   <a class="navbar-brand" [routerLink]="['/']" (click)="navbarCollapsed = true">Todo Application</a>
+  <!--Attr binding: [attr.aria-expanded]-->
   <button class="navbar-toggler navbar-toggler-right" type="button" (click)="navbarCollapsed = !navbarCollapsed"
     [attr.aria-expanded]="!navbarCollapsed" aria-controls="navbar-content" data-target="#navbar-content"
     aria-label="Toggle navigation">

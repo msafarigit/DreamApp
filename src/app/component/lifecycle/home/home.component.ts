@@ -1,3 +1,4 @@
+/* eslint-disable @angular-eslint/no-conflicting-lifecycle */
 import { Component, OnInit, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, ViewChild } from '@angular/core';
 
 import { ChildComponent } from '@component/lifecycle/child/child.component';
@@ -60,29 +61,29 @@ export class HomeComponent implements OnInit, OnChanges, DoCheck, AfterContentIn
 }
 
 /*
-// ngOnChanges(): Respond when Angular (re)sets data-bound input properties. The method receives a SimpleChanges object of current and previous property values.
-//                Called before ngOnInit() and whenever one or more data-bound input properties change.
+ ngOnChanges(): Respond when Angular (re)sets data-bound input properties. The method receives a SimpleChanges object of current and previous property values.
+                Called before ngOnInit() and whenever one or more data-bound input properties change.
 
-// ngOnInit(): Initialize the directive/component after Angular first displays the data-bound properties and sets the directive/component's input properties.
-//             Called once, after the first ngOnChanges().
+ ngOnInit(): Initialize the directive/component after Angular first displays the data-bound properties and sets the directive/component's input properties.
+             Called once, after the first ngOnChanges().
 
-// ngDoCheck(): Detect and act upon changes that Angular can't or won't detect on its own.
-//              Called during every change detection run, immediately after ngOnChanges() and ngOnInit().
+ ngDoCheck(): Detect and act upon changes that Angular can't or won't detect on its own.
+              Called during every change detection run, immediately after ngOnChanges() and ngOnInit().
 
-// ngAfterContentInit(): Respond after Angular projects external content into the component's view / the view that a directive is in.
-//                       Called once after the first ngDoCheck().
+ ngAfterContentInit(): Respond after Angular projects external content into the component's view / the view that a directive is in.
+                       Called once after the first ngDoCheck().
 
-// ngAfterContentChecked(): Respond after Angular checks the content projected into the directive/component.
-//                          Called after the ngAfterContentInit() and every subsequent ngDoCheck().
+ ngAfterContentChecked(): Respond after Angular checks the content projected into the directive/component.
+                          Called after the ngAfterContentInit() and every subsequent ngDoCheck().
 
-// ngAfterViewInit(): Respond after Angular initializes the component's views and child views / the view that a directive is in.
-//                    Called once after the first ngAfterContentChecked().
+ ngAfterViewInit(): Respond after Angular initializes the component's views and child views / the view that a directive is in.
+                    Called once after the first ngAfterContentChecked().
 
-// ngAfterViewChecked(): Respond after Angular checks the component's views and child views / the view that a directive is in.
-//                       Called after the ngAfterViewInit() and every subsequent ngAfterContentChecked().
+ ngAfterViewChecked(): Respond after Angular checks the component's views and child views / the view that a directive is in.
+                       Called after the ngAfterViewInit() and every subsequent ngAfterContentChecked().
 
-// ngOnDestroy(): Cleanup just before Angular destroys the directive/component. Unsubscribe Observables and detach event handlers to avoid memory leaks.
-//                Called just before Angular destroys the directive/component.
+ ngOnDestroy(): Cleanup just before Angular destroys the directive/component. Unsubscribe Observables and detach event handlers to avoid memory leaks.
+                Called just before Angular destroys the directive/component.
 */
 
 /*
@@ -98,8 +99,8 @@ Use the ngOnInit() method to perform the following initialization tasks.
  In Flaw: Constructor does Real Work, Misko Hevery, Angular team lead, explains why you should avoid complex constructor logic.
 
 2- Set up the component after Angular sets the input properties. Constructors should do no more than set the initial local variables to simple values.
- Keep in mind that a directive's data-bound input properties are not set until after construction. If you need to initialize the directive based on those properties,
- set them when ngOnInit() runs.
+ Keep in mind that a directive's data-bound input properties are not set until after construction.
+ If you need to initialize the directive based on those properties, set them when ngOnInit() runs.
 The ngOnChanges() method is your first opportunity to access those properties.
 Angular calls ngOnChanges() before ngOnInit(), but also many times after that. It only calls ngOnInit() once.
 */

@@ -12,12 +12,12 @@ import { StyleExampleComponent } from '@component/style-example/style-example.co
 import { NotFoundComponent } from '@component/not-found/not-found.component';
 
 const routerOptions: ExtraOptions = {
-    scrollPositionRestoration: 'enabled',
-    anchorScrolling: 'enabled',
-    enableTracing: false, // <-- debugging purposes only, console log
-    // scrollOffset: [0, 64],
-    preloadingStrategy: DelayPreloadingStrategy,
-    relativeLinkResolution: 'legacy'
+  scrollPositionRestoration: 'enabled',
+  anchorScrolling: 'enabled',
+  enableTracing: false, // <-- debugging purposes only, console log
+  // scrollOffset: [0, 64],
+  preloadingStrategy: DelayPreloadingStrategy,
+  relativeLinkResolution: 'legacy'
 };
 
 // router order provides priority of path!
@@ -32,7 +32,7 @@ const router: Routes = [
   },
   {
     path: 'lifecycle',
-    loadChildren: () => import('@component/lifecycle/lifecycle.module').then(m=> m.LifecycleModule)
+    loadChildren: () => import('@component/lifecycle/lifecycle.module').then(m => m.LifecycleModule)
   },
   {
     path: 'interaction',
