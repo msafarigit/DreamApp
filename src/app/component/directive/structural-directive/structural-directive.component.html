@@ -26,7 +26,7 @@
     </div>
 
     <div class="col">
-      <h2 id="ng-container">&lt;ng-container&gt;</h2>
+      <h4 id="ng-container">&lt;ng-container&gt;</h4>
       <h4>*ngIf with a &lt;ng-container&gt;</h4>
       <button (click)="hero = hero ? null : heroes[0]">Toggle hero</button>
       <p>
@@ -76,7 +76,7 @@
     </div>
 
     <div class="col">
-      <h4>select with ng-container and ng-template</h4>
+      <h4>select with ng-container and ng-template:</h4>
       <button (click)="color = color ? null : 'yello'">Toggle hero</button>
 
       <select>
@@ -93,6 +93,16 @@
         <option>Oops</option>
       </ng-template>
 
+      <hr />
+
+      <h5>select with ng-container and *ngTemplateOutlet:</h5>
+      <ng-container *ngTemplateOutlet="templateOutlet; context:{ $implicit: 'mahdi safari', age: 1 }"></ng-container>
+
+      <ng-template #templateOutlet let-data let-i="age">
+        <h5>{{data}}</h5>
+        <h5>{{i}}</h5>
+      </ng-template>
     </div>
   </div>
 </div>
+
