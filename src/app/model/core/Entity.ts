@@ -10,7 +10,7 @@ export class Entity implements IEntity {
 
   protected constructor(id: number) { this.id = id; }
 
-  getID() : number {
+  getID(): number {
     return this.id;
   }
 }

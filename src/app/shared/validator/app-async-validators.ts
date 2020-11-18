@@ -5,12 +5,9 @@ import { map } from 'rxjs/operators';
 import { AuthService } from '@shared/service/auth.service';
 
 export class AppAsyncValidators {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   static EmailNotTakenValidator(authService: AuthService): AsyncValidatorFn {
-    return (control:AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> => {
-      return authService.checkEmail(control.value).pipe(map(res => {
-        return res ? null : { emailTaken: true };
-      }));
-    }
+    return (control: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> => authService.checkEmail(control.value).pipe(map(res => res ? null : { emailTaken: true }));
   }
 }
 

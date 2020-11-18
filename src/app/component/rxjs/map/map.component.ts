@@ -111,21 +111,21 @@ export class MapComponent implements OnInit {
   // If the previous filter changes are still being processed while a new change is already made,
   // it will cancel the previous subscription and start a new subscription on the latest change.
   otherSwitchMap() {
-    const filters = ['brand=porsche', 'model=911', 'horsepower=389', 'color=red']
+    const filters = ['brand=porsche', 'model=911', 'horsepower=389', 'color=red'];
     const activeFilters = new BehaviorSubject('');
 
     const applyFilters = () => {
       filters.forEach((filter, index) => {
         let newFilters = activeFilters.value;
         if (index === 0) {
-          newFilters = `?${filter}`
+          newFilters = `?${filter}`;
         } else {
-          newFilters = `${newFilters}&${filter}`
+          newFilters = `${newFilters}&${filter}`;
         }
 
-        activeFilters.next(newFilters)
-      })
-    }
+        activeFilters.next(newFilters);
+      });
+    };
 
     // using switchMap
     activeFilters.pipe(

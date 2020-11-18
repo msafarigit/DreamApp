@@ -15,9 +15,9 @@ export class AgeRangeValidatorDirective implements Validator {
 
   validate(control: AbstractControl): ValidationErrors {
     if (!control.value || !this.ageModel)
-      return null;
+      {return null;}
     const isValid = control.value >= this.ageModel.min && control.value < this.ageModel.max;
-    return isValid ? null : { ageRange: control.value }
+    return isValid ? null : { ageRange: control.value };
   }
 
   // registerOnValidatorChange?(fn: () => void): void {

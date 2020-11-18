@@ -34,9 +34,7 @@ export class ModelDrivenFormNestedComponent implements OnInit {
   }
 
   buildServiceFormArray(): FormArray {
-    const serviceFormControls: Array<FormControl> = this.serviceList.map((service, index, serviceList) => {
-      return this.fb.control(service.selected);
-    });
+    const serviceFormControls: Array<FormControl> = this.serviceList.map((service, index, serviceList) => this.fb.control(service.selected));
 
     return this.fb.array(serviceFormControls);
   }
@@ -44,14 +42,12 @@ export class ModelDrivenFormNestedComponent implements OnInit {
   onSubmit() {
     const formVal = Object.assign(new Object(), this.packageForm.value, {
       selected: this.getSelectedServices()
-    })
+    });
     alert(JSON.stringify(formVal));
   }
 
   getSelectedServices(): any[] {
-    return this.packageForm.value.serviceInfo.services.map((selected, index) => {
-      return selected && this.serviceList[index];
-    })
+    return this.packageForm.value.serviceInfo.services.map((selected, index) => selected && this.serviceList[index])
       .filter(service => service);
   }
 }

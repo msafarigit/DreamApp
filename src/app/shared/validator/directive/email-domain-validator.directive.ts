@@ -12,14 +12,10 @@ export class EmailDomainValidatorDirective implements Validator {
   constructor() { }
 
   validate(control: AbstractControl): ValidationErrors {
-    if (!control.value || !this.domainName)
-      return null;
-    if (control.value.indexOf('@') === -1)
-      return { emailDomain: control.value };
+    if (!control.value || !this.domainName) { return null; }
+    if (control.value.indexOf('@') === -1) { return { emailDomain: control.value }; }
 
     const [_, domain] = control.value.split('@');
-    return domain === this.domainName ? null : { emailDomain: control.value }
+    return domain === this.domainName ? null : { emailDomain: control.value };
   }
-
-
 }

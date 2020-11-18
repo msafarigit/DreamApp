@@ -45,6 +45,6 @@ Component styles normally apply only to the HTML in the component's own template
 Applying the ::ng-deep pseudo-class to any CSS rule completely disables view-encapsulation for that rule.
  Any style with ::ng-deep applied becomes a global style.
  Use /deep/, >>> and ::ng-deep only with emulated view encapsulation.
- Emulated is the default and most commonly used view encapsulation. 
+ Emulated is the default and most commonly used view encapsulation.
  For more information, see the Controlling view encapsulation section.
 */

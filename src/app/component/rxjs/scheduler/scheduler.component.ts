@@ -1,3 +1,4 @@
+/* eslint-disable prefer-arrow/prefer-arrow-functions */
 import { Component, OnInit } from '@angular/core';
 import { Observable, asyncScheduler } from 'rxjs';
 import { observeOn } from 'rxjs/operators';
@@ -13,7 +14,7 @@ export class SchedulerComponent implements OnInit {
 
   finalObserver = {
     next(x) {
-      console.log('got value ' + x)
+      console.log('got value ' + x);
     },
     error(err) {
       console.error('something wrong occurred: ' + err);
@@ -55,7 +56,7 @@ export class SchedulerComponent implements OnInit {
         null /* will be the x for the function above */
       );
     }
-  }
+  };
 
   constructor() {
     this.observable = new Observable<number>((observer) => {

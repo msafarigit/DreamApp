@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, NgForm, AbstractControl } from '@angular/forms';
-import { map } from 'rxjs/operators'
+import { map } from 'rxjs/operators';
 
 import { AuthService } from '@shared/service/auth.service';
 import { AppAsyncValidators } from '@shared/validator/app-async-validators';
@@ -40,9 +40,7 @@ export class ModelDrivenAsyncValidatorComponent implements OnInit {
   }
 
   validateEmailNotTaken(control: AbstractControl) {
-    return this.authService.checkEmail(control.value).pipe(map(res => {
-      return res ? null : { emailTaken: true };
-    }));
+    return this.authService.checkEmail(control.value).pipe(map(res => res ? null : { emailTaken: true }));
   }
 }
 

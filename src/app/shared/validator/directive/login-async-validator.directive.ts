@@ -1,6 +1,6 @@
 import { Directive, forwardRef, Input } from '@angular/core';
 import { NG_ASYNC_VALIDATORS, AbstractControl, ValidationErrors, AsyncValidator } from '@angular/forms';
-import { Observable, timer } from 'rxjs'
+import { Observable, timer } from 'rxjs';
 import { switchMap, map } from 'rxjs/operators';
 
 import { AuthService } from '@shared/service/auth.service';
