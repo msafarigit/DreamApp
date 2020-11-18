@@ -10,6 +10,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 // #region base
 import { AppRoutingModule } from './app-routing.module';
+import { APP_CONFIG, APP_DI_CONFIG } from './app.config';
 import { NavbarModule } from './navbar/navbar.module';
 import { SharedModule } from '@shared/shared.module';
 import { AppComponent } from './app.component';
@@ -66,7 +67,10 @@ import { NotFoundComponent } from '@component/not-found/not-found.component';
     SharedModule.forRoot()
 
   ],
-  providers: [], // Using the @Injectable() providedIn property is preferable to the @NgModule() providers
+  // Using the @Injectable() providedIn property is preferable to the @NgModule() providers
+  providers: [
+    { provide: APP_CONFIG, useValue: APP_DI_CONFIG }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
