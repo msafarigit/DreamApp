@@ -10,9 +10,9 @@ export class ModalComponent implements OnInit {
 
   closeResult: string;
 
-  constructor(private modalService: NgbModal) {
+  constructor(private modalService: NgbModal) {  }
 
-  }
+  ngOnInit() {  }
 
   open(content) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
@@ -31,9 +31,4 @@ export class ModalComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
-
-  ngOnInit() {
-
-  }
-
 }
