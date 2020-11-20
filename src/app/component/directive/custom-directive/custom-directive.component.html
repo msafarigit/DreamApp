@@ -2,7 +2,9 @@
 <p [appClass]="backgroundColor">orange background color from component with attribute directive!</p> -->
 
 <p class="text" appClass="{'text-danger': 'true'}">not worked!</p>
-<p class="text" [appClass]="{'text-danger': dangerText, 'text-info': !dangerText}">component with attribute directive!</p>
+<p class="text" [appClass]="{'text-danger': dangerText, 'text-info': !dangerText}">
+  component with attribute directive!
+</p>
 
 <ul *appTimes="5; let i = index">
   <li>{{i}}- custom structural directive!</li>

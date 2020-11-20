@@ -4,7 +4,6 @@ import { Component, OnInit, OnChanges, SimpleChanges, DoCheck, AfterContentInit,
 import { ChildComponent } from '@component/lifecycle/child/child.component';
 import { PERSONS, Person } from '@model/Person';
 
-// eslint-disable-next-line @angular-eslint/no-conflicting-lifecycle
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -61,6 +60,24 @@ export class HomeComponent implements OnInit, OnChanges, DoCheck, AfterContentIn
 }
 
 /*
+ Initializing a component or directive:
+ Use the ngOnInit() method to perform the following initialization tasks:
+  1- Perform complex initializations outside of the constructor. Components should be cheap and safe to construct.
+   You should not, for example, fetch data in a component constructor.
+   You shouldn't worry that a new component will try to contact a remote server when created under test or before you decide to display it.
+   An ngOnInit() is a good place for a component to fetch its initial data. For an example, see the Tour of Heroes tutorial.
+
+   url:http://misko.hevery.com/code-reviewers-guide/flaw-constructor-does-real-work/
+   In Flaw: Constructor does Real Work, Misko Hevery, Angular team lead, explains why you should avoid complex constructor logic.
+
+  2- Set up the component after Angular sets the input properties. Constructors should do no more than set the initial local variables to simple values.
+   Keep in mind that a directive's data-bound input properties are not set until after construction.
+   If you need to initialize the directive based on those properties, set them when ngOnInit() runs.
+   The ngOnChanges() method is your first opportunity to access those properties.
+   Angular calls ngOnChanges() before ngOnInit(), but also many times after that. It only calls ngOnInit() once.
+*/
+
+/*
  ngOnChanges(): Respond when Angular (re)sets data-bound input properties. The method receives a SimpleChanges object of current and previous property values.
                 Called before ngOnInit() and whenever one or more data-bound input properties change.
 
@@ -84,23 +101,4 @@ export class HomeComponent implements OnInit, OnChanges, DoCheck, AfterContentIn
 
  ngOnDestroy(): Cleanup just before Angular destroys the directive/component. Unsubscribe Observables and detach event handlers to avoid memory leaks.
                 Called just before Angular destroys the directive/component.
-*/
-
-/*
-Initializing a component or directive:
-Use the ngOnInit() method to perform the following initialization tasks.
-
-1- Perform complex initializations outside of the constructor. Components should be cheap and safe to construct.
- You should not, for example, fetch data in a component constructor.
- You shouldn't worry that a new component will try to contact a remote server when created under test or before you decide to display it.
- An ngOnInit() is a good place for a component to fetch its initial data. For an example, see the Tour of Heroes tutorial.
-
- url:http://misko.hevery.com/code-reviewers-guide/flaw-constructor-does-real-work/
- In Flaw: Constructor does Real Work, Misko Hevery, Angular team lead, explains why you should avoid complex constructor logic.
-
-2- Set up the component after Angular sets the input properties. Constructors should do no more than set the initial local variables to simple values.
- Keep in mind that a directive's data-bound input properties are not set until after construction.
- If you need to initialize the directive based on those properties, set them when ngOnInit() runs.
-The ngOnChanges() method is your first opportunity to access those properties.
-Angular calls ngOnChanges() before ngOnInit(), but also many times after that. It only calls ngOnInit() once.
 */

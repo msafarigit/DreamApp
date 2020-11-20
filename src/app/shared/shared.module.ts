@@ -57,19 +57,19 @@ export class SharedModule {
       providers: [AuthService],
     };
   }
- }
+}
 
 /*
-The forRoot() pattern
-Generally, you'll only need providedIn for providing services and forRoot()/forChild() for routing. However, understanding how forRoot()
+ The forRoot() pattern
+ Generally, you'll only need providedIn for providing services and forRoot()/forChild() for routing. However, understanding how forRoot()
  works to make sure a service is a singleton will inform your development at a deeper level.
 
-If a module defines both providers and declarations (components, directives, pipes),
+ If a module defines both providers and declarations (components, directives, pipes),
  then loading the module in multiple feature modules would duplicate the registration of the service.
  This could result in multiple service instances and the service would no longer behave as a singleton.
 
-There are multiple ways to prevent this:
-  1-Use the providedIn syntax instead of registering the service in the module.
-  2-Separate your services into their own module.
-  3-Define forRoot() and forChild() methods in the module.
+ There are multiple ways to prevent this:
+   1-Use the providedIn syntax instead of registering the service in the module.
+   2-Separate your services into their own module.
+   3-Define forRoot() and forChild() methods in the module.
 */

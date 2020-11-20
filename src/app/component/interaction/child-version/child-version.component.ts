@@ -23,8 +23,7 @@ export class ChildVersionComponent implements OnInit, OnChanges {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {  }
 
   // means: an object with keys of type string, each associated to a value of type SimpleChange.
   ngOnChanges(changes: { [propKey: string]: SimpleChange }): void {

@@ -63,11 +63,11 @@ attributes on the <ng-template>:
 */
 
 /*
-The <ng-template>:
- The <ng-template> is an Angular element for rendering HTML. It is never displayed directly.
- In fact, before rendering the view, Angular replaces the <ng-template> and its contents with a comment.
- If there is no structural directive and you merely wrap some elements in a <ng-template>, those elements disappear.
- That's the fate of the middle "Hip!" in the phrase "Hip! Hip! Hooray!".
+ ngTemplate:
+  The <ng-template> is an Angular element for rendering HTML. It is never displayed directly.
+  In fact, before rendering the view, Angular replaces the <ng-template> and its contents with a comment.
+  If there is no structural directive and you merely wrap some elements in a <ng-template>, those elements disappear.
+  That's the fate of the middle "Hip!" in the phrase "Hip! Hip! Hooray!".
 
  -first usage:
   <div class="lessons-list" *ngIf="lessons else loading">...</div>
@@ -75,19 +75,15 @@ The <ng-template>:
       <div>Loading...</div>
   </ng-template>
 
- -second usage:
- <ng-template [ngIf]="lessons" [ngIfElse]="loading">
-   <div class="lessons-list">
+ converted to:
+  <ng-template [ngIf]="lessons" [ngIfElse]="loading">
+    <div class="lessons-list">
      ...
-   </div>
- </ng-template>
+    </div>
+  </ng-template>
 
- <ng-template #loading>
-     <div>Loading...</div>
- </ng-template>
-
- -third usage:
- <ng-template [ngIf]="hero">
-    <div class="name">{{hero.name}}</div>
- </ng-template>
+ -second usage:
+  <ng-template [ngIf]="hero">
+     <div class="name">{{hero.name}}</div>
+  </ng-template>
 */

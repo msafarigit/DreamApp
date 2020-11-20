@@ -1,18 +1,17 @@
 <form class="form">
-    <!--Template reference variable-->
-    <input #name (keyup.enter)="onKeyEnter($event)"/>
-    <input #lastName (mouseleave)="onMouseLeave($event)" />
-    <input #id type="hidden" />
-    <button class="btn btn-success" type="button" (click)="savePerson(id, name, lastName); id.value = ''; name.value = ''; lastName.value = '';">Save</button>
+  <!--Template reference variable-->
+  <input #name (keyup.enter)="onKeyEnter($event)" />
+  <input #lastName (mouseleave)="onMouseLeave($event)" />
+  <input #id type="hidden" />
+  <button class="btn btn-success" type="button" (click)="savePerson(id, name, lastName); id.value = ''; name.value = ''; lastName.value = '';">Save</button>
 </form>
 
 <p *ngIf="!persons || persons.length == 0">No Person</p>
 <ul class="list-group">
-    <!--Template input variables -->
-    <li *ngFor="let person of persons" class="list-group-item">
-        {{person.name}} {{person.lastName}}
-        <input type="button" class="btn btn-primary" value="Edit"
-            (click)="id.value = person.id; name.value = person.name; lastName.value = person.lastName;" />
-        <input type="button" class="btn btn-danger" value="Delete" (click)="deletePerson(person)" />
-    </li>
+  <!--Template input variables -->
+  <li *ngFor="let person of persons" class="list-group-item">
+    {{person.name}} {{person.lastName}}
+    <input type="button" class="btn btn-primary" value="Edit" (click)="id.value = person.id; name.value = person.name; lastName.value = person.lastName;" />
+    <input type="button" class="btn btn-danger" value="Delete" (click)="deletePerson(person)" />
+  </li>
 </ul>

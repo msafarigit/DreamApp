@@ -58,6 +58,8 @@ export class TemplateReferenceVariableComponent implements OnInit {
   }
 }
 
-// A template reference variable is often a reference to a DOM element within a template.
-// It can also refer to a directive (which contains a component), an element, TemplateRef, or a web component.
-// Use the hash symbol (#) to declare a reference variable.
+/*
+ A template reference variable is often a reference to a DOM element within a template.
+ It can also refer to a directive (which contains a component), an element, TemplateRef, or a web component.
+ Use the hash symbol (#) to declare a reference variable.
+*/

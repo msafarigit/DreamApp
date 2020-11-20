@@ -18,10 +18,10 @@ export class ClassRoomComponent implements OnInit {
     this.disagree = 0;
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   studentVote(vote: boolean) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     vote ? this.agree++ : this.disagree++;
   }
 }

@@ -148,11 +148,11 @@ export class NgContainerExampleComponent {
   </p>
 
   It's more like the curly braces in a JavaScript if-block:
-  if (someCondition) {
-   statement1;
-   statement2;
-   statement3;
-  }
+   if (someCondition) {
+    statement1;
+    statement2;
+    statement3;
+   }
 
   Without those braces, JavaScript would only execute the first statement when you intend to conditionally execute all of them as a single block.
   The <ng-container> satisfies a similar need in Angular templates.

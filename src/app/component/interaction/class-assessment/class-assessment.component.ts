@@ -28,8 +28,7 @@ export class ClassAssessmentComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   announce() {
     const assessment = this.assessments[this.nextAssessment++];

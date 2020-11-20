@@ -15,7 +15,5 @@ export class CountdownLocalVarParentComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 }

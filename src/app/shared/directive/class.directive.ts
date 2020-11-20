@@ -1,5 +1,4 @@
 import { Directive, ElementRef, Input } from '@angular/core';
-
 // ElementRef for attribute directives!!
 
 @Directive({
@@ -13,7 +12,7 @@ export class ClassDirective {
   // }
 
   @Input('appClass')
-  set classNames(classObj: {[key: string]: any}){
+  set classNames(classObj: { [key: string]: any }) {
     for (const key in classObj) {
       if (classObj.hasOwnProperty(key) && classObj[key]) {
         this.element.nativeElement.classList.add(key);
