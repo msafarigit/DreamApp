@@ -10,8 +10,7 @@ export class StyleExampleComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
 

@@ -47,36 +47,37 @@ export class ModelDrivenFormNestedComponent implements OnInit {
   }
 
   getSelectedServices(): any[] {
-    return this.packageForm.value.serviceInfo.services.map((selected, index) => selected && this.serviceList[index])
+    return this.packageForm.value
+      .serviceInfo.services.map((selected, index) => selected && this.serviceList[index])
       .filter(service => service);
   }
 }
 
 /*
-FormBuilder: CLASS
-group(): Construct a new FormGroup instance.
-group(controlsConfig: { [key: string]: any; }, options: AbstractControlOptions | { [key: string]: any; } = null): FormGroup
+ FormBuilder: CLASS
+  group(): Construct a new FormGroup instance.
+  group(controlsConfig: { [key: string]: any; }, options: AbstractControlOptions | { [key: string]: any; } = null): FormGroup
 
-control(): Construct a new FormControl with the given state, validators and options.
-control(formState: any, validatorOrOpts?: ValidatorFn | AbstractControlOptions | ValidatorFn[], asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[]): FormControl
-this.control = fb.control({value: 'my val', disabled: true});
+  control(): Construct a new FormControl with the given state, validators and options.
+  control(formState: any, validatorOrOpts?: ValidatorFn | AbstractControlOptions | ValidatorFn[], asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[]): FormControl
+  this.control = fb.control({value: 'my val', disabled: true});
 
-array(): Constructs a new FormArray from the given array of configurations, validators and options.
-array(controlsConfig: any[], validatorOrOpts?: ValidatorFn | AbstractControlOptions | ValidatorFn[], asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[]): FormArray
+  array(): Constructs a new FormArray from the given array of configurations, validators and options.
+  array(controlsConfig: any[], validatorOrOpts?: ValidatorFn | AbstractControlOptions | ValidatorFn[], asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[]): FormArray
 */
 
 /*
-interface AbstractControlOptions {
-    // @description
-    // The list of validators applied to a control.
+ interface AbstractControlOptions {
+    -- @description
+    -- The list of validators applied to a control.
     validators?: ValidatorFn | ValidatorFn[] | null;
 
-    // @description
-    // The list of async validators applied to control.
+    -- @description
+    -- The list of async validators applied to control.
     asyncValidators ?: AsyncValidatorFn | AsyncValidatorFn[] | null;
 
-    // @description
-    // The event name for control to update upon.
+    -- @description
+    -- The event name for control to update upon.
     updateOn ?: 'change' | 'blur' | 'submit';
-}
+ }
 */

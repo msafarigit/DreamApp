@@ -57,33 +57,31 @@ export class ModelDrivenFormComponent {
 }
 
 /*
-Reactive Forms:
- provide a model-driven approach to handling form inputs whose values change over time.
- This guide shows you how to create and update a simple form control,
- progress to using multiple controls in a group, validate form values,
- and implement more advanced forms.
+ Reactive Forms:
+  provide a model-driven approach to handling form inputs whose values change over time.
+  This guide shows you how to create and update a simple form control,  progress to using multiple controls in a group,
+  validate form values, and implement more advanced forms.
 
- Reactive forms use an explicit and immutable approach to managing the state of a form at a given point in time.
- Each change to the form state returns a new state, which maintains the integrity of the model between changes.
- Reactive forms are built around observable streams,
- where form inputs and values are provided as streams of input values, which can be accessed synchronously.
+  Reactive forms use an explicit and immutable approach to managing the state of a form at a given point in time.
+  Each change to the form state returns a new state, which maintains the integrity of the model between changes.
+  Reactive forms are built around observable streams,
+  where form inputs and values are provided as streams of input values, which can be accessed synchronously.
 
- Reactive forms differ from template-driven forms in distinct ways.
- Reactive forms provide more predictability with synchronous access to the data model,
- immutability with observable operators, and change tracking through observable streams.
+  Reactive forms differ from template-driven forms in distinct ways.
+  Reactive forms provide more predictability with synchronous access to the data model,
+  immutability with observable operators, and change tracking through observable streams.
 */
 
 /*
   Step 1: Registering the reactive forms module
-  Step 2: The FormControl class is the basic building block when using reactive forms.
-   To register a single form control, import the FormControl class into your component and create a new instance
-   of the form control to save as a class property.
+  Step 2: The FormControl class is the basic building block when using reactive forms. To register a single form control,
+  import the FormControl class into your component and create a new instance of the form control to save as a class property.
   Step 3: Registering the control in the template
 */
 
 /*
-Reactive forms API:
-Listed below are the base classes and services used to create and manage form controls.
+ Reactive forms API:
+  Listed below are the base classes and services used to create and manage form controls.
 
 1- Classes:
 AbstractControl: The abstract base class for the concrete form control classes FormControl, FormGroup, and FormArray.
@@ -137,8 +135,8 @@ constructor(formState: any = null,
   asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[])
 
 Parameters:
-formState:any - Initializes the control with an initial value, or an object that defines the initial value and disabled state.
-Optional. Default is null.
+ formState:any - Initializes the control with an initial value, or an object that defines the initial value and disabled state.
+ Optional. Default is null.
 
 validatorOrOpts:ValidatorFn | AbstractControlOptions | ValidatorFn[]
 A synchronous validator function, or an array of such functions, or an AbstractControlOptions object that contains validation functions and a validation trigger.
@@ -197,9 +195,7 @@ get name() { return this.heroForm.get('name'); }
 get power() { return this.heroForm.get('power'); }
 
 <input id="name" class="form-control" formControlName="name" required />
-
 <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-
   <div *ngIf="name.errors.required">
     Name is required.
   </div>
@@ -209,7 +205,6 @@ get power() { return this.heroForm.get('power'); }
   <div *ngIf="name.errors.forbiddenName">
     Name cannot be Bob.
   </div>
-
 </div>
 
 The required attribute is still present. While it's not necessary for validation purposes,
@@ -230,22 +225,17 @@ The validation error object typically has a property whose name is the validatio
 */
 
 /*
-  FormControl:
-  constructor(formState?: any, validatorOrOpts?: ValidatorFn | ValidatorFn[] | AbstractControlOptions | null, asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[] | null);
-*/
-
-/*
-interface AbstractControlOptions {
-    // @description
-    // The list of validators applied to a control.
+ interface AbstractControlOptions {
+    -- @description
+    -- The list of validators applied to a control.
     validators?: ValidatorFn | ValidatorFn[] | null;
 
-    // @description
-    // The list of async validators applied to control.
+    -- @description
+    -- The list of async validators applied to control.
     asyncValidators ?: AsyncValidatorFn | AsyncValidatorFn[] | null;
 
-    // @description
-    // The event name for control to update upon.
+    -- @description
+    -- The event name for control to update upon.
     updateOn ?: 'change' | 'blur' | 'submit';
-}
+ }
 */

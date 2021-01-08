@@ -13,9 +13,9 @@ import { loginAsyncValidator } from '@shared/validator/login-async-validator';
 })
 export class ModelDrivenAsyncValidatorComponent implements OnInit {
 
-  validationForm: FormGroup;
-
   @ViewChild('form', { static: true }) form: NgForm;
+
+  validationForm: FormGroup;
 
   get email() {
     return this.validationForm.get('email');
@@ -33,11 +33,9 @@ export class ModelDrivenAsyncValidatorComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
-  onSubmit(): void {
-  }
+  onSubmit(): void { }
 
   validateEmailNotTaken(control: AbstractControl) {
     return this.authService.checkEmail(control.value).pipe(map(res => res ? null : { emailTaken: true }));
@@ -47,20 +45,18 @@ export class ModelDrivenAsyncValidatorComponent implements OnInit {
 /*
   FormControl:
   constructor(formState?: any, validatorOrOpts?: ValidatorFn | ValidatorFn[] | AbstractControlOptions | null, asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[] | null);
-*/
 
-/*
-interface AbstractControlOptions {
-    // @description
-    // The list of validators applied to a control.
-    validators?: ValidatorFn | ValidatorFn[] | null;
+ interface AbstractControlOptions {
+   -- @description
+   -- The list of validators applied to a control.
+   validators?: ValidatorFn | ValidatorFn[] | null;
 
-    // @description
-    // The list of async validators applied to control.
-    asyncValidators ?: AsyncValidatorFn | AsyncValidatorFn[] | null;
+   -- @description
+   -- The list of async validators applied to control.
+   asyncValidators ?: AsyncValidatorFn | AsyncValidatorFn[] | null;
 
-    // @description
-    // The event name for control to update upon.
-    updateOn ?: 'change' | 'blur' | 'submit';
-}
+   -- @description
+   -- The event name for control to update upon.
+   updateOn ?: 'change' | 'blur' | 'submit';
+ }
 */

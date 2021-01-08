@@ -24,9 +24,9 @@ export class SqrtPipe implements PipeTransform {
     const numberPipe = new DecimalPipe('en');
 
     if (showText) {
-      return `Sqrt ${value} is ` + numberPipe.transform(Math.sqrt(value), digit);
+      return `Sqrt ${value} is ` + numberPipe.transform(isNaN(value) ? 1 : Math.sqrt(value), digit);
     }
-    return numberPipe.transform(Math.sqrt(value), digit);
+    return numberPipe.transform(isNaN(value) ? 1 : Math.sqrt(value), digit);
   }
 
 }
